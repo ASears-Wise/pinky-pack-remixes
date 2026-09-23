@@ -1,0 +1,1688 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Pinky Pack Remixes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=DM+Sans:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600&display=swap">
+
+<style>
+/* This pitch deliberately commits to one visual world — the club at night —
+   so it paints its own dark ground in every host theme. */
+:root{--kick:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#111014}
+body{color:#fff;font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+:focus-visible{outline:2px solid #FF2D78;outline-offset:3px}
+html:not(.is-playing) [data-play] .i-pause,
+html.is-playing [data-play] .i-play{display:none}
+
+/* ─── PRESENTATION SHELL ─────────────────────────────── */
+.ph{padding:48px 60px 30px;border-bottom:1px solid rgba(255,255,255,.08)}
+.ph-agency{font-size:11px;letter-spacing:.15em;color:rgba(255,255,255,.65);text-transform:uppercase;margin-bottom:8px}
+.ph h1{font-size:22px;font-weight:500;color:rgba(255,255,255,.92);margin-bottom:6px}
+.ph-sub{font-size:13px;color:rgba(255,255,255,.65)}
+.ph-note{margin-top:18px;max-width:64ch;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.78)}
+.ph-note b{color:#fff;font-weight:600}
+
+.cnav{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:14px 60px;border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(17,16,20,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.tab{border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.75);padding:0 18px;min-height:40px;font-size:12.5px;border-radius:3px;transition:color .2s,border-color .2s,background .2s}
+.tab:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+.tab[aria-selected="true"]{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6);color:#fff}
+.transport{margin-left:auto;display:inline-flex;align-items:center;gap:10px;min-height:40px;padding:0 16px 0 14px;border-radius:999px;border:1px solid rgba(255,45,120,.55);font-size:12.5px;font-weight:500;transition:background .2s,border-color .2s}
+.transport:hover{border-color:#FF2D78}
+.transport[aria-pressed="true"]{background:rgba(255,45,120,.14);border-color:#FF2D78}
+.tm{display:inline-flex;gap:2px;align-items:flex-end;height:14px}
+.tm i{display:block;width:3px;height:14px;background:#FF2D78;transform-origin:bottom;transform:scaleY(calc(.25 + var(--kick) * var(--k)))}
+
+.concept-label{padding:30px 60px 20px;display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}
+.concept-label .number{font-size:11px;color:rgba(255,255,255,.82);letter-spacing:.1em}
+.concept-label .name{font-size:18px;font-weight:500;color:rgba(255,255,255,.96)}
+.concept-label .tagline{font-size:13px;color:rgba(255,255,255,.68);max-width:70ch}
+
+.concept-notes{margin:0 40px 16px;padding:22px 26px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:4px;display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));gap:28px}
+.note-block h4{font-size:10px;color:rgba(255,255,255,.82);letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px;font-weight:600}
+.note-block p{font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.55}
+.swatches{display:flex;gap:6px}
+.swatch{width:22px;height:22px;border-radius:2px;border:1px solid rgba(255,255,255,.14)}
+
+.design-frame{margin:0 40px 64px;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+
+@media (max-width:860px){
+  .ph,.cnav,.concept-label{padding-left:20px;padding-right:20px}
+  .transport{margin-left:0}
+  .concept-notes{margin:0 16px 12px;grid-template-columns:1fr 1fr;gap:18px}
+  .design-frame{margin:0 16px 44px}
+}
+
+/* ═══════════════════════════════════════════════════════
+   01 — VINYL CUT, REMIXED
+   ═══════════════════════════════════════════════════════ */
+.c1{background:#0D0A08;color:#F0EBE0;font-family:'DM Sans',system-ui,sans-serif}
+.c1 a{text-decoration:none}
+.c1 :focus-visible{outline-color:#C8982A}
+.c1-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:22px 56px;border-bottom:1px solid rgba(200,152,42,.16)}
+.c1-logo{font-family:'Bodoni Moda',Georgia,serif;font-weight:700;font-size:19px}
+.c1-logo em{color:#C8982A;font-weight:400}
+.c1-links{display:flex;gap:28px;list-style:none;flex-wrap:wrap}
+.c1-links a{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,235,224,.74);transition:color .2s}
+.c1-links a:hover,.c1-links a[aria-current]{color:#C8982A}
+
+.c1-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center;padding:60px 56px 44px}
+.c1-eyeline{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#C8982A;margin-bottom:26px}
+.c1-name{font-family:'Bodoni Moda',Georgia,serif;font-weight:900;font-size:clamp(46px,6.2vw,82px);line-height:.98;letter-spacing:-.01em;margin-bottom:14px}
+.c1-name em{font-style:italic;font-weight:400;color:#C8982A}
+.c1-title{font-size:13px;letter-spacing:.06em;color:rgba(240,235,224,.82);margin-bottom:30px}
+.c1-pullquote{font-family:'Bodoni Moda',Georgia,serif;font-style:italic;font-size:clamp(17px,1.8vw,20px);line-height:1.55;color:rgba(240,235,224,.95);max-width:32em;padding-left:20px;border-left:2px solid #C8982A;margin-bottom:34px}
+.c1-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.c1-cta{display:inline-flex;align-items:center;min-height:48px;background:#C8982A;color:#0D0A08;font-weight:600;font-size:14px;padding:0 30px;letter-spacing:.03em;transition:background .2s}
+.c1-cta:hover{background:#DDB04A}
+.c1-needle{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 22px 0 7px;border:1px solid rgba(200,152,42,.55);border-radius:999px;color:#F0EBE0;font-size:14px;font-weight:500;transition:border-color .2s,background .2s}
+.c1-needle:hover{border-color:#C8982A;background:rgba(200,152,42,.08)}
+.c1-needle[aria-pressed="true"]{background:rgba(200,152,42,.12);border-color:#C8982A}
+.c1-needle .pi{width:34px;height:34px;border-radius:50%;background:#C8982A;display:grid;place-items:center}
+
+.c1-deck-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0}
+.c1-deck{position:relative;width:min(100%,520px);aspect-ratio:1.12/1;max-width:100%}
+.c1-deck::before{content:"";position:absolute;left:3%;top:4%;width:83%;height:94%;border-radius:50%;box-shadow:0 44px 80px -24px rgba(0,0,0,.95),0 0 90px -10px rgba(200,152,42,.14)}
+.c1-rec{position:absolute;left:0;top:0;width:89.2857%;height:100%;display:block;transform-origin:50% 50%;will-change:transform}
+.c1-sheen{position:absolute;left:0;top:0;width:89.2857%;height:100%;border-radius:50%;pointer-events:none;
+  background:conic-gradient(from 200deg,transparent 0deg,rgba(255,236,200,.08) 18deg,transparent 38deg,transparent 180deg,rgba(255,236,200,.05) 198deg,transparent 218deg);
+  -webkit-mask:radial-gradient(circle,transparent 0 34%,#000 34.6%);mask:radial-gradient(circle,transparent 0 34%,#000 34.6%)}
+.c1-arm-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.c1-arm{transform-box:view-box;transform-origin:98px 8px;transform:rotate(-15deg);transition:transform 1s cubic-bezier(.3,.7,.2,1)}
+html.is-playing .c1-arm{transform:rotate(0deg)}
+.c1-deck-cap{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,235,224,.64)}
+
+.c1-scope{padding:0 56px 44px}
+.c1-scope-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,235,224,.66);padding-top:18px;margin-bottom:10px;border-top:1px solid rgba(200,152,42,.16)}
+.c1-scope-meta b{color:#C8982A;font-weight:500}
+#v1-scope{display:block;width:100%;height:84px}
+
+.c1-sleeve{background:#1A1410;padding:56px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr);gap:40px}
+.c1-sleeve-head h2{font-family:'Bodoni Moda',Georgia,serif;font-size:34px;font-weight:700;line-height:1.1;margin-bottom:12px}
+.c1-sleeve-head p{font-size:14px;line-height:1.65;color:rgba(240,235,224,.8);max-width:30ch}
+.c1-side h3{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C8982A;font-weight:500;padding-bottom:12px;border-bottom:1px solid rgba(200,152,42,.32)}
+.c1-trk{display:grid;grid-template-columns:30px minmax(0,1fr) auto;grid-template-areas:"no t era" "no w w";column-gap:12px;row-gap:9px;padding:16px 0;border-bottom:1px solid rgba(240,235,224,.08)}
+.c1-trk-no{grid-area:no;font-family:'Bodoni Moda',Georgia,serif;font-style:italic;color:#C8982A;font-size:15px}
+.c1-trk-t{grid-area:t;min-width:0}
+.c1-trk-t strong{display:block;font-family:'Bodoni Moda',Georgia,serif;font-size:16px;font-weight:700;margin-bottom:2px}
+.c1-trk-t span{font-size:13px;line-height:1.5;color:rgba(240,235,224,.78)}
+.c1-trk .v1-mini{grid-area:w;display:block;width:100%;height:22px}
+.c1-trk-era{grid-area:era;text-align:right;font-size:12px;color:rgba(240,235,224,.74);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.c1-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:56px;padding:64px 56px;align-items:start}
+.c1-story-head{font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(28px,3.4vw,38px);line-height:1.15;margin-bottom:22px;text-wrap:balance}
+.c1-story-body{font-size:14.5px;line-height:1.75;color:rgba(240,235,224,.86);font-weight:300;max-width:58ch}
+.c1-story-body + .c1-story-body{margin-top:14px}
+.c1-reshape{background:#14100C;border:1px solid rgba(200,152,42,.2);padding:26px}
+.c1-kicker{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C8982A;margin-bottom:6px}
+.c1-reshape figcaption strong{display:block;font-family:'Bodoni Moda',Georgia,serif;font-size:22px;font-weight:700;line-height:1.25}
+.c1-axis{position:relative;height:20px;margin:20px 0 4px;font-size:10px;color:rgba(240,235,224,.6);font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(240,235,224,.14)}
+.c1-axis span{position:absolute;top:0;transform:translateX(-50%)}
+.c1-axis span:first-child{transform:none}
+.c1-axis span:last-child{transform:translateX(-100%)}
+.c1-rs-row{margin-top:14px}
+.c1-rs-label{display:block;font-size:12px;color:rgba(240,235,224,.82);margin-bottom:5px}
+.c1-rs-label b{color:#C8982A;font-weight:600;font-variant-numeric:tabular-nums;margin-left:6px}
+.c1-rs-track canvas{display:block;width:100%;height:34px}
+.c1-legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(240,235,224,.08);font-size:11.5px;color:rgba(240,235,224,.74)}
+.c1-legend b{color:#C8982A;font-weight:500;font-variant-numeric:tabular-nums}
+
+.c1-services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding:0 56px 64px}
+.c1-service-item{border-top:1px solid #C8982A;padding-top:20px}
+.c1-service-item .tag{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#C8982A;margin-bottom:10px}
+.c1-service-item h4{font-family:'Bodoni Moda',Georgia,serif;font-size:19px;margin-bottom:8px;font-weight:700}
+.c1-service-item p{font-size:13.5px;line-height:1.65;color:rgba(240,235,224,.82);font-weight:300}
+
+.c1-liner{background:#0A0806;padding:56px;border-top:1px solid rgba(200,152,42,.12);display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,2fr);gap:40px}
+.c1-liner-head span{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C8982A;margin-bottom:8px}
+.c1-liner-head h3{font-family:'Bodoni Moda',Georgia,serif;font-size:28px;line-height:1.15;font-weight:700}
+.c1-names{list-style:none;columns:3;column-gap:28px}
+.c1-names li{font-family:'Bodoni Moda',Georgia,serif;font-style:italic;font-size:16px;padding:7px 0;border-bottom:1px solid rgba(240,235,224,.07);break-inside:avoid;color:rgba(240,235,224,.84)}
+
+.c1-contact{position:relative;background:#C8982A;padding:52px 56px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;overflow:hidden}
+#v1-band{position:absolute;inset:0;width:100%;height:100%;display:block}
+.c1-contact-text,.c1-contact-btn{position:relative}
+.c1-contact-text h3{font-family:'Bodoni Moda',Georgia,serif;font-size:28px;color:#0D0A08;margin-bottom:6px}
+.c1-contact-text p{font-size:14px;color:rgba(13,10,8,.78)}
+.c1-contact-btn{display:inline-flex;align-items:center;min-height:48px;background:#0D0A08;color:#C8982A;font-size:14px;font-weight:600;padding:0 32px;letter-spacing:.03em}
+
+@media (max-width:860px){
+  .c1-nav{padding:18px 22px}
+  .c1-hero{grid-template-columns:1fr;padding:40px 22px 32px;gap:36px}
+  .c1-scope{padding:0 22px 36px}
+  .c1-sleeve{grid-template-columns:1fr;padding:44px 22px;gap:28px}
+  .c1-story{grid-template-columns:1fr;padding:48px 22px;gap:36px}
+  .c1-reshape{padding:18px}
+  .c1-services{grid-template-columns:1fr;padding:0 22px 48px;gap:24px}
+  .c1-liner{grid-template-columns:1fr;padding:44px 22px;gap:22px}
+  .c1-names{columns:2}
+  .c1-contact{padding:40px 22px}
+}
+@media (max-width:480px){.c1-names{columns:1}}
+
+/* ═══════════════════════════════════════════════════════
+   02 — CLUB DARK, REMIXED
+   ═══════════════════════════════════════════════════════ */
+.c2{background:#000;color:#fff;font-family:'Inter',system-ui,sans-serif}
+.c2 a{text-decoration:none}
+.c2-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:20px 48px;border-bottom:1px solid rgba(255,45,120,.18)}
+.c2-nav-logo{font-family:'Anton',Impact,sans-serif;font-size:20px;letter-spacing:.04em;color:#FF2D78}
+.c2-nav-links{display:flex;gap:30px;list-style:none;flex-wrap:wrap}
+.c2-nav-links a{font-size:11px;color:rgba(255,255,255,.72);letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.c2-nav-links a:hover,.c2-nav-links a[aria-current]{color:#FF2D78}
+
+.c2-hero{padding:64px 48px 44px;position:relative;overflow:hidden}
+.c2-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(26,108,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(26,108,255,.06) 1px,transparent 1px);background-size:48px 48px}
+.c2-now{font-size:11px;color:#FF2D78;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px;margin-bottom:26px;position:relative}
+.c2-pulse{width:8px;height:8px;background:#FF2D78;border-radius:50%;transform:scale(calc(.75 + var(--kick) * .7));box-shadow:0 0 calc(var(--kick) * 16px) #FF2D78}
+html:not(.is-playing) .c2-pulse{transform:none}
+.c2-name{font-family:'Anton',Impact,sans-serif;font-weight:400;line-height:.88;position:relative}
+.c2-name .pk{display:block;color:#FF2D78;font-size:clamp(76px,15vw,196px);letter-spacing:-.005em;text-shadow:0 0 calc(var(--kick) * 52px) rgba(255,45,120,calc(var(--kick) * .9))}
+.c2-name .vz{display:block;color:#fff;font-size:clamp(48px,11.2vw,146px);letter-spacing:.005em}
+.c2-hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:34px;position:relative}
+.c2-hero-desc{font-size:15px;font-weight:300;color:rgba(255,255,255,.84);max-width:430px;line-height:1.65}
+.c2-hero-desc strong{color:#fff;font-weight:600}
+.c2-cta{display:inline-flex;align-items:center;min-height:48px;background:#FF2D78;color:#000;font-size:13.5px;font-weight:700;padding:0 32px;transition:background .2s}
+.c2-cta:hover{background:#FF5C97}
+
+.c2-deck{position:relative;background:#050507;border-block:1px solid rgba(255,45,120,.25)}
+#c2-deck{display:block;width:100%;height:150px}
+.c2-deck-tag{position:absolute;bottom:8px;left:12px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.6);text-transform:uppercase}
+.c2-deck-tag.r{left:auto;right:12px}
+
+.c2-cdj{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:14px;align-items:center;padding:20px 48px;background:#0A0A0D;border-bottom:1px solid rgba(255,255,255,.06)}
+.c2-cue,.c2-play{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:.08em;transition:background .15s}
+.c2-cue{border:2px solid rgba(255,255,255,.55);color:rgba(255,255,255,.9)}
+.c2-cue:hover{background:rgba(255,255,255,.08)}
+.c2-play{border:2px solid #FF2D78;color:#FF2D78;box-shadow:0 0 calc(var(--kick) * 26px) rgba(255,45,120,.75)}
+.c2-play:hover,.c2-play[aria-pressed="true"]{background:rgba(255,45,120,.14)}
+.c2-lcd{display:grid;grid-template-columns:minmax(0,2.2fr) repeat(4,minmax(0,1fr));gap:1px;background:rgba(26,108,255,.28);border:1px solid rgba(26,108,255,.4);border-radius:4px;overflow:hidden}
+.c2-lcd-cell{background:#060914;padding:10px 14px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.c2-lcd-cell .k{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#7FA6FF}
+.c2-lcd-cell .v{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12.5px;color:#E6EEFF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c2-lcd-cell .v.big{font-size:20px;font-weight:500;font-variant-numeric:tabular-nums}
+
+.c2-marquee{background:#FF2D78;padding:11px 0;overflow:hidden;white-space:nowrap}
+.c2-marquee-inner{display:inline-flex;animation:c2-marquee 25s linear infinite;animation-play-state:paused}
+html.is-playing .c2-marquee-inner{animation-play-state:running}
+.c2-marquee-item{font-family:'Anton',Impact,sans-serif;font-size:13px;color:#000;letter-spacing:.05em;padding:0 36px}
+.c2-marquee-dot{color:rgba(0,0,0,.6)}
+@keyframes c2-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.c2-sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.c2-sec-head h3{font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:clamp(26px,3.4vw,36px);letter-spacing:.02em;line-height:1}
+.c2-sec-head p{font-size:13px;color:rgba(255,255,255,.74);max-width:40ch;line-height:1.55}
+
+.c2-career{padding:60px 48px 52px}
+.c2-overview{background:#050507;border:1px solid rgba(255,255,255,.09);padding:14px 14px 0}
+#c2-over{display:block;width:100%;height:96px}
+.c2-axis{position:relative;height:30px}
+.c2-axis span{position:absolute;top:0;padding-top:9px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;color:rgba(255,255,255,.62)}
+.c2-axis span::before{content:"";position:absolute;left:0;top:0;width:1px;height:6px;background:rgba(255,255,255,.3)}
+.c2-pads{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:14px}
+.c2-pad{min-height:54px;border-radius:4px;background:#0D0D12;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:10px;padding:8px 12px;text-align:left;transition:border-color .15s,background .15s}
+.c2-pad:hover{border-color:rgba(255,255,255,.3)}
+.c2-pad b{width:26px;height:26px;border-radius:3px;background:var(--c);color:#000;display:grid;place-items:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;flex-shrink:0}
+.c2-pad span{font-size:12px;color:rgba(255,255,255,.8);line-height:1.3;min-width:0}
+.c2-pad[aria-pressed="true"]{border-color:var(--c);background:#16161D;box-shadow:inset 0 0 0 1px var(--c)}
+.c2-card{margin-top:14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start;padding:22px 24px;background:#0A0A0A;border-left:3px solid var(--c,#FF2D78)}
+.c2-card-letter{font-family:'Anton',Impact,sans-serif;font-size:46px;line-height:1;color:var(--c,#FF2D78)}
+.c2-card-era{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7FA6FF;margin-bottom:6px}
+.c2-card h3{font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:24px;letter-spacing:.02em;margin-bottom:8px}
+.c2-card p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.8);max-width:62ch}
+
+.c2-media{padding:0 48px 60px;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:40px;align-items:start}
+.c2-video-frame{background:#0A0A0A;border:1px solid rgba(255,45,120,.22);aspect-ratio:16/9;max-width:100%;position:relative;display:grid;place-items:center}
+.c2-video-corner{position:absolute;width:16px;height:16px;border-color:#FF2D78;border-style:solid}
+.c2-video-corner.tl{top:8px;left:8px;border-width:2px 0 0 2px}
+.c2-video-corner.tr{top:8px;right:8px;border-width:2px 2px 0 0}
+.c2-video-corner.bl{bottom:8px;left:8px;border-width:0 0 2px 2px}
+.c2-video-corner.br{bottom:8px;right:8px;border-width:0 2px 2px 0}
+.c2-video-play{width:62px;height:62px;border:2px solid #FF2D78;border-radius:50%;display:grid;place-items:center}
+.c2-video-cap{position:absolute;top:18px;left:34px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.66)}
+#c2-scrub{position:absolute;left:34px;right:34px;bottom:20px;width:calc(100% - 68px);height:26px;display:block}
+.c2-sidebar{display:flex;flex-direction:column;gap:24px}
+.c2-sidebar-label{font-size:10px;color:rgba(255,255,255,.82);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.c2-sidebar-stat{font-family:'Anton',Impact,sans-serif;font-size:44px;color:#1A6CFF;line-height:1;margin-bottom:5px}
+.c2-sidebar-stat.pink{font-size:26px;color:#FF2D78}
+.c2-sidebar-desc{font-size:12.5px;color:rgba(255,255,255,.74);line-height:1.55}
+.c2-sidebar-divider{height:1px;background:rgba(255,255,255,.08)}
+
+.c2-mixer{padding:0 48px 60px}
+.c2-strips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
+.c2-ch{background:#0A0A0A;border-top:2px solid var(--c);padding:22px;display:flex;flex-direction:column;gap:18px}
+.c2-ch header{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.66)}
+.c2-led{width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 calc(3px + var(--kick) * 12px) var(--c)}
+.c2-ch-body{display:grid;grid-template-columns:minmax(0,1fr) 12px;gap:18px;flex:1}
+.c2-ch h3{font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:20px;letter-spacing:.02em;margin-bottom:10px}
+.c2-ch p{font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.78);font-weight:300}
+.c2-meter{--lvl:.7;position:relative;width:12px;min-height:130px;background:repeating-linear-gradient(to top,rgba(255,255,255,.08) 0 5px,transparent 5px 8px)}
+.c2-meter span{position:absolute;left:0;right:0;bottom:0;height:calc(var(--lvl) * 100%);background:repeating-linear-gradient(to top,var(--c) 0 5px,transparent 5px 8px);background-position:bottom}
+.c2-knobs{display:flex;gap:20px;padding-top:14px;border-top:1px solid rgba(255,255,255,.07)}
+.c2-knob{display:flex;flex-direction:column;align-items:center;gap:5px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:.12em;color:rgba(255,255,255,.6)}
+
+.c2-circle{padding:56px 48px;background:#0A0A0A;border-top:1px solid rgba(26,108,255,.14)}
+.c2-circle h3{font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:22px;color:rgba(255,255,255,.66);margin-bottom:24px;letter-spacing:.04em}
+.c2-circle-names{display:flex;flex-wrap:wrap;gap:10px}
+.c2-circle-tag{border:1px solid rgba(255,255,255,.12);padding:8px 16px;font-size:12.5px;color:rgba(255,255,255,.84);transition:border-color .2s,color .2s}
+.c2-circle-tag:hover{border-color:#FF2D78;color:#fff}
+
+.c2-footer{background:#FF2D78;padding:48px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.c2-footer-logo{font-family:'Anton',Impact,sans-serif;font-size:32px;color:#000;letter-spacing:.02em;line-height:1.05}
+.c2-footer-tagline{font-size:12.5px;color:rgba(0,0,0,.78);margin-top:6px}
+.c2-footer-contact{display:inline-flex;align-items:center;min-height:48px;background:#000;color:#FF2D78;font-size:13.5px;font-weight:700;padding:0 32px}
+
+@media (max-width:860px){
+  .c2-nav{padding:18px 22px}
+  .c2-hero{padding:44px 22px 36px}
+  .c2-cdj{grid-template-columns:auto auto 1fr;padding:18px 22px}
+  .c2-lcd{grid-column:1 / -1;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .c2-lcd-cell.wide{grid-column:1 / -1}
+  .c2-career{padding:48px 22px 40px}
+  .c2-pads{gap:6px}
+  .c2-pad{justify-content:center;padding:8px}
+  .c2-pad span{display:none}
+  .c2-media{grid-template-columns:1fr;padding:0 22px 48px;gap:28px}
+  .c2-mixer{padding:0 22px 48px}
+  .c2-strips{grid-template-columns:1fr}
+  .c2-circle{padding:44px 22px}
+  .c2-footer{padding:40px 22px}
+}
+
+/* ═══════════════════════════════════════════════════════
+   03 — UV FLOOR, REMIXED
+   ═══════════════════════════════════════════════════════ */
+.c3{background:#0C0018;font-family:'Space Grotesk',system-ui,sans-serif;color:#F0EAFF;overflow:hidden}
+.c3 a{text-decoration:none}
+.c3 :focus-visible{outline-color:#D4FF00}
+.c3-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:20px 52px;position:relative;z-index:10;border-bottom:1px solid rgba(176,111,255,.14)}
+.c3-nav-logo{font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;color:#D4FF00;letter-spacing:.06em}
+.c3-nav-links{display:flex;gap:30px;list-style:none;flex-wrap:wrap}
+.c3-nav-links a{font-size:12px;font-weight:500;color:rgba(200,160,255,.9);letter-spacing:.04em;transition:color .2s}
+.c3-nav-links a:hover,.c3-nav-links a[aria-current]{color:#D4FF00}
+
+.c3-hero{position:relative;overflow:hidden;padding:48px 52px 176px;background:radial-gradient(ellipse 75% 55% at 50% 108%,rgba(176,111,255,.3),transparent 72%),#0C0018}
+.c3-lasers{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.c3-laser-g{transform-box:view-box;transform-origin:500px -40px;animation:c3-sweep 5.8s ease-in-out infinite alternate;animation-play-state:paused}
+html.is-playing .c3-laser-g{animation-play-state:running}
+@keyframes c3-sweep{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+.c3-laser{stroke-width:1.5;vector-effect:non-scaling-stroke;opacity:calc(.16 + var(--kick) * .55)}
+.c3-hero-content{position:relative;z-index:2}
+.c3-kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#D4FF00;margin-bottom:14px;font-weight:500}
+.c3-title{font-weight:400}
+#u3-name{display:block;width:100%;height:clamp(92px,17vw,206px)}
+.c3-vz{display:block;font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(46px,8.6vw,108px);line-height:.9;letter-spacing:.02em;color:#F0EAFF;margin-top:6px}
+.c3-hero-footer{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:26px}
+.c3-hero-tag{font-size:14px;font-weight:300;color:rgba(214,190,255,.95);line-height:1.6;max-width:400px}
+.c3-hero-tag strong{color:#F0EAFF;font-weight:600}
+.c3-hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.c3-drop{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px 0 7px;border:1px solid #D4FF00;color:#D4FF00;border-radius:999px;font-weight:600;font-size:13px;letter-spacing:.04em;transition:background .2s}
+.c3-drop:hover,.c3-drop[aria-pressed="true"]{background:rgba(212,255,0,.1)}
+.c3-drop .pi{width:34px;height:34px;border-radius:50%;background:#D4FF00;display:grid;place-items:center}
+.c3-hero-cta{display:inline-flex;align-items:center;min-height:48px;background:#D4FF00;color:#0C0018;font-size:13px;font-weight:600;padding:0 30px;letter-spacing:.03em;transition:background .2s}
+.c3-hero-cta:hover{background:#E4FF5C}
+.c3-crowd{position:absolute;left:0;right:0;bottom:0;width:100%;height:140px;display:block;z-index:1;pointer-events:none}
+
+.c3-floor{background:#0C0018;padding:0 52px 38px}
+.c3-floor-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:20px 0 4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(200,160,255,.92)}
+.c3-floor-head b{color:#D4FF00;font-weight:600}
+#u3-floor{display:block;width:100%;height:190px}
+.c3-creds{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;padding-top:16px;border-top:1px solid rgba(176,111,255,.2)}
+.c3-creds-label{font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;letter-spacing:.08em;color:rgba(200,160,255,.95)}
+.c3-creds ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px}
+.c3-creds li{font-size:13px;color:rgba(240,234,255,.88)}
+.c3-creds li strong{color:#D4FF00;font-weight:600}
+
+.c3-story{background:#120025;clip-path:polygon(0 0,100% 22px,100% 100%,0 calc(100% - 22px));padding:80px 52px 96px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.c3-story-lhs h2{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;font-size:clamp(38px,4.4vw,54px);line-height:1.03;letter-spacing:.03em;margin-bottom:22px}
+.c3-story-lhs h2 span{color:#D4FF00}
+.c3-story-lhs p{font-size:14.5px;line-height:1.75;font-weight:300;color:rgba(240,234,255,.87);margin-bottom:14px;max-width:58ch}
+.c3-video-box{background:#0C0018;border:1px solid rgba(176,111,255,.24);aspect-ratio:16/9;max-width:100%;display:grid;place-items:center;position:relative;overflow:hidden}
+.c3-video-glow{position:absolute;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(176,111,255,.3) 0%,transparent 70%)}
+.c3-video-play-btn{width:62px;height:62px;border:2px solid #B06FFF;border-radius:50%;display:grid;place-items:center;position:relative}
+.c3-video-caption{position:absolute;bottom:12px;left:16px;font-size:10px;font-weight:500;color:rgba(200,160,255,.9);letter-spacing:.1em}
+
+.c3-services{background:#0C0018;clip-path:polygon(0 22px,100% 0,100% 100%,0 100%);padding:84px 52px 64px;margin-top:-1px}
+.c3-services-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.c3-services-intro h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;font-size:clamp(34px,4vw,46px);letter-spacing:.04em;line-height:1;max-width:420px}
+.c3-services-intro p{font-size:13.5px;font-weight:300;color:rgba(240,234,255,.78);max-width:320px;line-height:1.65}
+.c3-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
+.c3-svc{background:#1A003B;padding:28px 28px 30px;position:relative}
+.c3-svc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent,#B06FFF)}
+.c3-svc:nth-child(2){--accent:#D4FF00}
+.c3-svc:nth-child(3){--accent:#E4D2FF}
+.c3-band{display:flex;justify-content:space-between;gap:8px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#D4FF00;margin-bottom:12px}
+.c3-band span{color:rgba(200,160,255,.9);font-weight:500}
+.c3-eq{display:block;width:100%;height:56px;margin-bottom:18px;overflow:visible}
+.c3-svc h4{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;font-size:24px;letter-spacing:.04em;margin-bottom:10px}
+.c3-svc p{font-size:13.5px;font-weight:300;line-height:1.65;color:rgba(240,234,255,.82)}
+
+.c3-stats{background:#D4FF00;clip-path:polygon(0 0,100% 22px,100% calc(100% - 22px),0 100%);padding:60px 52px;display:flex;justify-content:space-around;align-items:center;gap:24px;flex-wrap:wrap}
+.c3-flash-stat{text-align:center}
+.c3-flash-num{font-family:'Bebas Neue',Impact,sans-serif;font-size:72px;color:#0C0018;line-height:1;letter-spacing:.02em}
+.c3-flash-desc{font-size:12.5px;font-weight:500;color:rgba(12,0,24,.8);margin-top:4px;line-height:1.4}
+.c3-stats-divider{width:1px;height:60px;background:rgba(12,0,24,.2)}
+
+.c3-influence{background:#120025;clip-path:polygon(0 22px,100% 0,100% 100%,0 100%);padding:84px 52px 68px;margin-top:-1px}
+.c3-circle-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px) minmax(0,1fr);gap:28px;align-items:center}
+.c3-ring-wrap{position:relative;aspect-ratio:1;width:100%;max-width:100%}
+#u3-ring{position:absolute;inset:0;width:100%;height:100%;display:block}
+.c3-ring-label{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}
+.c3-ring-label small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(200,160,255,.95);margin-bottom:2px}
+.c3-ring-label b{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;font-size:clamp(28px,3vw,38px);letter-spacing:.05em;color:#F0EAFF}
+.c3-names-col{list-style:none;display:flex;flex-direction:column;gap:8px}
+.c3-names-col.l{align-items:flex-end}
+.c3-name-chip{font-size:13px;color:rgba(240,234,255,.86);padding:8px 16px;border:1px solid rgba(176,111,255,.24);background:rgba(176,111,255,.05);transition:background .2s,border-color .2s,color .2s}
+.c3-name-chip:hover{background:rgba(176,111,255,.14);border-color:rgba(176,111,255,.5);color:#fff}
+
+.c3-footer{background:#0C0018;padding:48px 52px;border-top:1px solid rgba(176,111,255,.12);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.c3-footer-logo{font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:.06em;color:rgba(240,234,255,.84)}
+.c3-footer-logo span{color:#D4FF00}
+.c3-footer-sub{font-size:12.5px;font-weight:300;color:rgba(200,160,255,.85);margin-top:4px}
+.c3-footer-cta{display:inline-flex;align-items:center;min-height:48px;border:1px solid #B06FFF;color:#C9A2FF;font-size:13px;font-weight:500;padding:0 32px;letter-spacing:.04em;transition:background .2s,color .2s}
+.c3-footer-cta:hover{background:#B06FFF;color:#0C0018}
+
+@media (max-width:860px){
+  .c3-nav{padding:18px 22px}
+  .c3-hero{padding:36px 22px 160px}
+  .c3-floor{padding:0 22px 32px}
+  .c3-story{grid-template-columns:1fr;padding:64px 22px 80px;gap:36px}
+  .c3-services{padding:72px 22px 52px}
+  .c3-service-grid{grid-template-columns:1fr}
+  .c3-stats{padding:56px 22px}
+  .c3-stats-divider{display:none}
+  .c3-influence{padding:72px 22px 56px}
+  .c3-circle-grid{grid-template-columns:1fr 1fr;gap:18px}
+  .c3-ring-wrap{grid-column:1 / -1;order:-1;width:min(100%,300px);justify-self:center}
+  .c3-names-col.l{align-items:flex-start}
+  .c3-name-chip{font-size:12px;padding:7px 12px}
+  .c3-footer{padding:40px 22px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- PRESENTATION HEADER -->
+<header class="ph">
+  <div class="ph-agency">Wise Digital Strategies — Website Pitch · Round 3</div>
+  <h1>Ray "Pinky" Velazquez / Pinky Pack Productions</h1>
+  <p class="ph-sub">3 design directions, remixed · perfectbusiness.com refresh</p>
+  <p class="ph-note">
+    Round one’s three directions, pushed harder. <b>Waveforms carry every page</b> —
+    grooves, beatgrids, spectrums. Press play for a 124 BPM house loop and each design
+    moves with the kick. Sound and motion stay off until you do.
+  </p>
+</header>
+
+<!-- CONCEPT NAVIGATION -->
+<div class="cnav">
+  <div role="tablist" aria-label="Design directions" style="display:contents">
+    <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">Option 1 — Vinyl Cut</button>
+    <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Option 2 — Club Dark</button>
+    <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Option 3 — UV Floor</button>
+  </div>
+  <button class="transport" data-play data-on="Pause the demo" data-off="Play 124 BPM demo" aria-pressed="false">
+    <span class="tm" aria-hidden="true"><i style="--k:.9"></i><i style="--k:.55"></i><i style="--k:1"></i><i style="--k:.7"></i></span>
+    <span class="play-text">Play 124 BPM demo</span>
+  </button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CONCEPT 1: VINYL CUT                                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="concept" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+  <div class="concept-label">
+    <span class="number">01</span>
+    <span class="name">Vinyl Cut</span>
+    <span class="tagline">Analog luxury, remixed. The record is the waveform — drop the needle and it spins.</span>
+  </div>
+
+  <div class="concept-notes">
+    <div class="note-block">
+      <h4>Palette</h4>
+      <div class="swatches">
+        <span class="swatch" style="background:#0D0A08" title="#0D0A08"></span>
+        <span class="swatch" style="background:#2A1F14" title="#2A1F14"></span>
+        <span class="swatch" style="background:#C8982A" title="#C8982A"></span>
+        <span class="swatch" style="background:#F0EBE0" title="#F0EBE0"></span>
+      </div>
+    </div>
+    <div class="note-block">
+      <h4>Type</h4>
+      <p>Bodoni Moda (display) · DM Sans (body)</p>
+    </div>
+    <div class="note-block">
+      <h4>The waveform</h4>
+      <p>The grooves are cut from a real four-on-the-floor pattern. Record Reshaping is shown to scale: 3:00 in, 7:00 out.</p>
+    </div>
+    <div class="note-block">
+      <h4>Best for</h4>
+      <p>Clients who want Ray to feel like a trusted authority, not a promoter.</p>
+    </div>
+  </div>
+
+  <div class="design-frame">
+    <div class="c1">
+      <nav class="c1-nav" aria-label="Vinyl Cut site navigation">
+        <div class="c1-logo">Pinky Pack <em>Productions</em></div>
+        <ul class="c1-links">
+          <li><a href="#" aria-current="page">Home</a></li>
+          <li><a href="#">Story</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="c1-hero">
+        <div class="c1-hero-text">
+          <p class="c1-eyeline">Pinky Pack Productions · New York</p>
+          <h2 class="c1-name">Ray <em>“Pinky”</em><br>Velazquez</h2>
+          <p class="c1-title">Dance Music Producer · Remixer · A&amp;R Consultant</p>
+          <blockquote class="c1-pullquote">
+            “I was picking up 100 records a week from the Manhattan record pool. After that kind of pounding, your sense of what a hit record is becomes a little keener.”
+          </blockquote>
+          <div class="c1-actions">
+            <a href="#" class="c1-cta">Work with Pinky</a>
+            <button class="c1-needle" data-play data-on="Lift the needle" data-off="Drop the needle" aria-pressed="false">
+              <span class="pi" aria-hidden="true">
+                <svg class="i-play" width="12" height="14" viewBox="0 0 12 14"><path d="M1 1l10 6-10 6z" fill="#0D0A08"/></svg>
+                <svg class="i-pause" width="12" height="14" viewBox="0 0 12 14"><path d="M1.5 1h3v12h-3zM7.5 1h3v12h-3z" fill="#0D0A08"/></svg>
+              </span>
+              <span class="play-text">Drop the needle</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="c1-deck-wrap">
+          <div class="c1-deck">
+            <canvas id="v1-rec" class="c1-rec" aria-hidden="true"></canvas>
+            <div class="c1-sheen" aria-hidden="true"></div>
+            <svg class="c1-arm-svg" viewBox="0 0 112 100" aria-hidden="true">
+              <g class="c1-arm">
+                <rect x="96.4" y="-4.5" width="4.2" height="6.5" rx="1" fill="#2A1F14" stroke="#C8982A" stroke-width=".35"/>
+                <line x1="98" y1="8" x2="92.6" y2="61.6" stroke="#C8982A" stroke-width="1.3" stroke-linecap="round"/>
+                <line x1="98" y1="8" x2="92.6" y2="61.6" stroke="#F3D58A" stroke-width=".35" stroke-linecap="round" opacity=".7"/>
+                <polygon points="90.4,61.2 94.4,61.9 93.4,70.6 90,69.9" fill="#C8982A"/>
+                <circle cx="91.7" cy="69.6" r=".7" fill="#F0EBE0"/>
+                <circle cx="98" cy="8" r="6" fill="#1A1410" stroke="#C8982A" stroke-width=".5"/>
+                <circle cx="98" cy="8" r="2.6" fill="#C8982A"/>
+              </g>
+            </svg>
+          </div>
+          <p class="c1-deck-cap">Side A · Extended Mix · 33⅓ RPM</p>
+        </div>
+      </div>
+
+      <div class="c1-scope">
+        <div class="c1-scope-meta"><span>Demo loop — <b>drop the needle to hear it</b></span><span>124 BPM · A minor</span></div>
+        <canvas id="v1-scope" aria-hidden="true"></canvas>
+      </div>
+
+      <section class="c1-sleeve" aria-label="Career, as a record sleeve">
+        <div class="c1-sleeve-head">
+          <h2>The sleeve.</h2>
+          <p>Fifty years in dance music, read like the back of a 12-inch.</p>
+        </div>
+        <div class="c1-side">
+          <h3>Side A — The floor</h3>
+          <div class="c1-trk">
+            <span class="c1-trk-no">A1</span>
+            <div class="c1-trk-t"><strong>Ipanema Discotheque</strong><span>Resident DJ, two blocks from Studio 54</span></div>
+            <span class="c1-trk-era">’70s</span>
+            <canvas class="v1-mini" data-seed="11" aria-hidden="true"></canvas>
+          </div>
+          <div class="c1-trk">
+            <span class="c1-trk-no">A2</span>
+            <div class="c1-trk-t"><strong>Manhattan Record Pool</strong><span>100 records a week, reviewed for the labels</span></div>
+            <span class="c1-trk-era">’70s–’80s</span>
+            <canvas class="v1-mini" data-seed="23" aria-hidden="true"></canvas>
+          </div>
+        </div>
+        <div class="c1-side">
+          <h3>Side B — The label</h3>
+          <div class="c1-trk">
+            <span class="c1-trk-no">B1</span>
+            <div class="c1-trk-t"><strong>Vanguard Records</strong><span>A&amp;R Director</span></div>
+            <span class="c1-trk-era">1979–84</span>
+            <canvas class="v1-mini" data-seed="37" aria-hidden="true"></canvas>
+          </div>
+          <div class="c1-trk">
+            <span class="c1-trk-no">B2</span>
+            <div class="c1-trk-t"><strong>Spectrum City → Public Enemy</strong><span>Produced the first single</span></div>
+            <span class="c1-trk-era">’80s</span>
+            <canvas class="v1-mini" data-seed="41" aria-hidden="true"></canvas>
+          </div>
+          <div class="c1-trk">
+            <span class="c1-trk-no">B3</span>
+            <div class="c1-trk-t"><strong>Legends of Vinyl</strong><span>Co-founder</span></div>
+            <span class="c1-trk-era">Today</span>
+            <canvas class="v1-mini" data-seed="53" aria-hidden="true"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="c1-story">
+        <div>
+          <h2 class="c1-story-head">The ear that built an era.</h2>
+          <p class="c1-story-body">Before algorithms decided what was a hit, there was the record pool. In 1970s Manhattan, Ray “Pinky” Velazquez was standing in that room — pulling 100 records a week, listening hard, giving feedback that shaped what went to radio and what didn’t.</p>
+          <p class="c1-story-body">He spun at the Ipanema Discotheque two blocks from Studio 54. He signed artists to Vanguard Records. He produced the first single of a group that would become Public Enemy. The hits he helped build still play today.</p>
+          <p class="c1-story-body">Now he’s bringing that instinct to you.</p>
+        </div>
+
+        <figure class="c1-reshape">
+          <figcaption>
+            <span class="c1-kicker">Record reshaping, drawn to scale</span>
+            <strong>Three minutes in. Every version the floor needs, out.</strong>
+          </figcaption>
+          <div class="c1-axis" aria-hidden="true">
+            <span style="left:0">0:00</span><span style="left:14.2857%">1:00</span><span style="left:28.5714%">2:00</span><span style="left:42.8571%">3:00</span><span style="left:57.1429%">4:00</span><span style="left:71.4286%">5:00</span><span style="left:85.7143%">6:00</span><span style="left:100%">7:00</span>
+          </div>
+          <div class="c1-rs-row">
+            <span class="c1-rs-label">Your original <b>3:00</b></span>
+            <div class="c1-rs-track" style="width:42.857%"><canvas id="v1-orig" aria-hidden="true"></canvas></div>
+          </div>
+          <div class="c1-rs-row">
+            <span class="c1-rs-label">Extended mix <b>7:00</b></span>
+            <div class="c1-rs-track"><canvas id="v1-ext" aria-hidden="true"></canvas></div>
+          </div>
+          <div class="c1-rs-row">
+            <span class="c1-rs-label">Radio edit <b>3:30</b></span>
+            <div class="c1-rs-track" style="width:50%"><canvas id="v1-radio" aria-hidden="true"></canvas></div>
+          </div>
+          <div class="c1-rs-row">
+            <span class="c1-rs-label">Instrumental <b>7:00</b></span>
+            <div class="c1-rs-track"><canvas id="v1-inst" aria-hidden="true"></canvas></div>
+          </div>
+          <div class="c1-legend">
+            <span><b>0:00</b> DJ intro</span><span><b>0:58</b> Your original</span><span><b>3:58</b> Breakdown</span><span><b>4:58</b> Drop</span><span><b>6:00</b> DJ outro</span>
+          </div>
+        </figure>
+      </section>
+
+      <section class="c1-services" aria-label="Services">
+        <div class="c1-service-item">
+          <span class="tag">Extended · Radio · Instrumental</span>
+          <h4>Record Reshaping</h4>
+          <p>Your 3-minute track becomes a 7-minute floor work, a radio edit, and an instrumental — built for every format that matters.</p>
+        </div>
+        <div class="c1-service-item">
+          <span class="tag">One session</span>
+          <h4>Hit Record Consulting</h4>
+          <p>50 years of listening tells Ray what lands and what doesn’t. One session can reframe your entire approach to a track.</p>
+        </div>
+        <div class="c1-service-item">
+          <span class="tag">Arrangement to label</span>
+          <h4>Production &amp; A&amp;R Guidance</h4>
+          <p>From arrangement to label strategy — Ray’s been on both sides of the table and knows what decision-makers are looking for.</p>
+        </div>
+      </section>
+
+      <section class="c1-liner">
+        <div class="c1-liner-head">
+          <span>Liner notes</span>
+          <h3>A career built alongside</h3>
+        </div>
+        <ul class="c1-names">
+          <li>John “Jellybean” Benitez</li><li>Danny Krivit</li><li>Todd Terry</li><li>Kerry Chandler</li>
+          <li>Nora En Pure</li><li>David Morales</li><li>John Morales</li><li>Frankie Knuckles</li>
+          <li>Carl Cox</li><li>Joey Negro</li><li>Dr. Packer</li><li>Hugel</li>
+          <li>Ron Hardy</li><li>John Luongo</li><li>Ray Caviano</li><li>Timmy Regisford</li>
+        </ul>
+      </section>
+
+      <div class="c1-contact">
+        <canvas id="v1-band" aria-hidden="true"></canvas>
+        <div class="c1-contact-text">
+          <h3>Ready to make your record matter?</h3>
+          <p>Reach out and let’s talk about what your track needs.</p>
+        </div>
+        <a href="#" class="c1-contact-btn">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CONCEPT 2: CLUB DARK                                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="concept" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+  <div class="concept-label">
+    <span class="number">02</span>
+    <span class="name">Club Dark</span>
+    <span class="tagline">Manhattan at 3am, on a CDJ. Pink for Pinky. Beatgrid, hot cues, no apologies.</span>
+  </div>
+
+  <div class="concept-notes">
+    <div class="note-block">
+      <h4>Palette</h4>
+      <div class="swatches">
+        <span class="swatch" style="background:#000000" title="#000000"></span>
+        <span class="swatch" style="background:#FF2D78" title="#FF2D78"></span>
+        <span class="swatch" style="background:#1A6CFF" title="#1A6CFF"></span>
+        <span class="swatch" style="background:#FFFFFF" title="#FFFFFF"></span>
+      </div>
+    </div>
+    <div class="note-block">
+      <h4>Type</h4>
+      <p>Anton (display) · Inter (body) · JetBrains Mono (deck readouts)</p>
+    </div>
+    <div class="note-block">
+      <h4>The waveform</h4>
+      <p>A zoomed deck waveform on a 124 BPM beatgrid, and Ray’s career laid out as a track overview with hot-cue pads you can tap.</p>
+    </div>
+    <div class="note-block">
+      <h4>Best for</h4>
+      <p>Clients who want Ray to feel magnetic and exciting to the emerging artist market.</p>
+    </div>
+  </div>
+
+  <div class="design-frame">
+    <div class="c2">
+      <nav class="c2-nav" aria-label="Club Dark site navigation">
+        <div class="c2-nav-logo">PINKY PACK</div>
+        <ul class="c2-nav-links">
+          <li><a href="#" aria-current="page">Home</a></li>
+          <li><a href="#">Story</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <header class="c2-hero">
+        <div class="c2-grid" aria-hidden="true"></div>
+        <p class="c2-now"><span class="c2-pulse" aria-hidden="true"></span>Now taking sessions</p>
+        <h2 class="c2-name"><span class="pk">“PINKY”</span><span class="vz">VELAZQUEZ</span></h2>
+        <div class="c2-hero-bottom">
+          <p class="c2-hero-desc"><strong>Dance music producer, remixer, and A&amp;R veteran</strong> with 50+ years in the business — from two blocks off Studio 54 to hits that still move floors worldwide.</p>
+          <a href="#" class="c2-cta">Book a Session</a>
+        </div>
+      </header>
+
+      <div class="c2-deck">
+        <canvas id="c2-deck" aria-hidden="true"></canvas>
+        <span class="c2-deck-tag">Deck A</span>
+        <span class="c2-deck-tag r">Beatgrid · 124.00</span>
+      </div>
+
+      <div class="c2-cdj">
+        <button class="c2-cue" id="c2-cue" type="button" aria-label="Cue: stop and return to the top">CUE</button>
+        <button class="c2-play" data-play data-on="Pause the demo" data-off="Play the demo" aria-pressed="false">
+          <svg class="i-play" width="18" height="20" viewBox="0 0 18 20" aria-hidden="true"><path d="M2 1.5l14 8.5-14 8.5z" fill="#FF2D78"/></svg>
+          <svg class="i-pause" width="18" height="20" viewBox="0 0 18 20" aria-hidden="true"><path d="M3 2h4v16H3zM11 2h4v16h-4z" fill="#FF2D78"/></svg>
+          <span class="sr play-text">Play the demo</span>
+        </button>
+        <div class="c2-lcd">
+          <div class="c2-lcd-cell wide"><span class="k">Track 01</span><span class="v">Pinky Pack Productions — Demo loop</span></div>
+          <div class="c2-lcd-cell"><span class="k">BPM</span><span class="v big">124.0</span></div>
+          <div class="c2-lcd-cell"><span class="k">Key</span><span class="v big">8A</span></div>
+          <div class="c2-lcd-cell"><span class="k">Bar</span><span class="v big" id="c2-bar">1.1</span></div>
+          <div class="c2-lcd-cell"><span class="k">Remain</span><span class="v big" id="c2-remain">-07:00</span></div>
+        </div>
+      </div>
+
+      <div class="c2-marquee" aria-hidden="true">
+        <div class="c2-marquee-inner">
+          <span class="c2-marquee-item">Ipanema Discotheque · NYC</span><span class="c2-marquee-item c2-marquee-dot">·</span>
+          <span class="c2-marquee-item">Vanguard Records A&amp;R Director</span><span class="c2-marquee-item c2-marquee-dot">·</span>
+          <span class="c2-marquee-item">Manhattan Record Pool Member</span><span class="c2-marquee-item c2-marquee-dot">·</span>
+          <span class="c2-marquee-item">Legends of Vinyl Co-Founder</span><span class="c2-marquee-item c2-marquee-dot">·</span>
+          <span class="c2-marquee-item">50+ Years in Dance Music</span><span class="c2-marquee-item c2-marquee-dot">·</span>
+          <span class="c2-marquee-item">Ipanema Discotheque · NYC</span><span class="c2-marquee-item c2-marquee-dot">·</span>
+          <span class="c2-marquee-item">Vanguard Records A&amp;R Director</span><span class="c2-marquee-item c2-marquee-dot">·</span>
+          <span class="c2-marquee-item">Manhattan Record Pool Member</span><span class="c2-marquee-item c2-marquee-dot">·</span>
+          <span class="c2-marquee-item">Legends of Vinyl Co-Founder</span><span class="c2-marquee-item c2-marquee-dot">·</span>
+          <span class="c2-marquee-item">50+ Years in Dance Music</span><span class="c2-marquee-item c2-marquee-dot">·</span>
+        </div>
+      </div>
+
+      <section class="c2-career">
+        <div class="c2-sec-head">
+          <h3>THE CAREER, AS A TRACK</h3>
+          <p>Hot cues mark the moments that built the ear. Hit a pad to jump to it.</p>
+        </div>
+        <div class="c2-overview">
+          <canvas id="c2-over" aria-hidden="true"></canvas>
+          <div class="c2-axis" aria-hidden="true">
+            <span style="left:0">’70s</span><span style="left:17.86%">’80s</span><span style="left:35.71%">’90s</span><span style="left:53.57%">’00s</span><span style="left:71.43%">’10s</span><span style="left:89.29%">’20s</span>
+          </div>
+        </div>
+        <div class="c2-pads" role="group" aria-label="Career hot cues">
+          <button class="c2-pad" data-cue="0" style="--c:#FF2D78" aria-pressed="true"><b>A</b><span>Ipanema Discotheque</span></button>
+          <button class="c2-pad" data-cue="1" style="--c:#1A6CFF" aria-pressed="false"><b>B</b><span>Manhattan Record Pool</span></button>
+          <button class="c2-pad" data-cue="2" style="--c:#FFFFFF" aria-pressed="false"><b>C</b><span>Vanguard A&amp;R</span></button>
+          <button class="c2-pad" data-cue="3" style="--c:#FF2D78" aria-pressed="false"><b>D</b><span>Public Enemy</span></button>
+          <button class="c2-pad" data-cue="4" style="--c:#1A6CFF" aria-pressed="false"><b>E</b><span>Today</span></button>
+        </div>
+        <div class="c2-card" id="c2-card" aria-live="polite">
+          <span class="c2-card-letter" id="c2-cl">A</span>
+          <div>
+            <p class="c2-card-era" id="c2-ce">The ’70s</p>
+            <h3 id="c2-ct">Ipanema Discotheque</h3>
+            <p id="c2-cb">Resident DJ two blocks from Studio 54 — reading a Manhattan dance floor in real time.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="c2-media">
+        <div class="c2-video-frame">
+          <div class="c2-video-corner tl"></div><div class="c2-video-corner tr"></div>
+          <div class="c2-video-corner bl"></div><div class="c2-video-corner br"></div>
+          <span class="c2-video-cap">Ray’s story — in his own words</span>
+          <div class="c2-video-play" aria-hidden="true">
+            <svg width="16" height="18" viewBox="0 0 16 18"><polygon points="3,1 15,9 3,17" fill="#FF2D78"/></svg>
+          </div>
+          <canvas id="c2-scrub" aria-hidden="true"></canvas>
+        </div>
+        <div class="c2-sidebar">
+          <div>
+            <div class="c2-sidebar-label">Career span</div>
+            <div class="c2-sidebar-stat">50+</div>
+            <div class="c2-sidebar-desc">Years shaping what dance music sounds like — from the vinyl era through today’s electronic scene.</div>
+          </div>
+          <div class="c2-sidebar-divider"></div>
+          <div>
+            <div class="c2-sidebar-label">Records reviewed weekly</div>
+            <div class="c2-sidebar-stat">100</div>
+            <div class="c2-sidebar-desc">At the Manhattan record pool — building an instinct no algorithm can replicate.</div>
+          </div>
+          <div class="c2-sidebar-divider"></div>
+          <div>
+            <div class="c2-sidebar-label">First signing</div>
+            <div class="c2-sidebar-stat pink">Public Enemy</div>
+            <div class="c2-sidebar-desc">Produced their first single at Vanguard — before they became one of the most influential acts in music history.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="c2-mixer">
+        <div class="c2-sec-head">
+          <h3>THREE CHANNELS</h3>
+          <p>Bring up as much of Ray as the record needs.</p>
+        </div>
+        <div class="c2-strips">
+          <article class="c2-ch" style="--c:#FF2D78">
+            <header><span>CH 1</span><span class="c2-led"></span></header>
+            <div class="c2-ch-body">
+              <div>
+                <h3>Record Reshaping</h3>
+                <p>3 minutes in. 7 minutes out. An instrumental. A radio edit. Ray builds every version a record needs to live on every format — floor, radio, streaming.</p>
+              </div>
+              <div class="c2-meter" id="c2-m1" style="--lvl:.72" aria-hidden="true"><span></span></div>
+            </div>
+            <div class="c2-knobs" aria-hidden="true">
+              <div class="c2-knob"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" fill="#16161B" stroke="rgba(255,255,255,.2)"/><line x1="13" y1="13" x2="13" y2="4" stroke="#FF2D78" stroke-width="2" stroke-linecap="round" transform="rotate(-30 13 13)"/></svg>HI</div>
+              <div class="c2-knob"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" fill="#16161B" stroke="rgba(255,255,255,.2)"/><line x1="13" y1="13" x2="13" y2="4" stroke="#FF2D78" stroke-width="2" stroke-linecap="round" transform="rotate(10 13 13)"/></svg>MID</div>
+              <div class="c2-knob"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" fill="#16161B" stroke="rgba(255,255,255,.2)"/><line x1="13" y1="13" x2="13" y2="4" stroke="#FF2D78" stroke-width="2" stroke-linecap="round" transform="rotate(60 13 13)"/></svg>LOW</div>
+            </div>
+          </article>
+          <article class="c2-ch" style="--c:#1A6CFF">
+            <header><span>CH 2</span><span class="c2-led"></span></header>
+            <div class="c2-ch-body">
+              <div>
+                <h3>Hit Record Consulting</h3>
+                <p>One session with Ray tells you what your track is missing. A career built on evaluating thousands of records gives him a diagnostic ear that’s earned, not taught.</p>
+              </div>
+              <div class="c2-meter" id="c2-m2" style="--lvl:.56" aria-hidden="true"><span></span></div>
+            </div>
+            <div class="c2-knobs" aria-hidden="true">
+              <div class="c2-knob"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" fill="#16161B" stroke="rgba(255,255,255,.2)"/><line x1="13" y1="13" x2="13" y2="4" stroke="#1A6CFF" stroke-width="2" stroke-linecap="round" transform="rotate(20 13 13)"/></svg>HI</div>
+              <div class="c2-knob"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" fill="#16161B" stroke="rgba(255,255,255,.2)"/><line x1="13" y1="13" x2="13" y2="4" stroke="#1A6CFF" stroke-width="2" stroke-linecap="round" transform="rotate(75 13 13)"/></svg>MID</div>
+              <div class="c2-knob"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" fill="#16161B" stroke="rgba(255,255,255,.2)"/><line x1="13" y1="13" x2="13" y2="4" stroke="#1A6CFF" stroke-width="2" stroke-linecap="round" transform="rotate(-10 13 13)"/></svg>LOW</div>
+            </div>
+          </article>
+          <article class="c2-ch" style="--c:rgba(255,255,255,.88)">
+            <header><span>CH 3</span><span class="c2-led"></span></header>
+            <div class="c2-ch-body">
+              <div>
+                <h3>Studio Production</h3>
+                <p>Full production and arrangement support for artists who are ready to take their music seriously. From a rough idea to a finished record.</p>
+              </div>
+              <div class="c2-meter" id="c2-m3" style="--lvl:.8" aria-hidden="true"><span></span></div>
+            </div>
+            <div class="c2-knobs" aria-hidden="true">
+              <div class="c2-knob"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" fill="#16161B" stroke="rgba(255,255,255,.2)"/><line x1="13" y1="13" x2="13" y2="4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" transform="rotate(55 13 13)"/></svg>HI</div>
+              <div class="c2-knob"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" fill="#16161B" stroke="rgba(255,255,255,.2)"/><line x1="13" y1="13" x2="13" y2="4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" transform="rotate(30 13 13)"/></svg>MID</div>
+              <div class="c2-knob"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" fill="#16161B" stroke="rgba(255,255,255,.2)"/><line x1="13" y1="13" x2="13" y2="4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" transform="rotate(40 13 13)"/></svg>LOW</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="c2-circle">
+        <h3>IN A CIRCLE WITH</h3>
+        <div class="c2-circle-names">
+          <span class="c2-circle-tag">John “Jellybean” Benitez</span><span class="c2-circle-tag">Danny Krivit</span>
+          <span class="c2-circle-tag">Todd Terry</span><span class="c2-circle-tag">Kerry Chandler</span>
+          <span class="c2-circle-tag">Nora En Pure</span><span class="c2-circle-tag">David Morales</span>
+          <span class="c2-circle-tag">John Morales</span><span class="c2-circle-tag">Frankie Knuckles</span>
+          <span class="c2-circle-tag">Carl Cox</span><span class="c2-circle-tag">Joey Negro</span>
+          <span class="c2-circle-tag">Dr. Packer</span><span class="c2-circle-tag">Hugel</span>
+          <span class="c2-circle-tag">Ron Hardy</span><span class="c2-circle-tag">John Luongo</span>
+          <span class="c2-circle-tag">Ray Caviano</span><span class="c2-circle-tag">Timmy Regisford</span>
+        </div>
+      </section>
+
+      <footer class="c2-footer">
+        <div>
+          <div class="c2-footer-logo">PINKY PACK<br>PRODUCTIONS</div>
+          <div class="c2-footer-tagline">Dance music consulting · New York</div>
+        </div>
+        <a href="#" class="c2-footer-contact">Book a Session</a>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CONCEPT 3: UV FLOOR                                 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="concept" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+  <div class="concept-label">
+    <span class="number">03</span>
+    <span class="name">UV Floor</span>
+    <span class="tagline">Ultraviolet. Lasers. A spectrum inside the name, and a crowd that moves when the kick lands.</span>
+  </div>
+
+  <div class="concept-notes">
+    <div class="note-block">
+      <h4>Palette</h4>
+      <div class="swatches">
+        <span class="swatch" style="background:#0C0018" title="#0C0018"></span>
+        <span class="swatch" style="background:#B06FFF" title="#B06FFF"></span>
+        <span class="swatch" style="background:#D4FF00" title="#D4FF00"></span>
+        <span class="swatch" style="background:#F0EAFF" title="#F0EAFF"></span>
+      </div>
+    </div>
+    <div class="note-block">
+      <h4>Type</h4>
+      <p>Bebas Neue (display) · Space Grotesk (body)</p>
+    </div>
+    <div class="note-block">
+      <h4>The waveform</h4>
+      <p>A spectrum analyser fills the letters of PINKY, the floor is a live analyser from 30 Hz to 16 kHz, and The Circle is a radial visualiser.</p>
+    </div>
+    <div class="note-block">
+      <h4>Best for</h4>
+      <p>Clients who want Ray to feel like an underground legend to the next generation of dance artists.</p>
+    </div>
+  </div>
+
+  <div class="design-frame">
+    <div class="c3">
+      <nav class="c3-nav" aria-label="UV Floor site navigation">
+        <div class="c3-nav-logo">PINKY PACK</div>
+        <ul class="c3-nav-links">
+          <li><a href="#" aria-current="page">Home</a></li>
+          <li><a href="#">Story</a></li>
+          <li><a href="#">Sessions</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <header class="c3-hero">
+        <svg class="c3-lasers" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+          <g class="c3-laser-g">
+            <line class="c3-laser" x1="500" y1="-40" x2="-120" y2="640" stroke="#B06FFF"/>
+            <line class="c3-laser" x1="500" y1="-40" x2="120"  y2="640" stroke="#D4FF00"/>
+            <line class="c3-laser" x1="500" y1="-40" x2="330"  y2="640" stroke="#B06FFF"/>
+            <line class="c3-laser" x1="500" y1="-40" x2="520"  y2="640" stroke="#D4FF00"/>
+            <line class="c3-laser" x1="500" y1="-40" x2="700"  y2="640" stroke="#B06FFF"/>
+            <line class="c3-laser" x1="500" y1="-40" x2="900"  y2="640" stroke="#D4FF00"/>
+            <line class="c3-laser" x1="500" y1="-40" x2="1120" y2="640" stroke="#B06FFF"/>
+          </g>
+        </svg>
+
+        <div class="c3-hero-content">
+          <p class="c3-kicker">Producer · Remixer · A&amp;R — New York</p>
+          <h2 class="c3-title">
+            <span class="sr">“Pinky” Velazquez</span>
+            <canvas id="u3-name" aria-hidden="true"></canvas>
+            <span class="c3-vz" aria-hidden="true">VELAZQUEZ</span>
+          </h2>
+          <div class="c3-hero-footer">
+            <p class="c3-hero-tag"><strong>Dance music producer, remixer, A&amp;R veteran.</strong> 50 years inside the music — from the Ipanema Discotheque to Vanguard Records to your studio.</p>
+            <div class="c3-hero-actions">
+              <button class="c3-drop" data-play data-on="Stop the drop" data-off="Drop it" aria-pressed="false">
+                <span class="pi" aria-hidden="true">
+                  <svg class="i-play" width="12" height="14" viewBox="0 0 12 14"><path d="M1 1l10 6-10 6z" fill="#0C0018"/></svg>
+                  <svg class="i-pause" width="12" height="14" viewBox="0 0 12 14"><path d="M1.5 1h3v12h-3zM7.5 1h3v12h-3z" fill="#0C0018"/></svg>
+                </span>
+                <span class="play-text">Drop it</span>
+              </button>
+              <a href="#" class="c3-hero-cta">Book a Session</a>
+            </div>
+          </div>
+        </div>
+
+        <canvas id="u3-crowd" class="c3-crowd" aria-hidden="true"></canvas>
+      </header>
+
+      <section class="c3-floor">
+        <div class="c3-floor-head"><span>The floor — <b>live spectrum</b></span><span>30 Hz → 16 kHz</span></div>
+        <canvas id="u3-floor" aria-hidden="true"></canvas>
+        <div class="c3-creds">
+          <span class="c3-creds-label">CREDENTIALS</span>
+          <ul>
+            <li>Vanguard Records A&amp;R · <strong>1979–1984</strong></li>
+            <li>Produced Public Enemy’s first single</li>
+            <li>Ipanema Discotheque resident</li>
+            <li>Legends of Vinyl co-founder</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="c3-story">
+        <div class="c3-story-lhs">
+          <h2>The ear that built an era.<br><span>Two blocks from Studio 54.</span></h2>
+          <p>Before algorithms, there was the record pool. Ray “Pinky” Velazquez was pulling 100 records a week from the Manhattan pool, listening hard, feeding labels the feedback that shaped what went to radio. It wasn’t theory — it was reps. Thousands of them.</p>
+          <p>He spun at the Ipanema Discotheque, signed Spectrum City to Vanguard (they became Public Enemy), and built an instinct you can’t buy and can’t fake. Now he brings it to your record.</p>
+        </div>
+        <div class="c3-video-box">
+          <div class="c3-video-glow"></div>
+          <div class="c3-video-play-btn" aria-hidden="true">
+            <svg width="16" height="18" viewBox="0 0 16 18"><polygon points="3,1 15,9 3,17" fill="#B06FFF"/></svg>
+          </div>
+          <div class="c3-video-caption">RAY’S STORY — IN HIS OWN WORDS</div>
+        </div>
+      </section>
+
+      <section class="c3-services">
+        <div class="c3-services-intro">
+          <h3>What Pinky Pack does to your record</h3>
+          <p>Not a production house. Not a studio for hire. A veteran ear and a set of hands that know exactly what a dance record needs to live.</p>
+        </div>
+        <div class="c3-service-grid">
+          <div class="c3-svc">
+            <div class="c3-band">Low <span>20–250 Hz</span></div>
+            <svg class="c3-eq" viewBox="0 0 240 56" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0 40 H240" stroke="rgba(176,111,255,.25)" stroke-width="1" fill="none"/>
+              <path d="M0 40 C 12 40, 22 10, 42 10 C 62 10, 72 40, 98 40 Z" fill="rgba(212,255,0,.18)"/>
+              <path d="M0 40 C 12 40, 22 10, 42 10 C 62 10, 72 40, 98 40 L 240 40" stroke="#D4FF00" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <h4>Record Reshaping</h4>
+            <p>The foundation. A 3-minute track goes in; out comes a 7-minute floor version, an instrumental, and a radio edit — every format the record needs to live.</p>
+          </div>
+          <div class="c3-svc">
+            <div class="c3-band">Mid <span>250 Hz–4 kHz</span></div>
+            <svg class="c3-eq" viewBox="0 0 240 56" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0 40 H240" stroke="rgba(176,111,255,.25)" stroke-width="1" fill="none"/>
+              <path d="M70 40 C 94 40, 102 8, 120 8 C 138 8, 146 40, 170 40 Z" fill="rgba(212,255,0,.18)"/>
+              <path d="M0 40 L 70 40 C 94 40, 102 8, 120 8 C 138 8, 146 40, 170 40 L 240 40" stroke="#D4FF00" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <h4>Hit Record Consulting</h4>
+            <p>Where the hook lives. Ray spent decades evaluating records before anyone else heard them. One session tells you what’s working and what the floor needs.</p>
+          </div>
+          <div class="c3-svc">
+            <div class="c3-band">High <span>4–20 kHz</span></div>
+            <svg class="c3-eq" viewBox="0 0 240 56" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0 40 H240" stroke="rgba(176,111,255,.25)" stroke-width="1" fill="none"/>
+              <path d="M150 40 C 176 40, 186 14, 206 14 L 240 14 L 240 40 Z" fill="rgba(212,255,0,.18)"/>
+              <path d="M0 40 L 150 40 C 176 40, 186 14, 206 14 L 240 14" stroke="#D4FF00" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <h4>Studio Production</h4>
+            <p>The shine. Arrangement, sound design, mixing guidance — for artists who know their music has something and want to make sure it lands.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="c3-stats">
+        <div class="c3-flash-stat"><div class="c3-flash-num">50+</div><div class="c3-flash-desc">years in the<br>dance music world</div></div>
+        <div class="c3-stats-divider"></div>
+        <div class="c3-flash-stat"><div class="c3-flash-num">100</div><div class="c3-flash-desc">records reviewed<br>every single week</div></div>
+        <div class="c3-stats-divider"></div>
+        <div class="c3-flash-stat"><div class="c3-flash-num">1979</div><div class="c3-flash-desc">Vanguard A&amp;R<br>Director</div></div>
+        <div class="c3-stats-divider"></div>
+        <div class="c3-flash-stat"><div class="c3-flash-num">PE</div><div class="c3-flash-desc">Produced Public<br>Enemy’s first single</div></div>
+      </section>
+
+      <section class="c3-influence" aria-label="The circle — a career built alongside">
+        <div class="c3-circle-grid">
+          <ul class="c3-names-col l">
+            <li class="c3-name-chip">John “Jellybean” Benitez</li><li class="c3-name-chip">Danny Krivit</li>
+            <li class="c3-name-chip">Todd Terry</li><li class="c3-name-chip">Kerry Chandler</li>
+            <li class="c3-name-chip">Nora En Pure</li><li class="c3-name-chip">David Morales</li>
+            <li class="c3-name-chip">John Morales</li><li class="c3-name-chip">Frankie Knuckles</li>
+          </ul>
+          <div class="c3-ring-wrap">
+            <canvas id="u3-ring" aria-hidden="true"></canvas>
+            <div class="c3-ring-label"><small>Built alongside</small><b>THE CIRCLE</b></div>
+          </div>
+          <ul class="c3-names-col">
+            <li class="c3-name-chip">Carl Cox</li><li class="c3-name-chip">Joey Negro</li>
+            <li class="c3-name-chip">Dr. Packer</li><li class="c3-name-chip">Hugel</li>
+            <li class="c3-name-chip">Ron Hardy</li><li class="c3-name-chip">John Luongo</li>
+            <li class="c3-name-chip">Ray Caviano</li><li class="c3-name-chip">Timmy Regisford</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="c3-footer">
+        <div>
+          <div class="c3-footer-logo"><span>PINKY</span> PACK PRODUCTIONS</div>
+          <div class="c3-footer-sub">Dance music consulting · New York</div>
+        </div>
+        <a href="#" class="c3-footer-cta">Get in Touch</a>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  var RM = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
+  var BPM = 124, BEAT = 60 / BPM, LOOP = 420, TAU = Math.PI * 2;
+  var root = document.documentElement;
+  function $(s) { return document.querySelector(s); }
+  function $$(s) { return Array.prototype.slice.call(document.querySelectorAll(s)); }
+  function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+  /* ── deterministic noise + a 124 BPM four-on-the-floor "signal" ── */
+  function hash(i) {
+    i |= 0; i = (i << 13) ^ i;
+    var x = (Math.imul(i, (Math.imul(Math.imul(i, i), 15731) + 789221) | 0) + 1376312589) & 0x7fffffff;
+    return 1 - x / 1073741824;
+  }
+  // [low, mid, high] energy at time t — kick on every beat, open hat on the off-beat,
+  // clap on 2 and 4, bass on the off-beat 16ths. Matches the audio loop exactly.
+  function bands(t, seed) {
+    seed = seed || 0;
+    var b = t / BEAT, bi = Math.floor(b), p = b - bi;
+    var pos = ((bi % 4) + 4) % 4;
+    var kick = Math.exp(-p * 7.5);
+    var q = (p + 0.5) % 1, hat = Math.exp(-q * 16);
+    var clap = (pos === 1 || pos === 3) ? Math.exp(-p * 11) : 0;
+    var s = Math.floor(b * 4) & 3, bass = (s === 2 || s === 3) ? 1 : 0.3;
+    var n1 = hash(Math.floor(t * 700) + seed * 7919);
+    var n2 = Math.abs(hash(Math.floor(t * 1900) + seed * 104729));
+    return [
+      clamp(0.14 + kick * 0.78 + bass * 0.12 + n1 * 0.04),
+      clamp(0.1 + clap * 0.6 + kick * 0.16 + n2 * 0.14),
+      clamp(0.05 + hat * 0.5 + n2 * 0.16)
+    ];
+  }
+  function segFor(f, segs) { for (var i = 0; i < segs.length; i++) if (f <= segs[i].end) return segs[i]; return segs[segs.length - 1]; }
+  // A whole track, column by column, shaped by an arrangement (intro / breakdown / drop…)
+  function trackCols(n, dur, seed, segs, opt) {
+    opt = opt || {};
+    var out = new Array(n), dt = dur / n;
+    for (var i = 0; i < n; i++) {
+      var f = (i + 0.5) / n, t = i * dt;
+      var sg = segs ? segFor(f, segs) : { gain: 1, kick: true };
+      var l = 0, m = 0, h = 0;
+      if (sg.kick) {
+        var k = dt > BEAT / 3 ? 5 : 1;
+        for (var j = 0; j < k; j++) {
+          var b = bands(t + dt * j / k, seed);
+          if (b[0] > l) l = b[0]; if (b[1] > m) m = b[1]; if (b[2] > h) h = b[2];
+        }
+      } else {
+        var sw = 0.5 + 0.5 * Math.sin(t * 0.9 + seed), nn = Math.abs(hash(i * 31 + seed * 977));
+        l = 0.1 + nn * 0.05; m = 0.3 + sw * 0.3 + nn * 0.08; h = 0.12 + nn * 0.12;
+      }
+      var g = sg.gain * (0.8 + 0.2 * Math.abs(hash(i * 7 + seed * 131)));
+      if (opt.fadeIn && f < opt.fadeIn) g *= f / opt.fadeIn;
+      if (opt.fadeOut && f > 1 - opt.fadeOut) g *= (1 - f) / opt.fadeOut;
+      var mm = opt.midMul == null ? 1 : opt.midMul;
+      out[i] = [clamp(l * g * (sg.low || 1)), clamp(m * g * mm * (sg.mid || 1)), clamp(h * g * (sg.high || 1))];
+    }
+    return out;
+  }
+  function drawBars(ctx, cols, x, y, w, h, s) {
+    var n = cols.length, step = w / n, bw = Math.max(0.8, step - (s.gap == null ? 1 : s.gap));
+    var mid = y + h / 2, mir = s.mirror !== false, pf = s.playFrac;
+    var colors = [s.low, s.mid, s.high], scales = [1, s.midScale || 0.7, s.highScale || 0.42];
+    for (var pass = 0; pass < 3; pass++) {
+      if (!colors[pass]) continue;
+      ctx.fillStyle = colors[pass];
+      for (var i = 0; i < n; i++) {
+        var a = cols[i][pass] * scales[pass]; if (a <= 0) continue;
+        ctx.globalAlpha = (pf != null && (i + 0.5) / n > pf) ? (s.dim || 0.32) : (s.alpha || 1);
+        var px = x + i * step;
+        if (mir) { var hh = a * h / 2; ctx.fillRect(px, mid - hh, bw, hh * 2); }
+        else { var hv = a * h; ctx.fillRect(px, y + h - hv, bw, hv); }
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+  function fit(cv) {
+    if (!cv) return null;
+    var w = cv.clientWidth, h = cv.clientHeight; if (!w || !h) return null;
+    var d = Math.min(2, window.devicePixelRatio || 1), W = Math.round(w * d), H = Math.round(h * d);
+    if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; }
+    var ctx = cv.getContext('2d'); ctx.setTransform(d, 0, 0, d, 0, 0); ctx.clearRect(0, 0, w, h);
+    return { ctx: ctx, w: w, h: h };
+  }
+  function band(st, lo, hi) {
+    var n = st.freq.length, ny = st.sr / 2;
+    var a = Math.floor(lo / ny * n), b = Math.max(a + 1, Math.floor(hi / ny * n)), s = 0;
+    for (var i = a; i < b && i < n; i++) s += st.freq[i];
+    return s / ((b - a) * 255);
+  }
+  function staticSpec(f) {
+    return Math.max(0.04, Math.min(1, 0.9 * Math.exp(-f * 2.1) + 0.14 + 0.12 * Math.sin(f * 19) * (1 - f) + 0.06 * hash(Math.floor(f * 997))));
+  }
+  function specAt(st, f, n) {
+    if (!st.freq) return staticSpec(f);
+    var hz = 30 * Math.pow(16000 / 30, f), hz2 = 30 * Math.pow(16000 / 30, f + 1 / n);
+    return clamp(band(st, hz, hz2) * 1.15);
+  }
+
+  // Arrangements, as fractions of the track
+  var EXT = [
+    { end: 58 / 420,  gain: 0.62, kick: true, mid: 0.4 },
+    { end: 238 / 420, gain: 1,    kick: true },
+    { end: 298 / 420, gain: 0.8,  kick: false },
+    { end: 360 / 420, gain: 1.08, kick: true },
+    { end: 1,         gain: 0.6,  kick: true, mid: 0.4 }
+  ];
+  var ORIG  = [{ end: 1, gain: 1, kick: true }];
+  var RADIO = [{ end: 0.05, gain: 0.6, kick: true, mid: 0.4 }, { end: 0.72, gain: 1, kick: true }, { end: 0.8, gain: 0.75, kick: false }, { end: 1, gain: 1.02, kick: true }];
+  var CAREER = [{ end: 0.12, gain: 0.55, kick: true }, { end: 0.3, gain: 1, kick: true }, { end: 0.42, gain: 0.7, kick: false }, { end: 0.62, gain: 0.85, kick: true }, { end: 0.72, gain: 0.6, kick: false }, { end: 1, gain: 1, kick: true }];
+  var MINI = [{ end: 0.15, gain: 0.55, kick: true }, { end: 0.55, gain: 1, kick: true }, { end: 0.7, gain: 0.7, kick: false }, { end: 1, gain: 1, kick: true }];
+
+  /* ── renderer registry ── */
+  var LIVE = { 1: [], 2: [], 3: [] }, STAT = { 1: [], 2: [], 3: [] }, active = 1;
+  function reg(p, fn, kind) { (kind === 'static' ? STAT : LIVE)[p].push(fn); }
+  function run(list, st) { for (var i = 0; i < list.length; i++) { try { list[i](st); } catch (e) { if (window.console) console.error(e); } } }
+  var REST = { playing: false, t: 0, kick: 0, freq: null, wave: null, sr: 48000 };
+
+  /* ═════════ 01 · VINYL CUT ═════════ */
+  function drawVinyl() {
+    var F = fit($('#v1-rec')); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, R = Math.min(w, h) / 2 - 1, cx = w / 2, cy = h / 2;
+    var g = ctx.createRadialGradient(cx, cy, R * 0.3, cx, cy, R);
+    g.addColorStop(0, '#1A140E'); g.addColorStop(0.7, '#0B0806'); g.addColorStop(1, '#050403');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU); ctx.fill();
+    ctx.lineWidth = 0.6; ctx.strokeStyle = 'rgba(240,235,224,0.045)';
+    for (var r = R * 0.36; r < R * 0.99; r += 1.6) { ctx.beginPath(); ctx.arc(cx, cy, r, 0, TAU); ctx.stroke(); }
+    // the groove spiral IS the waveform
+    var rIn = R * 0.37, rOut = R * 0.955, turns = Math.max(14, Math.round(R / 9)), per = 320, N = turns * per;
+    var pitch = (rOut - rIn) / turns, cols = trackCols(N, LOOP, 3, EXT);
+    var paths = [new Path2D(), new Path2D(), new Path2D(), new Path2D()];
+    for (var k = 0; k < N; k++) {
+      var f = k / N, ang = f * turns * TAU, rr = rOut - f * (rOut - rIn);
+      var a = Math.max(cols[k][0], cols[k][1] * 0.8), len = Math.max(0.3, a * pitch * 0.92) / 2;
+      var ca = Math.cos(ang), sa = Math.sin(ang), bkt = Math.min(3, Math.floor(a * 4));
+      paths[bkt].moveTo(cx + ca * (rr - len), cy + sa * (rr - len));
+      paths[bkt].lineTo(cx + ca * (rr + len), cy + sa * (rr + len));
+    }
+    var al = [0.16, 0.3, 0.5, 0.8];
+    ctx.lineWidth = Math.max(0.8, (TAU * rOut / per) * 0.55);
+    for (var b = 0; b < 4; b++) { ctx.strokeStyle = 'rgba(200,152,42,' + al[b] + ')'; ctx.stroke(paths[b]); }
+    // label
+    var L = R * 0.335;
+    ctx.fillStyle = '#C8982A'; ctx.beginPath(); ctx.arc(cx, cy, L, 0, TAU); ctx.fill();
+    ctx.strokeStyle = 'rgba(13,10,8,0.35)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(cx, cy, L * 0.93, 0, TAU); ctx.stroke();
+    ctx.fillStyle = '#0D0A08'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.font = '900 ' + (L * 0.2) + 'px "Bodoni Moda", Georgia, serif'; ctx.fillText('Pinky Pack', cx, cy - L * 0.42);
+    var hasLS = 'letterSpacing' in ctx;
+    if (hasLS) ctx.letterSpacing = (L * 0.025) + 'px';
+    ctx.font = '500 ' + (L * 0.075) + 'px "DM Sans", sans-serif'; ctx.fillText('PRODUCTIONS · NEW YORK', cx, cy - L * 0.24);
+    if (hasLS) ctx.letterSpacing = '0px';
+    ctx.font = 'italic 400 ' + (L * 0.12) + 'px "Bodoni Moda", Georgia, serif'; ctx.fillText('Ray “Pinky” Velazquez', cx, cy + L * 0.3);
+    if (hasLS) ctx.letterSpacing = (L * 0.02) + 'px';
+    ctx.font = '500 ' + (L * 0.07) + 'px "DM Sans", sans-serif'; ctx.fillText('EXTENDED MIX · 124 BPM', cx, cy + L * 0.5);
+    ctx.textAlign = 'left'; ctx.fillText('SIDE A', cx - L * 0.66, cy);
+    ctx.textAlign = 'right'; ctx.fillText('33⅓', cx + L * 0.66, cy);
+    if (hasLS) ctx.letterSpacing = '0px';
+    ctx.fillStyle = '#0D0A08'; ctx.beginPath(); ctx.arc(cx, cy, Math.max(2.5, R * 0.02), 0, TAU); ctx.fill();
+    ctx.strokeStyle = 'rgba(200,152,42,0.35)'; ctx.beginPath(); ctx.arc(cx, cy, R - 0.5, 0, TAU); ctx.stroke();
+  }
+  reg(1, drawVinyl, 'static');
+
+  var vAngle = 0, vLast = 0;
+  reg(1, function (st) {
+    var cv = $('#v1-rec'); if (!cv) return;
+    if (!st.playing) { vLast = 0; return; }
+    var now = performance.now();
+    if (vLast) vAngle = (vAngle + (now - vLast) * 0.2) % 360; // 33⅓ rpm
+    vLast = now; cv.style.transform = 'rotate(' + vAngle.toFixed(2) + 'deg)';
+  });
+
+  var scopeCols = null, scopeN = 0;
+  reg(1, function (st) {
+    var F = fit($('#v1-scope')); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, n = Math.floor(w / 3);
+    if (!scopeCols || scopeN !== n) { scopeCols = trackCols(n, LOOP, 9, EXT); scopeN = n; }
+    var pf = st.playing ? (st.t % LOOP) / LOOP : null;
+    drawBars(ctx, scopeCols, 0, 6, w, h - 12, { low: '#C8982A', mid: '#F0EBE0', gap: 1, midScale: 0.45, alpha: 0.85, playFrac: pf, dim: 0.28 });
+    if (st.playing && st.wave) {
+      var N = st.wave.length;
+      ctx.strokeStyle = '#F3D58A'; ctx.lineWidth = 1.6; ctx.shadowColor = 'rgba(200,152,42,.9)'; ctx.shadowBlur = 10;
+      ctx.beginPath();
+      for (var i = 0; i < N; i += 2) {
+        var x = i / (N - 1) * w, y = h / 2 + ((st.wave[i] - 128) / 128) * h * 0.9;
+        if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y);
+      }
+      ctx.stroke(); ctx.shadowBlur = 0;
+      ctx.fillStyle = '#F0EBE0'; ctx.fillRect(Math.round(pf * w), 0, 1.5, h);
+    }
+  });
+
+  reg(1, function () {
+    $$('.v1-mini').forEach(function (cv) {
+      var F = fit(cv); if (!F) return;
+      var s = +cv.getAttribute('data-seed') || 1;
+      drawBars(F.ctx, trackCols(Math.floor(F.w / 3), 60, s, MINI, { fadeOut: 0.08 }), 0, 0, F.w, F.h,
+        { low: '#C8982A', mid: '#F0EBE0', gap: 1, midScale: 0.4, alpha: 0.85 });
+    });
+    function rs(sel, dur, segs, opt, marks, midMul) {
+      var F = fit($(sel)); if (!F) return;
+      opt = opt || {}; if (midMul != null) opt.midMul = midMul;
+      drawBars(F.ctx, trackCols(Math.floor(F.w / 3), dur, 7, segs, opt), 0, 0, F.w, F.h,
+        { low: '#C8982A', mid: '#F0EBE0', gap: 1, midScale: 0.55, alpha: midMul != null ? 0.65 : 0.92 });
+      if (marks) {
+        F.ctx.fillStyle = 'rgba(240,235,224,.55)';
+        marks.forEach(function (m) { F.ctx.fillRect(Math.round(m * F.w), 0, 1, F.h); });
+      }
+    }
+    var cuts = [58 / 420, 238 / 420, 298 / 420, 360 / 420];
+    rs('#v1-orig', 180, ORIG, { fadeIn: 0.02, fadeOut: 0.04 });
+    rs('#v1-ext', 420, EXT, null, cuts);
+    rs('#v1-radio', 210, RADIO, { fadeOut: 0.05 });
+    rs('#v1-inst', 420, EXT, {}, cuts, 0.4);
+    var B = fit($('#v1-band'));
+    if (B) drawBars(B.ctx, trackCols(Math.floor(B.w / 4), 240, 17, EXT), 0, 0, B.w, B.h,
+      { low: 'rgba(13,10,8,.13)', mid: 'rgba(13,10,8,.1)', gap: 1.5, midScale: 0.5 });
+  }, 'static');
+
+  /* ═════════ 02 · CLUB DARK ═════════ */
+  reg(2, function (st) {
+    var F = fit($('#c2-deck')); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, t = st.t;
+    var ph = Math.round(w * 0.38), ppb = Math.max(38, Math.min(72, w / 15)), pps = ppb / BEAT;
+    var k0 = Math.floor((t - ph / pps) / BEAT) - 1, k1 = Math.ceil((t + (w - ph) / pps) / BEAT) + 1;
+    ctx.font = '500 10px "JetBrains Mono", monospace'; ctx.textBaseline = 'top';
+    for (var k = Math.max(0, k0); k <= k1; k++) {
+      var x = ph + (k * BEAT - t) * pps, isBar = k % 4 === 0;
+      ctx.fillStyle = isBar ? 'rgba(255,255,255,.22)' : 'rgba(255,255,255,.07)';
+      ctx.fillRect(Math.round(x), 0, 1, h);
+      if (isBar) { ctx.fillStyle = 'rgba(255,255,255,.6)'; ctx.fillText(String(k / 4 + 1), x + 4, 6); }
+    }
+    var cy = h / 2;
+    for (var px = 0; px < w; px += 2) {
+      var tt = t + (px - ph) / pps; if (tt < 0) continue;
+      var b = bands(tt, 5);
+      ctx.globalAlpha = px < ph ? 0.45 : 1;
+      var lo = b[0] * h * 0.4, mi = b[1] * h * 0.26, hi = b[2] * h * 0.15;
+      ctx.fillStyle = '#FF2D78'; ctx.fillRect(px, cy - lo, 1.4, lo * 2);
+      ctx.fillStyle = '#1A6CFF'; ctx.fillRect(px, cy - mi, 1.4, mi * 2);
+      ctx.fillStyle = '#FFFFFF'; ctx.fillRect(px, cy - hi, 1.4, hi * 2);
+    }
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = '#FFFFFF'; ctx.shadowColor = '#FF2D78'; ctx.shadowBlur = 12;
+    ctx.fillRect(ph - 1, 0, 2, h); ctx.shadowBlur = 0;
+    ctx.beginPath(); ctx.moveTo(ph - 6, 0); ctx.lineTo(ph + 6, 0); ctx.lineTo(ph, 7); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(ph - 6, h); ctx.lineTo(ph + 6, h); ctx.lineTo(ph, h - 7); ctx.fill();
+  });
+
+  var lastRemain = '', lastBar = '';
+  reg(2, function (st) {
+    var t = st.t, s = Math.ceil(LOOP - (t % LOOP));
+    if (s > LOOP) s = LOOP;
+    var txt = '-' + String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+    if (txt !== lastRemain) { var r = $('#c2-remain'); if (r) r.textContent = txt; lastRemain = txt; }
+    var bi = Math.floor(t / BEAT), bt = (Math.floor(bi / 4) + 1) + '.' + ((bi % 4) + 1);
+    if (bt !== lastBar) { var e = $('#c2-bar'); if (e) e.textContent = bt; lastBar = bt; }
+  });
+
+  reg(2, function (st) {
+    var lv = st.freq
+      ? [clamp(band(st, 20, 250) * 1.2), clamp(band(st, 250, 4000) * 1.9), clamp(band(st, 4000, 16000) * 3.2)]
+      : [0.72, 0.56, 0.8];
+    ['#c2-m1', '#c2-m2', '#c2-m3'].forEach(function (s, i) { var el = $(s); if (el) el.style.setProperty('--lvl', lv[i].toFixed(3)); });
+  });
+
+  var CUES = [
+    { k: 'A', pos: 5 / 56,  c: '#FF2D78', era: 'The ’70s',       title: 'Ipanema Discotheque', body: 'Resident DJ two blocks from Studio 54 — reading a Manhattan dance floor in real time.' },
+    { k: 'B', pos: 7 / 56,  c: '#1A6CFF', era: '’70s – ’80s',    title: 'Manhattan Record Pool', body: 'A hundred records a week, pulled, played and reported back to the labels before radio heard them.' },
+    { k: 'C', pos: 9 / 56,  c: '#FFFFFF', era: '1979 – 1984',    title: 'A&R Director, Vanguard Records', body: 'Signing, shaping and releasing records from the label side of the table.' },
+    { k: 'D', pos: 13 / 56, c: '#FF2D78', era: 'The Vanguard years', title: 'Public Enemy’s first single', body: 'Signed Spectrum City to Vanguard and produced their first single — before they became Public Enemy.' },
+    { k: 'E', pos: 54 / 56, c: '#1A6CFF', era: 'Today',          title: 'Legends of Vinyl · Pinky Pack Productions', body: 'Co-founder of Legends of Vinyl, and now taking sessions for producers who want that ear on their record.' }
+  ];
+  var cueIdx = 0, overCols = null, overN = 0;
+  function drawOver() {
+    var F = fit($('#c2-over')); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, n = Math.floor(w / 3);
+    if (!overCols || overN !== n) { overCols = trackCols(n, 600, 21, CAREER, { fadeIn: 0.02, fadeOut: 0.02 }); overN = n; }
+    var pf = CUES[cueIdx].pos;
+    drawBars(ctx, overCols, 0, 16, w, h - 16, { low: '#FF2D78', mid: '#1A6CFF', high: '#FFFFFF', gap: 1, midScale: 0.62, highScale: 0.3, playFrac: pf, dim: 0.28 });
+    ctx.font = '700 8px "JetBrains Mono", monospace'; ctx.textBaseline = 'top';
+    CUES.forEach(function (c, i) {
+      var x = Math.round(c.pos * w);
+      ctx.globalAlpha = i === cueIdx ? 1 : 0.7; ctx.fillStyle = c.c;
+      ctx.fillRect(x, 12, 1.5, h - 12);
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x + 11, 0); ctx.lineTo(x + 11, 9); ctx.lineTo(x + 5, 13); ctx.lineTo(x, 13); ctx.fill();
+      ctx.fillStyle = '#000'; ctx.fillText(c.k, x + 2.5, 2.5);
+    });
+    ctx.globalAlpha = 1;
+    var px = Math.round(pf * w);
+    ctx.fillStyle = '#FFFFFF'; ctx.shadowColor = '#FF2D78'; ctx.shadowBlur = 10;
+    ctx.fillRect(px - 1, 16, 2, h - 16); ctx.shadowBlur = 0;
+  }
+  reg(2, drawOver, 'static');
+  reg(2, function () {
+    var F = fit($('#c2-scrub')); if (!F) return;
+    drawBars(F.ctx, trackCols(Math.floor(F.w / 3), 300, 29, CAREER), 0, 0, F.w, F.h,
+      { low: '#FF2D78', mid: '#FFFFFF', gap: 1, midScale: 0.35, playFrac: 0.18, dim: 0.3 });
+  }, 'static');
+
+  function selectCue(i) {
+    cueIdx = i; var c = CUES[i];
+    $$('.c2-pad').forEach(function (p, j) { p.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
+    var card = $('#c2-card'); card.style.setProperty('--c', c.c);
+    $('#c2-cl').textContent = c.k; $('#c2-ce').textContent = c.era;
+    $('#c2-ct').textContent = c.title; $('#c2-cb').textContent = c.body;
+    drawOver();
+  }
+  $$('.c2-pad').forEach(function (p) {
+    p.addEventListener('click', function () { selectCue(+p.getAttribute('data-cue')); });
+  });
+
+  /* ═════════ 03 · UV FLOOR ═════════ */
+  reg(3, function (st) {
+    var F = fit($('#u3-name')); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, txt = '“PINKY”';
+    var fs = h / 0.74;
+    ctx.font = '400 ' + fs + 'px "Bebas Neue", Impact, sans-serif';
+    var tw = ctx.measureText(txt).width;
+    if (tw > w) { fs *= w / tw; ctx.font = '400 ' + fs + 'px "Bebas Neue", Impact, sans-serif'; tw = ctx.measureText(txt).width; }
+    var base = h - 2, top = base - fs * 0.72;
+    var bw = Math.max(4, Math.round(fs / 22)), gap = Math.max(2, Math.round(bw * 0.45)), n = Math.ceil(tw / (bw + gap));
+    var g = ctx.createLinearGradient(0, base, 0, top);
+    g.addColorStop(0, '#6A2FD0'); g.addColorStop(0.55, '#B06FFF'); g.addColorStop(1, '#EADCFF');
+    for (var i = 0; i < n; i++) {
+      var f = i / n;
+      var lv = st.freq ? specAt(st, f, n) * 1.1 : 0.42 + 0.5 * staticSpec(f);
+      lv = Math.max(0.12, Math.min(1, lv));
+      var x = i * (bw + gap), bh = (base - top) * lv;
+      ctx.fillStyle = g; ctx.fillRect(x, base - bh, bw, bh);
+      ctx.fillStyle = '#D4FF00'; ctx.fillRect(x, base - bh - 4, bw, 3);
+    }
+    ctx.globalCompositeOperation = 'destination-in';
+    ctx.fillStyle = '#000'; ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left';
+    ctx.fillText(txt, 0, base);
+    ctx.globalCompositeOperation = 'destination-over';
+    ctx.fillStyle = 'rgba(176,111,255,0.17)'; ctx.fillText(txt, 0, base);
+    ctx.globalCompositeOperation = 'source-over';
+  });
+
+  var crowd = null, crowdW = 0;
+  function makeCrowd(w) {
+    var out = [];
+    for (var row = 0; row < 2; row++) {
+      var sp = row ? 30 : 23, n = Math.ceil(w / sp) + 1;
+      for (var i = 0; i < n; i++) {
+        var j = i * 3 + row * 5003;
+        out.push({
+          x: (i + (row ? 0.5 : 0) + hash(j) * 0.3) * sp, row: row,
+          s: (row ? 1.1 : 0.8) * (0.88 + 0.24 * Math.abs(hash(j + 7))),
+          arms: Math.abs(hash(j + 13)) > 0.45 ? (hash(j + 17) > 0 ? 2 : 1) : 0,
+          ph: Math.abs(hash(j + 23)), lean: hash(j + 31) * 3
+        });
+      }
+    }
+    return out;
+  }
+  function drawPerson(ctx, p, H, u, k) {
+    var s = p.s * u, bob = k * 8 * s * (0.55 + 0.45 * Math.abs(Math.sin(p.ph * 9)));
+    var bodyH = (p.row ? 46 : 60) * s, yS = H - bodyH - bob, x = p.x + p.lean * k;
+    ctx.fillStyle = p.row ? '#0C0018' : '#2A0F52';
+    ctx.strokeStyle = ctx.fillStyle;
+    ctx.beginPath();
+    ctx.moveTo(x - 14 * s, H); ctx.lineTo(x - 14 * s, yS + 8 * s);
+    ctx.quadraticCurveTo(x - 14 * s, yS, x - 6 * s, yS); ctx.lineTo(x + 6 * s, yS);
+    ctx.quadraticCurveTo(x + 14 * s, yS, x + 14 * s, yS + 8 * s); ctx.lineTo(x + 14 * s, H);
+    ctx.closePath(); ctx.fill();
+    ctx.fillRect(x - 3.5 * s, yS - 5 * s, 7 * s, 7 * s);
+    ctx.beginPath(); ctx.arc(x, yS - 10 * s, 7.5 * s, 0, TAU); ctx.fill();
+    if (p.arms) {
+      ctx.lineWidth = 5 * s; ctx.lineCap = 'round';
+      var reach = (28 + k * 8) * s;
+      ctx.beginPath(); ctx.moveTo(x + 10 * s, yS + 3 * s); ctx.lineTo(x + (16 + k * 3) * s, yS - reach); ctx.stroke();
+      if (p.arms === 2) { ctx.beginPath(); ctx.moveTo(x - 10 * s, yS + 3 * s); ctx.lineTo(x - (16 + k * 3) * s, yS - reach); ctx.stroke(); }
+    }
+  }
+  reg(3, function (st) {
+    var F = fit($('#u3-crowd')); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h;
+    if (!crowd || crowdW !== Math.round(w)) { crowd = makeCrowd(w); crowdW = Math.round(w); }
+    var g = ctx.createLinearGradient(0, 0, 0, h);
+    g.addColorStop(0, 'rgba(176,111,255,0)'); g.addColorStop(1, 'rgba(176,111,255,' + (0.3 + st.kick * 0.25).toFixed(3) + ')');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    var u = h / 130;
+    for (var i = 0; i < crowd.length; i++) drawPerson(ctx, crowd[i], h, u, st.kick);
+  });
+
+  var peaks = [];
+  reg(3, function (st) {
+    var F = fit($('#u3-floor')); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, floorY = Math.round(h * 0.64), H = floorY - 8;
+    var n = Math.max(16, Math.floor(w / 9)), step = w / n, bw = Math.max(2, step - 3);
+    if (peaks.length !== n) peaks = new Array(n).fill(0);
+    var g = ctx.createLinearGradient(0, floorY - H, 0, floorY);
+    g.addColorStop(0, '#E4D2FF'); g.addColorStop(0.35, '#B06FFF'); g.addColorStop(1, '#5B2A9E');
+    for (var i = 0; i < n; i++) {
+      var f = i / n, lv = Math.max(0.03, st.freq ? specAt(st, f, n) : staticSpec(f) * 0.9);
+      var x = i * step, bh = lv * H;
+      ctx.fillStyle = g; ctx.fillRect(x, floorY - bh, bw, bh);
+      ctx.globalAlpha = 0.18; ctx.fillRect(x, floorY + 2, bw, Math.min(h - floorY - 2, bh * 0.45)); ctx.globalAlpha = 1;
+      peaks[i] = st.playing ? Math.max(lv, peaks[i] - 0.012) : lv;
+      ctx.fillStyle = '#D4FF00'; ctx.fillRect(x, floorY - peaks[i] * H - 4, bw, 2);
+    }
+    ctx.fillStyle = 'rgba(212,255,0,.5)'; ctx.fillRect(0, floorY, w, 1);
+    ctx.font = '500 10px "Space Grotesk", sans-serif'; ctx.textBaseline = 'top';
+    [[30, '30 Hz'], [100, '100'], [1000, '1k'], [10000, '10k']].forEach(function (a) {
+      var fx = Math.log(a[0] / 30) / Math.log(16000 / 30) * w;
+      ctx.fillStyle = 'rgba(240,234,255,.62)'; ctx.fillText(a[1], fx + 4, floorY + 8); ctx.fillRect(fx, floorY, 1, 5);
+    });
+  });
+
+  reg(3, function (st) {
+    var F = fit($('#u3-ring')); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, cx = w / 2, cy = h / 2, S = Math.min(w, h), r0 = S * 0.3, L = S * 0.17, n = 96;
+    ctx.lineCap = 'round'; ctx.lineWidth = Math.max(2, S * 0.011);
+    for (var i = 0; i < n; i++) {
+      var half = i < n / 2 ? i / (n / 2) : (n - i) / (n / 2);
+      var lv = st.freq ? specAt(st, half * 0.85, n / 2) : staticSpec(half) * 0.85 + 0.05 * Math.abs(hash(i + 300));
+      lv = Math.max(0.06, Math.min(1, lv));
+      var a = i / n * TAU - Math.PI / 2, c = Math.cos(a), s = Math.sin(a);
+      ctx.strokeStyle = lv > 0.72 ? '#D4FF00' : 'rgba(176,111,255,' + (0.45 + lv * 0.5).toFixed(3) + ')';
+      ctx.beginPath(); ctx.moveTo(cx + c * r0, cy + s * r0); ctx.lineTo(cx + c * (r0 + L * lv), cy + s * (r0 + L * lv)); ctx.stroke();
+    }
+    ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(176,111,255,.35)';
+    ctx.beginPath(); ctx.arc(cx, cy, r0 - 6, 0, TAU); ctx.stroke();
+    ctx.fillStyle = 'rgba(176,111,255,' + (0.06 + st.kick * 0.18).toFixed(3) + ')';
+    ctx.beginPath(); ctx.arc(cx, cy, r0 - 8, 0, TAU); ctx.fill();
+  });
+
+  /* ── painting ── */
+  function paintAll() {
+    run(STAT[active], REST);
+    if (!A.playing || RM.matches) run(LIVE[active], REST);
+  }
+  var pend = 0;
+  function schedule() { if (pend) return; pend = requestAnimationFrame(function () { pend = 0; paintAll(); }); }
+
+  /* ── audio: a synthesized 124 BPM house loop, click-to-play only ── */
+  var A = { ctx: null, playing: false, t0: 0, next: 0, step: 0, timer: 0, kicks: [], lastKick: -9 };
+  var AM9 = [220, 261.63, 329.63, 392, 493.88], FM7 = [174.61, 220, 261.63, 329.63];
+  var BASS = [[55, 55, 55, 55], [55, 55, 65.41, 49]];
+  A.init = function () {
+    var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return false;
+    var c = this.ctx = new AC();
+    this.master = c.createGain(); this.master.gain.value = 0.0001;
+    var comp = c.createDynamicsCompressor();
+    comp.threshold.value = -14; comp.ratio.value = 4; comp.attack.value = 0.003; comp.release.value = 0.2;
+    this.an = c.createAnalyser(); this.an.fftSize = 1024; this.an.smoothingTimeConstant = 0.8;
+    this.master.connect(comp); comp.connect(this.an); this.an.connect(c.destination);
+    this.freq = new Uint8Array(this.an.frequencyBinCount); this.wave = new Uint8Array(this.an.fftSize);
+    var buf = c.createBuffer(1, c.sampleRate, c.sampleRate), d = buf.getChannelData(0);
+    for (var i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+    this.noise = buf;
+    return true;
+  };
+  A.kick = function (t) {
+    var c = this.ctx, o = c.createOscillator(), g = c.createGain();
+    o.type = 'sine'; o.frequency.setValueAtTime(150, t); o.frequency.exponentialRampToValueAtTime(44, t + 0.12);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.95, t + 0.004); g.gain.exponentialRampToValueAtTime(0.001, t + 0.42);
+    o.connect(g); g.connect(this.master); o.start(t); o.stop(t + 0.45);
+    this.kicks.push(t);
+  };
+  A.hit = function (t, type, f, q, peak, dec) {
+    var c = this.ctx, s = c.createBufferSource(), fl = c.createBiquadFilter(), g = c.createGain();
+    s.buffer = this.noise; fl.type = type; fl.frequency.value = f; fl.Q.value = q;
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + 0.002); g.gain.exponentialRampToValueAtTime(0.0008, t + dec);
+    s.connect(fl); fl.connect(g); g.connect(this.master); s.start(t, Math.random() * 0.5); s.stop(t + dec + 0.02);
+  };
+  A.clap = function (t) { for (var i = 0; i < 3; i++) this.hit(t + i * 0.011, 'bandpass', 1350, 0.9, 0.5, i === 2 ? 0.2 : 0.03); };
+  A.bass = function (t, f, d) {
+    var c = this.ctx, o = c.createOscillator(), fl = c.createBiquadFilter(), g = c.createGain();
+    o.type = 'sawtooth'; o.frequency.value = f; fl.type = 'lowpass'; fl.Q.value = 7;
+    fl.frequency.setValueAtTime(900, t); fl.frequency.exponentialRampToValueAtTime(260, t + d);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.26, t + 0.006);
+    g.gain.setValueAtTime(0.26, t + d * 0.7); g.gain.exponentialRampToValueAtTime(0.0008, t + d);
+    o.connect(fl); fl.connect(g); g.connect(this.master); o.start(t); o.stop(t + d + 0.02);
+  };
+  A.stab = function (t, notes) {
+    var c = this.ctx, fl = c.createBiquadFilter(), g = c.createGain();
+    fl.type = 'lowpass'; fl.frequency.setValueAtTime(2600, t); fl.frequency.exponentialRampToValueAtTime(700, t + 0.3);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.07, t + 0.005); g.gain.exponentialRampToValueAtTime(0.0008, t + 0.34);
+    fl.connect(g); g.connect(this.master);
+    for (var i = 0; i < notes.length; i++) {
+      var o = c.createOscillator(); o.type = 'sawtooth'; o.frequency.value = notes[i]; o.detune.value = (Math.random() - 0.5) * 12;
+      o.connect(fl); o.start(t); o.stop(t + 0.36);
+    }
+  };
+  A.stepAt = function (step, t) {
+    var s = step % 16, bar = Math.floor(step / 16);
+    if (s % 4 === 0) this.kick(t);
+    if (s % 4 === 2) this.hit(t, 'highpass', 7200, 0.7, 0.2, 0.14);
+    else if (bar >= 1 && s % 2 === 1) this.hit(t, 'highpass', 9000, 0.7, 0.06, 0.035);
+    if (bar >= 2 && (s === 4 || s === 12)) this.clap(t);
+    if (bar >= 1 && s % 4 === 2) this.bass(t, BASS[bar % 2][s >> 2], BEAT * 0.42);
+    if (bar >= 4 && (s === 3 || s === 10)) this.stab(t, (Math.floor(bar / 2) % 2) ? FM7 : AM9);
+  };
+  A.tick = function () {
+    var c = this.ctx;
+    while (this.next < c.currentTime + 0.12) { this.stepAt(this.step, this.next); this.next += BEAT / 4; this.step++; }
+  };
+  A.play = function () {
+    if (!this.ctx && !this.init()) return;
+    var self = this, c = this.ctx;
+    var go = function () {
+      var now = c.currentTime;
+      self.t0 = now + 0.06; self.next = self.t0; self.step = 0; self.kicks.length = 0; self.lastKick = -9;
+      self.master.gain.cancelScheduledValues(now); self.master.gain.setValueAtTime(0.0001, now);
+      self.master.gain.exponentialRampToValueAtTime(0.34, now + 0.05);
+      clearInterval(self.timer); self.timer = setInterval(function () { self.tick(); }, 25); self.tick();
+      self.playing = true; onTransport();
+    };
+    if (c.state === 'suspended') c.resume().then(go, go); else go();
+  };
+  A.pause = function () {
+    if (!this.playing) return;
+    clearInterval(this.timer); this.playing = false;
+    var c = this.ctx, now = c.currentTime;
+    this.master.gain.cancelScheduledValues(now); this.master.gain.setValueAtTime(0.34, now);
+    this.master.gain.exponentialRampToValueAtTime(0.0001, now + 0.08);
+    setTimeout(function () { if (!A.playing && c.state === 'running') c.suspend(); }, 160);
+    onTransport();
+  };
+  A.toggle = function () { if (this.playing) this.pause(); else this.play(); };
+
+  var raf = 0;
+  function frame() {
+    if (!A.playing) { raf = 0; return; }
+    var c = A.ctx, now = c.currentTime;
+    while (A.kicks.length && A.kicks[0] <= now) A.lastKick = A.kicks.shift();
+    var kick = Math.exp(-Math.max(0, now - A.lastKick) * 6.5);
+    if (!RM.matches) {
+      A.an.getByteFrequencyData(A.freq); A.an.getByteTimeDomainData(A.wave);
+      root.style.setProperty('--kick', kick.toFixed(3));
+      run(LIVE[active], { playing: true, t: Math.max(0, now - A.t0), kick: kick, freq: A.freq, wave: A.wave, sr: c.sampleRate });
+    }
+    raf = requestAnimationFrame(frame);
+  }
+
+  var playBtns = $$('[data-play]');
+  function onTransport() {
+    var p = A.playing;
+    root.classList.toggle('is-playing', p);
+    playBtns.forEach(function (b) {
+      b.setAttribute('aria-pressed', p ? 'true' : 'false');
+      var t = b.querySelector('.play-text'); if (t) t.textContent = p ? b.getAttribute('data-on') : b.getAttribute('data-off');
+    });
+    if (p) { if (!raf) raf = requestAnimationFrame(frame); }
+    else { root.style.setProperty('--kick', '0'); peaks = []; paintAll(); }
+  }
+  playBtns.forEach(function (b) { b.addEventListener('click', function () { A.toggle(); }); });
+  var cue = $('#c2-cue'); if (cue) cue.addEventListener('click', function () { if (A.playing) A.pause(); else paintAll(); });
+  document.addEventListener('visibilitychange', function () { if (document.hidden && A.playing) A.pause(); });
+
+  /* ── tabs ── */
+  var tabs = $$('[role="tab"]');
+  function select(i, focus) {
+    tabs.forEach(function (t, j) {
+      var on = j === i;
+      t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    active = i + 1; peaks = [];
+    if (focus) tabs[i].focus();
+    try { localStorage.setItem('pinky-remix-tab', String(i)); } catch (e) {}
+    paintAll();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(i, false); });
+    t.addEventListener('keydown', function (e) {
+      var n = null;
+      if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+      else if (e.key === 'Home') n = 0;
+      else if (e.key === 'End') n = tabs.length - 1;
+      if (n !== null) { e.preventDefault(); select(n, true); }
+    });
+  });
+
+  if ('ResizeObserver' in window) {
+    var ro = new ResizeObserver(schedule);
+    $$('.design-frame').forEach(function (el) { ro.observe(el); });
+  } else window.addEventListener('resize', schedule);
+
+  var saved = null;
+  try { saved = localStorage.getItem('pinky-remix-tab'); } catch (e) {}
+  var start = saved === null ? 0 : parseInt(saved, 10);
+  select(isNaN(start) || start < 0 || start >= tabs.length ? 0 : start, false);
+
+  if (document.fonts) {
+    Promise.all([
+      document.fonts.load('400 100px "Bebas Neue"'),
+      document.fonts.load('900 20px "Bodoni Moda"'),
+      document.fonts.load('italic 400 20px "Bodoni Moda"'),
+      document.fonts.load('500 10px "DM Sans"'),
+      document.fonts.load('500 10px "JetBrains Mono"'),
+      document.fonts.load('500 10px "Space Grotesk"')
+    ]).then(paintAll, paintAll);
+    document.fonts.ready.then(paintAll);
+  }
+})();
+</script>
+
+</body>
+</html>
