@@ -2178,7 +2178,8 @@ html.is-playing .c3-laser-g{animation-play-state:running}
     var ctx = F.ctx, w = F.w, h = F.h;
     if (!crowd4 || crowd4W !== Math.round(w)) { crowd4 = makeCrowd4(w); crowd4W = Math.round(w); }
     var still = !motionOn, k = still ? 0 : st.kick;
-    var b = still ? 0 : st.t / BEAT, e = still ? 0 : st.playing ? 1 : 0.86;
+    // no music: a slow half-time sway at low energy; with music: full energy on the real beat
+    var b = still ? 0 : st.playing ? st.t / BEAT : st.t / (BEAT * 2), e = still ? 0 : st.playing ? 1 : 0.35;
     var u = h / 115, d = cv.width / w;
     var g = ctx.createLinearGradient(0, 0, 0, h);
     g.addColorStop(0, 'rgba(255,45,120,0)');
