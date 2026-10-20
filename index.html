@@ -57,6 +57,7 @@ html.is-playing [data-play] .i-play{display:none}
 
 @media (max-width:860px){
   .ph,.cnav,.concept-label{padding-left:20px;padding-right:20px}
+  .cnav{position:static}
   .transport{margin-left:0}
   .concept-notes{margin:0 16px 12px;grid-template-columns:1fr 1fr;gap:18px}
   .design-frame{margin:0 16px 44px}
@@ -408,8 +409,188 @@ html.is-playing .c3-laser-g{animation-play-state:running}
   .c3-footer{padding:40px 22px}
 }
 
+/* ═══════════════════════════════════════════════════════
+   04 — CLUB DARK × UV FLOOR (built from Ray's notes)
+   Option 2's type + colour, option 3's movement. Serious, cinematic, bigger text.
+   ═══════════════════════════════════════════════════════ */
+.concept-notes--5{grid-template-columns:auto repeat(4,minmax(0,1fr))}
+.frame-hint{margin:0 40px 14px;font-size:13px;color:rgba(255,255,255,.72);line-height:1.55}
+.frame-hint b{color:#fff;font-weight:600}
+
+.c4{--amb:0;background:#000;color:#fff;font-family:'Inter',system-ui,sans-serif;font-size:18px;line-height:1.6;position:relative;scroll-margin-top:80px}
+.c4 a{text-decoration:none}
+.c4 [data-track] .i-pause{display:none}
+.c4 [data-track][aria-pressed="true"] .i-pause{display:block}
+.c4 [data-track][aria-pressed="true"] .i-play{display:none}
+
+.c4-nav{display:flex;justify-content:space-between;align-items:center;gap:14px 20px;flex-wrap:wrap;padding:20px 56px;border-bottom:1px solid rgba(255,45,120,.22);position:relative;z-index:6;background:#000}
+.c4-logo{font-family:'Anton',Impact,sans-serif;font-size:24px;letter-spacing:.04em;color:#FF2D78;line-height:1}
+.c4-logo span{color:#fff}
+.c4-nav-r{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.c4-navlink{min-height:46px;padding:0 16px;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.78);border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.c4-navlink:hover{color:#fff}
+.c4-navlink[aria-current="page"]{color:#fff;border-bottom-color:#FF2D78}
+.c4-nav-cta{min-height:46px;display:inline-flex;align-items:center;padding:0 20px;margin-left:8px;border:1px solid #FF2D78;color:#FF2D78;font-size:15px;font-weight:600;transition:background .2s,color .2s}
+.c4-nav-cta:hover{background:#FF2D78;color:#000}
+
+.c4-hero{position:relative;overflow:hidden;padding:72px 56px 210px;
+  background:radial-gradient(ellipse 80% 55% at 28% 112%,rgba(255,45,120,.30),transparent 70%),
+             radial-gradient(ellipse 60% 50% at 86% 108%,rgba(26,108,255,.24),transparent 70%),#000}
+.c4-hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;background:radial-gradient(ellipse 120% 95% at 50% 38%,transparent 55%,rgba(0,0,0,.7) 100%)}
+.c4-lights{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.c4-sweep{transform-box:view-box;animation:c4-sweep 12s ease-in-out infinite alternate}
+.c4-sweep.a{transform-origin:190px -40px}
+.c4-sweep.b{transform-origin:810px -40px;animation-duration:14s;animation-direction:alternate-reverse}
+@keyframes c4-sweep{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+.c4.motion-off .c4-sweep{animation-play-state:paused}
+.c4-cone{opacity:calc(.12 + max(var(--kick),var(--amb)) * .22)}
+.c4-laser{stroke-width:1.2;vector-effect:non-scaling-stroke;opacity:calc(.14 + max(var(--kick),var(--amb)) * .5)}
+.c4-crowd{position:absolute;left:0;right:0;bottom:0;width:100%;height:190px;display:block;z-index:1;pointer-events:none}
+.c4-grain{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.c4-motion{position:absolute;top:18px;right:22px;z-index:6;min-height:40px;padding:0 16px;border:1px solid rgba(255,255,255,.26);border-radius:999px;background:rgba(0,0,0,.55);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.86);transition:border-color .2s}
+.c4-motion:hover{border-color:#fff}
+.c4-hero-grid{position:relative;z-index:5;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:52px;align-items:center}
+.c4-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:#FF2D78;margin-bottom:22px}
+.c4-name{--nm:clamp(64px,9vw,134px);font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:var(--nm);line-height:.92;letter-spacing:.005em;margin-bottom:28px}
+.c4-nl{display:block;color:#fff}
+#c4-pinky{display:block;width:100%;height:calc(var(--nm) * .88);margin:.04em 0 .03em}
+#c4-ring{position:absolute;inset:0;width:100%;height:100%;display:block}
+.c4-role{font-size:20px;line-height:1.6;color:rgba(255,255,255,.88);max-width:32em;margin-bottom:32px}
+.c4-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.c4-cta{display:inline-flex;align-items:center;min-height:56px;padding:0 32px;background:#FF2D78;color:#000;font-size:16px;font-weight:700;letter-spacing:.03em;transition:background .2s}
+.c4-cta:hover{background:#FF5C97}
+.c4-ghost{display:inline-flex;align-items:center;min-height:56px;padding:0 28px;border:1px solid rgba(255,255,255,.4);color:#fff;font-size:16px;font-weight:600;transition:border-color .2s}
+.c4-ghost:hover{border-color:#FF2D78}
+.c4-listen-btn{display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 24px 0 8px;border:1px solid rgba(255,255,255,.38);border-radius:999px;font-size:16px;font-weight:600;transition:border-color .2s,background .2s}
+.c4-listen-btn .pi{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.c4-listen-btn:hover,.c4-listen-btn[aria-pressed="true"]{border-color:#FF2D78;background:rgba(255,45,120,.1)}
+
+.c4-film{margin:0}
+.c4-film-frame{position:relative;aspect-ratio:16/9;max-width:100%;background:linear-gradient(160deg,#0C0C12,#040406);border:1px solid rgba(255,255,255,.14);display:grid;place-items:center;box-shadow:0 44px 90px -30px rgba(0,0,0,.95)}
+.c4-film-cap{position:absolute;top:20px;left:38px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.c4-film-play{width:96px;height:96px;border-radius:50%;border:2px solid #FF2D78;display:grid;place-items:center;box-shadow:0 0 calc(14px + var(--kick) * 30px) rgba(255,45,120,.45)}
+#c4-scrub{position:absolute;left:38px;right:38px;bottom:22px;width:calc(100% - 76px);height:30px;display:block}
+.c4-film figcaption{margin-top:16px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;font-size:17px;color:rgba(255,255,255,.86)}
+.c4-film figcaption b{color:#fff;font-weight:600}
+.c4-film figcaption span{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.06em;color:#7FA6FF}
+
+.c4-sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px 32px;flex-wrap:wrap;margin-bottom:30px}
+.c4-sec-head h3{font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:clamp(42px,5vw,66px);line-height:.95;letter-spacing:.01em;text-transform:uppercase}
+.c4-sec-head p{font-size:18px;line-height:1.55;color:rgba(255,255,255,.84);max-width:36ch}
+.c4-note{display:block;margin-top:8px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.06em;color:#7FA6FF}
+
+.c4-listen{padding:80px 56px 72px;border-top:1px solid rgba(255,255,255,.08)}
+.c4-deck{position:relative;background:#050507;border:1px solid rgba(255,45,120,.28)}
+#c4-deck{display:block;width:100%;height:170px}
+.c4-deck-tag{position:absolute;bottom:10px;left:14px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.66)}
+.c4-deck-tag.r{left:auto;right:14px}
+.c4-readout{display:grid;grid-template-columns:minmax(0,2.2fr) repeat(4,minmax(0,1fr));gap:1px;background:rgba(26,108,255,.3);border:1px solid rgba(26,108,255,.42);border-top:0}
+.c4-ro{background:#060914;padding:12px 16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.c4-ro .k{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7FA6FF}
+.c4-ro .v{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:16px;color:#E6EEFF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c4-ro .v.big{font-size:24px;font-weight:500;font-variant-numeric:tabular-nums}
+.c4-tracks{list-style:none;margin-top:20px;border-top:1px solid rgba(255,255,255,.12)}
+.c4-trk{display:grid;grid-template-columns:56px minmax(0,1.1fr) minmax(0,2fr) 92px 48px 60px;align-items:center;gap:20px;padding:16px 8px;border-bottom:1px solid rgba(255,255,255,.12);transition:background .2s}
+.c4-trk.is-active{background:linear-gradient(90deg,rgba(255,45,120,.12),transparent 72%)}
+.c4-trk-play{width:54px;height:54px;border-radius:50%;border:2px solid rgba(255,255,255,.42);display:grid;place-items:center;transition:border-color .2s,background .2s}
+.c4-trk-play:hover{border-color:#FF2D78}
+.c4-trk-play[aria-pressed="true"]{border-color:#FF2D78;background:rgba(255,45,120,.16)}
+.c4-trk-t{min-width:0}
+.c4-trk-t strong{display:block;font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:26px;letter-spacing:.02em;line-height:1.1}
+.c4-trk-t span{font-size:16px;color:rgba(255,255,255,.76)}
+.c4-trk-wave{display:block;width:100%;height:42px}
+.c4-trk-m{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;color:rgba(255,255,255,.84);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.c4-record{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:1px solid rgba(255,255,255,.12)}
+.c4-stat{padding:40px 30px;border-right:1px solid rgba(255,255,255,.12)}
+.c4-stat:last-child{border-right:none}
+.c4-stat-fig{display:block;font-family:'Anton',Impact,sans-serif;font-size:clamp(50px,5.4vw,78px);line-height:1;margin-bottom:14px;color:var(--c,#fff)}
+.c4-stat-fig.words{font-size:clamp(34px,3.3vw,46px);line-height:1.05}
+.c4-stat-k{display:block;font-size:17px;line-height:1.5;color:rgba(255,255,255,.84)}
+
+.c4-contact{position:relative;overflow:hidden;padding:104px 56px 96px;background:#000}
+#c4-floor{position:absolute;left:0;right:0;bottom:0;width:100%;height:80%;display:block;opacity:.55}
+.c4-contact::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#000 12%,rgba(0,0,0,.45) 58%,rgba(0,0,0,.8))}
+.c4-contact-in{position:relative;z-index:2;max-width:780px}
+.c4-contact h3{font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:clamp(54px,7.6vw,108px);line-height:.92;text-transform:uppercase;margin-bottom:24px}
+.c4-contact h3 em{font-style:normal;color:#FF2D78}
+.c4-contact-in > p:not(.c4-kicker){font-size:20px;line-height:1.6;color:rgba(255,255,255,.88);max-width:34em;margin-bottom:32px}
+
+.c4-story-head{padding:88px 56px 64px}
+.c4-story-head h2{font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:clamp(56px,8vw,116px);line-height:.92;text-transform:uppercase;margin-bottom:30px}
+.c4-lead{font-size:clamp(21px,2.1vw,25px);line-height:1.5;color:#fff;max-width:36em}
+.c4-story-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px;margin-top:40px;padding-top:36px;border-top:1px solid rgba(255,255,255,.12)}
+.c4-story-cols p{font-size:18px;line-height:1.75;color:rgba(255,255,255,.86)}
+.c4-quote{margin:0 56px;padding:44px 0 44px 40px;border-left:3px solid #FF2D78;font-size:clamp(26px,3vw,38px);font-weight:300;line-height:1.35;letter-spacing:-.01em;color:#fff;max-width:30em}
+.c4-quote cite{display:block;margin-top:22px;font-style:normal;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#FF2D78}
+.c4-career{padding:96px 56px 72px}
+.c4 .c2-overview{padding:16px 16px 0}
+#c4-over{display:block;width:100%;height:112px}
+.c4 .c2-axis{height:36px}
+.c4 .c2-axis span{font-size:13px;padding-top:11px}
+.c4 .c2-pad{min-height:64px}
+.c4 .c2-pad b{width:30px;height:30px;font-size:14px}
+.c4 .c2-pad span{font-size:15px}
+.c4 .c2-card{padding:28px 30px}
+.c4 .c2-card-letter{font-size:58px}
+.c4 .c2-card-era{font-size:13px}
+.c4 .c2-card h3{font-size:32px}
+.c4 .c2-card p{font-size:18px}
+.c4-services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;padding:0 56px 88px}
+.c4-svc{background:#0A0A0A;border-top:2px solid var(--c);padding:32px 30px}
+.c4-svc .tag{display:block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--c);margin-bottom:14px}
+.c4-svc h4{font-family:'Anton',Impact,sans-serif;font-weight:400;font-size:30px;letter-spacing:.02em;line-height:1.05;margin-bottom:14px}
+.c4-svc p{font-size:17px;line-height:1.65;color:rgba(255,255,255,.84)}
+.c4-circle{padding:88px 56px 96px;border-top:1px solid rgba(255,255,255,.1)}
+.c4-chip{font-size:16px;color:rgba(255,255,255,.9);padding:10px 18px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.02);transition:border-color .2s,background .2s}
+.c4-chip:hover{border-color:#FF2D78;background:rgba(255,45,120,.08)}
+.c4 .c3-ring-label small{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.12em;color:#7FA6FF}
+.c4 .c3-ring-label b{font-family:'Anton',Impact,sans-serif;font-size:clamp(40px,4.4vw,60px);letter-spacing:.03em;color:#fff;line-height:1}
+
+.c4-footer{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:52px 56px;border-top:2px solid #FF2D78;background:#000}
+.c4-footer-logo{font-family:'Anton',Impact,sans-serif;font-size:36px;letter-spacing:.02em;line-height:1}
+.c4-footer-logo span{color:#FF2D78}
+.c4-footer p{font-size:16px;color:rgba(255,255,255,.76);margin-top:10px}
+
+@media (max-width:1060px){
+  .concept-notes--5{grid-template-columns:1fr 1fr 1fr}
+}
+@media (max-width:860px){
+  .concept-notes--5{grid-template-columns:1fr 1fr}
+  .frame-hint{margin:0 16px 12px}
+  .c4-nav{padding:16px 22px}
+  .c4-nav-cta{margin-left:0}
+  .c4-hero{padding:72px 22px 190px}
+  .c4-hero-grid{grid-template-columns:1fr;gap:40px}
+  .c4-role{font-size:18px}
+  .c4-listen{padding:64px 22px 56px}
+  .c4-readout{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .c4-ro.wide{grid-column:1 / -1}
+  .c4-trk{grid-template-columns:54px minmax(0,1fr) auto;grid-template-areas:"p t d" "w w w";gap:12px 16px}
+  .c4-trk-play{grid-area:p}
+  .c4-trk-t{grid-area:t}
+  .c4-trk-wave{grid-area:w}
+  .c4-trk-m.dur{grid-area:d}
+  .c4-hide-sm{display:none}
+  .c4-record{grid-template-columns:1fr 1fr}
+  .c4-stat{padding:30px 22px}
+  .c4-stat:nth-child(2){border-right:none}
+  .c4-stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
+  .c4-contact{padding:80px 22px 72px}
+  .c4-story-head{padding:64px 22px 48px}
+  .c4-story-cols{grid-template-columns:1fr;gap:20px}
+  .c4-quote{margin:0 22px;padding:32px 0 32px 22px}
+  .c4-career{padding:72px 22px 56px}
+  .c4-services{grid-template-columns:1fr;padding:0 22px 64px}
+  .c4-circle{padding:64px 22px 72px}
+  .c4-chip{font-size:14px;padding:8px 12px}
+  .c4-footer{padding:40px 22px}
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
+  .c4-motion{display:none}
 }
 </style>
 </head>
@@ -417,13 +598,14 @@ html.is-playing .c3-laser-g{animation-play-state:running}
 
 <!-- PRESENTATION HEADER -->
 <header class="ph">
-  <div class="ph-agency">Wise Digital Strategies — Website Pitch · Round 3</div>
-  <h1>Ray "Pinky" Velazquez / Pinky Pack Productions</h1>
-  <p class="ph-sub">3 design directions, remixed · perfectbusiness.com refresh</p>
+  <div class="ph-agency">Wise Digital Strategies — Website Pitch · Round 4</div>
+  <h1>Ray Pinky Velasquez / Pinky Pack Productions</h1>
+  <p class="ph-sub">4 design directions · perfectbusiness.com refresh</p>
   <p class="ph-note">
-    Round one’s three directions, pushed harder. <b>Waveforms carry every page</b> —
-    grooves, beatgrids, spectrums. Press play for a 124 BPM house loop and each design
-    moves with the kick. Sound and motion stay off until you do.
+    <b>New: option 4</b> combines options 2 and 3, built from Ray’s review notes — option 2’s
+    type and colour, option 3’s movement, bigger text, two pages, video first.
+    Options 1–3 are kept for reference. Press play for demo audio; every design’s
+    waveforms move with it.
   </p>
 </header>
 
@@ -433,10 +615,11 @@ html.is-playing .c3-laser-g{animation-play-state:running}
     <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">Option 1 — Vinyl Cut</button>
     <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Option 2 — Club Dark</button>
     <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Option 3 — UV Floor</button>
+    <button class="tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">Option 4 — Club Dark × UV Floor</button>
   </div>
-  <button class="transport" data-play data-on="Pause the demo" data-off="Play 124 BPM demo" aria-pressed="false">
+  <button class="transport" data-play data-on="Pause the demo" data-off="Play the demo" aria-pressed="false">
     <span class="tm" aria-hidden="true"><i style="--k:.9"></i><i style="--k:.55"></i><i style="--k:1"></i><i style="--k:.7"></i></span>
-    <span class="play-text">Play 124 BPM demo</span>
+    <span class="play-text">Play the demo</span>
   </button>
 </div>
 
@@ -1080,6 +1263,294 @@ html.is-playing .c3-laser-g{animation-play-state:running}
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CONCEPT 4: CLUB DARK × UV FLOOR (from Ray's notes)  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="concept" id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+  <div class="concept-label">
+    <span class="number">04</span>
+    <span class="name">Club Dark × UV Floor</span>
+    <span class="tagline">Option 2’s type and colour with option 3’s movement, rebuilt from Ray’s notes as a two-page, video-first business card.</span>
+  </div>
+
+  <div class="concept-notes concept-notes--5">
+    <div class="note-block">
+      <h4>Palette</h4>
+      <div class="swatches">
+        <span class="swatch" style="background:#000000" title="#000000"></span>
+        <span class="swatch" style="background:#FF2D78" title="#FF2D78"></span>
+        <span class="swatch" style="background:#1A6CFF" title="#1A6CFF"></span>
+        <span class="swatch" style="background:#FFFFFF" title="#FFFFFF"></span>
+      </div>
+    </div>
+    <div class="note-block">
+      <h4>Type</h4>
+      <p>Anton · Inter · JetBrains Mono, from option 2 — sized up: body 18px, labels 13px and over.</p>
+    </div>
+    <div class="note-block">
+      <h4>Motion</h4>
+      <p>From option 3: the crowd, stage light and spectrum, re-lit in pink and blue. The crowd and lights move on their own; the waveforms answer Ray’s tracks.</p>
+    </div>
+    <div class="note-block">
+      <h4>From Ray’s notes</h4>
+      <p>Ray Pinky Velasquez, no quotes. Bigger text. Two pages. Video first. His own tracks with waveforms. Serious, never cartoonish.</p>
+    </div>
+    <div class="note-block">
+      <h4>Best for</h4>
+      <p>The brief Ray gave: historic and serious, but alive — closer to a 1970s New York film than a club flyer.</p>
+    </div>
+  </div>
+
+  <p class="frame-hint">Two pages — switch with the site’s own navigation: <b>Home</b> and <b>Story</b>. The film frame and the three tracks are placeholders until Ray supplies his video and audio.</p>
+
+  <div class="design-frame">
+    <div class="c4" id="c4">
+      <nav class="c4-nav" aria-label="Option 4 site navigation">
+        <div class="c4-logo">PINKY PACK <span>PRODUCTIONS</span></div>
+        <div class="c4-nav-r">
+          <button class="c4-navlink" type="button" data-page="1" aria-current="page">Home</button>
+          <button class="c4-navlink" type="button" data-page="2">Story</button>
+          <a href="#" class="c4-nav-cta">Book a session</a>
+        </div>
+      </nav>
+
+      <!-- ─── PAGE 1 · HOME ─── -->
+      <div class="c4-page" id="c4-p1">
+        <header class="c4-hero">
+          <svg class="c4-lights" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="c4-cone-p" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF2D78" stop-opacity=".7"/><stop offset=".85" stop-color="#FF2D78" stop-opacity="0"/></linearGradient>
+              <linearGradient id="c4-cone-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A6CFF" stop-opacity=".7"/><stop offset=".85" stop-color="#1A6CFF" stop-opacity="0"/></linearGradient>
+            </defs>
+            <g class="c4-sweep a">
+              <polygon class="c4-cone" points="190,-40 40,760 360,760" fill="url(#c4-cone-p)"/>
+              <line class="c4-laser" x1="190" y1="-40" x2="-80" y2="760" stroke="#FF2D78"/>
+              <line class="c4-laser" x1="190" y1="-40" x2="230" y2="760" stroke="#FF2D78"/>
+              <line class="c4-laser" x1="190" y1="-40" x2="520" y2="760" stroke="#FF2D78"/>
+            </g>
+            <g class="c4-sweep b">
+              <polygon class="c4-cone" points="810,-40 640,760 960,760" fill="url(#c4-cone-b)"/>
+              <line class="c4-laser" x1="810" y1="-40" x2="480" y2="760" stroke="#1A6CFF"/>
+              <line class="c4-laser" x1="810" y1="-40" x2="770" y2="760" stroke="#1A6CFF"/>
+              <line class="c4-laser" x1="810" y1="-40" x2="1080" y2="760" stroke="#1A6CFF"/>
+            </g>
+          </svg>
+          <canvas id="c4-crowd" class="c4-crowd" aria-hidden="true"></canvas>
+          <div class="c4-grain" aria-hidden="true"></div>
+          <button class="c4-motion" id="c4-motion" type="button">Pause motion</button>
+
+          <div class="c4-hero-grid">
+            <div>
+              <p class="c4-kicker">Pinky Pack Productions · New York</p>
+              <h2 class="c4-name">
+                <span class="c4-nl">RAY</span>
+                <span class="sr">Pinky</span>
+                <canvas id="c4-pinky" aria-hidden="true"></canvas>
+                <span class="c4-nl">VELASQUEZ</span>
+              </h2>
+              <p class="c4-role">Producer, remixer and A&amp;R. Fifty years deciding what a dance record needs — from the Manhattan record pool, to Vanguard Records, to your session.</p>
+              <div class="c4-actions">
+                <a href="#" class="c4-cta">Book a session</a>
+                <button class="c4-listen-btn" type="button" data-track="0" data-on="Pause" data-off="Hear Ray’s records" aria-pressed="false">
+                  <span class="pi" aria-hidden="true">
+                    <svg class="i-play" width="13" height="15" viewBox="0 0 13 15"><path d="M1.5 1.2l10.5 6.3-10.5 6.3z" fill="#000"/></svg>
+                    <svg class="i-pause" width="13" height="15" viewBox="0 0 13 15"><path d="M1.5 1.2h3.6v12.6H1.5zM7.9 1.2h3.6v12.6H7.9z" fill="#000"/></svg>
+                  </span>
+                  <span class="play-text">Hear Ray’s records</span>
+                </button>
+              </div>
+            </div>
+
+            <figure class="c4-film">
+              <div class="c4-film-frame">
+                <div class="c2-video-corner tl"></div><div class="c2-video-corner tr"></div>
+                <div class="c2-video-corner bl"></div><div class="c2-video-corner br"></div>
+                <span class="c4-film-cap">Film · In his own words</span>
+                <div class="c4-film-play" aria-hidden="true">
+                  <svg width="24" height="28" viewBox="0 0 24 28"><path d="M4 2l18 12-18 12z" fill="#FF2D78"/></svg>
+                </div>
+                <canvas id="c4-scrub" aria-hidden="true"></canvas>
+              </div>
+              <figcaption><b>Ray Pinky Velasquez, in his own words.</b> <span>Placeholder — Ray’s film opens the site</span></figcaption>
+            </figure>
+          </div>
+        </header>
+
+        <section class="c4-listen" aria-labelledby="c4-listen-h">
+          <div class="c4-sec-head">
+            <h3 id="c4-listen-h">Listen</h3>
+            <p>Ray’s own records, on the deck. <span class="c4-note">Demo audio until his masters arrive</span></p>
+          </div>
+          <div class="c4-deck">
+            <canvas id="c4-deck" aria-hidden="true"></canvas>
+            <span class="c4-deck-tag">Deck A</span>
+            <span class="c4-deck-tag r" id="c4-deck-tag">Beatgrid · 124.00</span>
+          </div>
+          <div class="c4-readout">
+            <div class="c4-ro wide"><span class="k">Now loaded</span><span class="v" id="c4-rt">Track 01 — Extended Mix</span></div>
+            <div class="c4-ro"><span class="k">BPM</span><span class="v big" id="c4-rbpm">124.0</span></div>
+            <div class="c4-ro"><span class="k">Key</span><span class="v big" id="c4-rkey">8A</span></div>
+            <div class="c4-ro"><span class="k">Bar</span><span class="v big" id="c4-rbar">1.1</span></div>
+            <div class="c4-ro"><span class="k">Remain</span><span class="v big" id="c4-rrem">-07:00</span></div>
+          </div>
+          <ol class="c4-tracks">
+            <li class="c4-trk is-active">
+              <button class="c4-trk-play" type="button" data-track="0" data-label="Track 01, Extended Mix" aria-label="Play Track 01, Extended Mix" aria-pressed="false">
+                <svg class="i-play" width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2.5 1.5l10 6.5-10 6.5z" fill="#fff"/></svg>
+                <svg class="i-pause" width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2 1.5h3.5v13H2zM8.5 1.5H12v13H8.5z" fill="#fff"/></svg>
+              </button>
+              <div class="c4-trk-t"><strong>Track 01</strong><span>Extended Mix</span></div>
+              <canvas class="c4-trk-wave" aria-hidden="true"></canvas>
+              <span class="c4-trk-m c4-hide-sm">124 BPM</span>
+              <span class="c4-trk-m c4-hide-sm">8A</span>
+              <span class="c4-trk-m dur">7:00</span>
+            </li>
+            <li class="c4-trk">
+              <button class="c4-trk-play" type="button" data-track="1" data-label="Track 02, Radio Edit" aria-label="Play Track 02, Radio Edit" aria-pressed="false">
+                <svg class="i-play" width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2.5 1.5l10 6.5-10 6.5z" fill="#fff"/></svg>
+                <svg class="i-pause" width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2 1.5h3.5v13H2zM8.5 1.5H12v13H8.5z" fill="#fff"/></svg>
+              </button>
+              <div class="c4-trk-t"><strong>Track 02</strong><span>Radio Edit</span></div>
+              <canvas class="c4-trk-wave" aria-hidden="true"></canvas>
+              <span class="c4-trk-m c4-hide-sm">118 BPM</span>
+              <span class="c4-trk-m c4-hide-sm">4A</span>
+              <span class="c4-trk-m dur">3:30</span>
+            </li>
+            <li class="c4-trk">
+              <button class="c4-trk-play" type="button" data-track="2" data-label="Track 03, Dub" aria-label="Play Track 03, Dub" aria-pressed="false">
+                <svg class="i-play" width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2.5 1.5l10 6.5-10 6.5z" fill="#fff"/></svg>
+                <svg class="i-pause" width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2 1.5h3.5v13H2zM8.5 1.5H12v13H8.5z" fill="#fff"/></svg>
+              </button>
+              <div class="c4-trk-t"><strong>Track 03</strong><span>Dub</span></div>
+              <canvas class="c4-trk-wave" aria-hidden="true"></canvas>
+              <span class="c4-trk-m c4-hide-sm">126 BPM</span>
+              <span class="c4-trk-m c4-hide-sm">5A</span>
+              <span class="c4-trk-m dur">6:12</span>
+            </li>
+          </ol>
+        </section>
+
+        <section class="c4-record" aria-label="The record">
+          <div class="c4-stat" style="--c:#FF2D78"><span class="c4-stat-fig">50+</span><span class="c4-stat-k">Years inside dance music</span></div>
+          <div class="c4-stat"><span class="c4-stat-fig">100</span><span class="c4-stat-k">Records a week at the Manhattan record pool</span></div>
+          <div class="c4-stat" style="--c:#1A6CFF"><span class="c4-stat-fig">1979–84</span><span class="c4-stat-k">A&amp;R Director, Vanguard Records</span></div>
+          <div class="c4-stat" style="--c:#FF2D78"><span class="c4-stat-fig words">Public Enemy</span><span class="c4-stat-k">Produced their first single</span></div>
+        </section>
+
+        <section class="c4-contact" aria-labelledby="c4-contact-h">
+          <canvas id="c4-floor" aria-hidden="true"></canvas>
+          <div class="c4-contact-in">
+            <p class="c4-kicker">Work with Ray</p>
+            <h3 id="c4-contact-h">Bring Ray<br><em>your record.</em></h3>
+            <p>Reshaping, consulting or full production — it starts with one conversation and one listen.</p>
+            <div class="c4-actions">
+              <a href="#" class="c4-cta">Book a session</a>
+              <a href="#" class="c4-ghost">Send a track</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ─── PAGE 2 · STORY ─── -->
+      <div class="c4-page" id="c4-p2" hidden>
+        <header class="c4-story-head">
+          <p class="c4-kicker">The story</p>
+          <h2>The ear that<br>built an era.</h2>
+          <p class="c4-lead">Before an algorithm decided what was a hit, there was the record pool — and Ray Pinky Velasquez was in the room.</p>
+          <div class="c4-story-cols">
+            <p>In 1970s Manhattan the record pool was the filter. Labels pressed the promos, DJs pulled them by the armful, and what came back decided what went to radio. Ray was pulling a hundred records a week — listening hard, marking them up, sending the verdict back to the labels.</p>
+            <p>He spun at the Ipanema Discotheque, two blocks from Studio 54. He ran A&amp;R at Vanguard Records from 1979 to 1984, signed Spectrum City and produced their first single — before they became Public Enemy. Today he is a co-founder of Legends of Vinyl, and through Pinky Pack Productions he brings that ear to your record.</p>
+          </div>
+        </header>
+
+        <blockquote class="c4-quote">
+          “I was picking up 100 records a week from the Manhattan record pool. After that kind of pounding, your sense of what a hit record is becomes a little keener.”
+          <cite>Ray Pinky Velasquez</cite>
+        </blockquote>
+
+        <section class="c4-career" aria-labelledby="c4-career-h">
+          <div class="c4-sec-head">
+            <h3 id="c4-career-h">Fifty years,<br>as a track</h3>
+            <p>Hot cues mark the moments that built the ear. Choose one.</p>
+          </div>
+          <div class="c2-overview">
+            <canvas id="c4-over" aria-hidden="true"></canvas>
+            <div class="c2-axis" aria-hidden="true">
+              <span style="left:0">’70s</span><span style="left:17.86%">’80s</span><span style="left:35.71%">’90s</span><span style="left:53.57%">’00s</span><span style="left:71.43%">’10s</span><span style="left:89.29%">’20s</span>
+            </div>
+          </div>
+          <div class="c2-pads" role="group" aria-label="Career hot cues">
+            <button class="c2-pad" type="button" data-cue="0" style="--c:#FF2D78" aria-pressed="true"><b>A</b><span>Ipanema Discotheque</span></button>
+            <button class="c2-pad" type="button" data-cue="1" style="--c:#1A6CFF" aria-pressed="false"><b>B</b><span>Manhattan Record Pool</span></button>
+            <button class="c2-pad" type="button" data-cue="2" style="--c:#FFFFFF" aria-pressed="false"><b>C</b><span>Vanguard A&amp;R</span></button>
+            <button class="c2-pad" type="button" data-cue="3" style="--c:#FF2D78" aria-pressed="false"><b>D</b><span>Public Enemy</span></button>
+            <button class="c2-pad" type="button" data-cue="4" style="--c:#1A6CFF" aria-pressed="false"><b>E</b><span>Today</span></button>
+          </div>
+          <div class="c2-card" id="c4-card" aria-live="polite">
+            <span class="c2-card-letter" id="c4-cl">A</span>
+            <div>
+              <p class="c2-card-era" id="c4-ce">The ’70s</p>
+              <h3 id="c4-ct">Ipanema Discotheque</h3>
+              <p id="c4-cb">Resident DJ two blocks from Studio 54 — reading a Manhattan dance floor in real time.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="c4-services" aria-label="Services">
+          <div class="c4-svc" style="--c:#FF2D78">
+            <span class="tag">Extended · Radio · Instrumental</span>
+            <h4>Record Reshaping</h4>
+            <p>Three minutes in. Seven minutes out, plus an instrumental and a radio edit — every version a record needs to live on the floor, the radio and streaming.</p>
+          </div>
+          <div class="c4-svc" style="--c:#1A6CFF">
+            <span class="tag">One session</span>
+            <h4>Hit Record Consulting</h4>
+            <p>One listen tells you what your track is missing. A career spent evaluating thousands of records gives Ray an ear that was earned, not taught.</p>
+          </div>
+          <div class="c4-svc" style="--c:#FFFFFF">
+            <span class="tag">Idea to finished record</span>
+            <h4>Studio Production</h4>
+            <p>Arrangement, sound and mix direction for artists ready to take their music seriously — from a rough idea to a record you can send out.</p>
+          </div>
+        </section>
+
+        <section class="c4-circle" aria-labelledby="c4-circle-h">
+          <div class="c4-sec-head">
+            <h3 id="c4-circle-h">The circle</h3>
+            <p>Fifty years alongside the people who shaped the sound.</p>
+          </div>
+          <div class="c3-circle-grid">
+            <ul class="c3-names-col l">
+              <li class="c4-chip">John “Jellybean” Benitez</li><li class="c4-chip">Danny Krivit</li>
+              <li class="c4-chip">Todd Terry</li><li class="c4-chip">Kerry Chandler</li>
+              <li class="c4-chip">Nora En Pure</li><li class="c4-chip">David Morales</li>
+              <li class="c4-chip">John Morales</li><li class="c4-chip">Frankie Knuckles</li>
+            </ul>
+            <div class="c3-ring-wrap">
+              <canvas id="c4-ring" aria-hidden="true"></canvas>
+              <div class="c3-ring-label"><small>At the centre</small><b>RAY</b></div>
+            </div>
+            <ul class="c3-names-col">
+              <li class="c4-chip">Carl Cox</li><li class="c4-chip">Joey Negro</li>
+              <li class="c4-chip">Dr. Packer</li><li class="c4-chip">Hugel</li>
+              <li class="c4-chip">Ron Hardy</li><li class="c4-chip">John Luongo</li>
+              <li class="c4-chip">Ray Caviano</li><li class="c4-chip">Timmy Regisford</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <footer class="c4-footer">
+        <div>
+          <div class="c4-footer-logo"><span>PINKY PACK</span> PRODUCTIONS</div>
+          <p>Ray Pinky Velasquez · Dance music production &amp; A&amp;R · New York</p>
+        </div>
+        <a href="#" class="c4-cta">Book a session</a>
+      </footer>
+    </div>
+  </div>
+</section>
+
 <script>
 (function () {
   'use strict';
@@ -1087,11 +1558,15 @@ html.is-playing .c3-laser-g{animation-play-state:running}
   var RM = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
   var BPM = 124, BEAT = 60 / BPM, LOOP = 420, TAU = Math.PI * 2;
   var root = document.documentElement;
+  function setTempo(b) { BPM = b; BEAT = 60 / b; }
   function $(s) { return document.querySelector(s); }
   function $$(s) { return Array.prototype.slice.call(document.querySelectorAll(s)); }
   function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function mmss(s) { return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }
+  var textCache = {};
+  function setText(sel, v) { if (textCache[sel] === v) return; textCache[sel] = v; var e = $(sel); if (e) e.textContent = v; }
 
-  /* ── deterministic noise + a 124 BPM four-on-the-floor "signal" ── */
+  /* ── deterministic noise + a four-on-the-floor "signal" ── */
   function hash(i) {
     i |= 0; i = (i << 13) ^ i;
     var x = (Math.imul(i, (Math.imul(Math.imul(i, i), 15731) + 789221) | 0) + 1376312589) & 0x7fffffff;
@@ -1195,11 +1670,143 @@ html.is-playing .c3-laser-g{animation-play-state:running}
   var CAREER = [{ end: 0.12, gain: 0.55, kick: true }, { end: 0.3, gain: 1, kick: true }, { end: 0.42, gain: 0.7, kick: false }, { end: 0.62, gain: 0.85, kick: true }, { end: 0.72, gain: 0.6, kick: false }, { end: 1, gain: 1, kick: true }];
   var MINI = [{ end: 0.15, gain: 0.55, kick: true }, { end: 0.55, gain: 1, kick: true }, { end: 0.7, gain: 0.7, kick: false }, { end: 1, gain: 1, kick: true }];
 
+  // Demo slots for Ray's own tracks — tempo, key (Camelot) and length per slot
+  var TRACKS = [
+    { name: 'Track 01', ver: 'Extended Mix', bpm: 124, semi: 0,  key: '8A', len: 420 },
+    { name: 'Track 02', ver: 'Radio Edit',   bpm: 118, semi: -4, key: '4A', len: 210 },
+    { name: 'Track 03', ver: 'Dub',          bpm: 126, semi: 3,  key: '5A', len: 372, dub: true }
+  ];
+
   /* ── renderer registry ── */
-  var LIVE = { 1: [], 2: [], 3: [] }, STAT = { 1: [], 2: [], 3: [] }, active = 1;
+  var LIVE = { 1: [], 2: [], 3: [], 4: [] }, STAT = { 1: [], 2: [], 3: [], 4: [] }, active = 1;
   function reg(p, fn, kind) { (kind === 'static' ? STAT : LIVE)[p].push(fn); }
   function run(list, st) { for (var i = 0; i < list.length; i++) { try { list[i](st); } catch (e) { if (window.console) console.error(e); } } }
   var REST = { playing: false, t: 0, kick: 0, freq: null, wave: null, sr: 48000 };
+  var motionOn = true;
+
+  /* ═════════ shared renderers ═════════ */
+  // CDJ-style zoomed waveform on a beatgrid; transients cross the playhead on the kick
+  function drawDeck(sel, st, labelPx) {
+    var F = fit($(sel)); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, t = st.playing ? st.t : 0;
+    var ph = Math.round(w * 0.38), ppb = Math.max(38, Math.min(72, w / 15)), pps = ppb / BEAT;
+    var k0 = Math.floor((t - ph / pps) / BEAT) - 1, k1 = Math.ceil((t + (w - ph) / pps) / BEAT) + 1;
+    ctx.font = '500 ' + (labelPx || 10) + 'px "JetBrains Mono", monospace'; ctx.textBaseline = 'top';
+    for (var k = Math.max(0, k0); k <= k1; k++) {
+      var x = ph + (k * BEAT - t) * pps, isBar = k % 4 === 0;
+      ctx.fillStyle = isBar ? 'rgba(255,255,255,.22)' : 'rgba(255,255,255,.07)';
+      ctx.fillRect(Math.round(x), 0, 1, h);
+      if (isBar) { ctx.fillStyle = 'rgba(255,255,255,.62)'; ctx.fillText(String(k / 4 + 1), x + 4, 6); }
+    }
+    var cy = h / 2;
+    for (var px = 0; px < w; px += 2) {
+      var tt = t + (px - ph) / pps; if (tt < 0) continue;
+      var b = bands(tt, 5);
+      ctx.globalAlpha = px < ph ? 0.45 : 1;
+      var lo = b[0] * h * 0.4, mi = b[1] * h * 0.26, hi = b[2] * h * 0.15;
+      ctx.fillStyle = '#FF2D78'; ctx.fillRect(px, cy - lo, 1.4, lo * 2);
+      ctx.fillStyle = '#1A6CFF'; ctx.fillRect(px, cy - mi, 1.4, mi * 2);
+      ctx.fillStyle = '#FFFFFF'; ctx.fillRect(px, cy - hi, 1.4, hi * 2);
+    }
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = '#FFFFFF'; ctx.shadowColor = '#FF2D78'; ctx.shadowBlur = 12;
+    ctx.fillRect(ph - 1, 0, 2, h); ctx.shadowBlur = 0;
+    ctx.beginPath(); ctx.moveTo(ph - 6, 0); ctx.lineTo(ph + 6, 0); ctx.lineTo(ph, 7); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(ph - 6, h); ctx.lineTo(ph + 6, h); ctx.lineTo(ph, h - 7); ctx.fill();
+  }
+  function scrubTo(sel, seed, pf, colors) {
+    var F = fit($(sel)); if (!F) return;
+    drawBars(F.ctx, trackCols(Math.floor(F.w / 3), 300, seed, CAREER), 0, 0, F.w, F.h,
+      { low: colors[0], mid: colors[1], gap: 1, midScale: 0.35, playFrac: pf, dim: 0.3 });
+  }
+
+  var CUES = [
+    { k: 'A', pos: 5 / 56,  c: '#FF2D78', era: 'The ’70s',       title: 'Ipanema Discotheque', body: 'Resident DJ two blocks from Studio 54 — reading a Manhattan dance floor in real time.' },
+    { k: 'B', pos: 7 / 56,  c: '#1A6CFF', era: '’70s – ’80s',    title: 'Manhattan Record Pool', body: 'A hundred records a week, pulled, played and reported back to the labels before radio heard them.' },
+    { k: 'C', pos: 9 / 56,  c: '#FFFFFF', era: '1979 – 1984',    title: 'A&R Director, Vanguard Records', body: 'Signing, shaping and releasing records from the label side of the table.' },
+    { k: 'D', pos: 13 / 56, c: '#FF2D78', era: 'The Vanguard years', title: 'Public Enemy’s first single', body: 'Signed Spectrum City to Vanguard and produced their first single — before they became Public Enemy.' },
+    { k: 'E', pos: 54 / 56, c: '#1A6CFF', era: 'Today',          title: 'Legends of Vinyl · Pinky Pack Productions', body: 'Co-founder of Legends of Vinyl, and now taking sessions for producers who want that ear on their record.' }
+  ];
+  var cueState = { c2: 0, c4: 0 };
+  // Career as a track overview, with hot-cue flags drawn to the decade axis
+  function drawOverTo(sel, idx, flagPx) {
+    var cv = $(sel), F = fit(cv); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, n = Math.floor(w / 3), fp = flagPx || 8;
+    if (!cv._cols || cv._n !== n) { cv._cols = trackCols(n, 600, 21, CAREER, { fadeIn: 0.02, fadeOut: 0.02 }); cv._n = n; }
+    var pf = CUES[idx].pos, top = fp * 2;
+    drawBars(ctx, cv._cols, 0, top, w, h - top, { low: '#FF2D78', mid: '#1A6CFF', high: '#FFFFFF', gap: 1, midScale: 0.62, highScale: 0.3, playFrac: pf, dim: 0.28 });
+    ctx.font = '700 ' + fp + 'px "JetBrains Mono", monospace'; ctx.textBaseline = 'top';
+    var fw = fp * 1.4, fh = fp * 1.65;
+    CUES.forEach(function (c, i) {
+      var x = Math.round(c.pos * w);
+      ctx.globalAlpha = i === idx ? 1 : 0.7; ctx.fillStyle = c.c;
+      ctx.fillRect(x, fh - 1, 1.5, h - fh + 1);
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x + fw, 0); ctx.lineTo(x + fw, fh * 0.7); ctx.lineTo(x + fw * 0.45, fh); ctx.lineTo(x, fh); ctx.fill();
+      ctx.fillStyle = '#000'; ctx.fillText(c.k, x + fp * 0.3, fp * 0.3);
+    });
+    ctx.globalAlpha = 1;
+    var px = Math.round(pf * w);
+    ctx.fillStyle = '#FFFFFF'; ctx.shadowColor = '#FF2D78'; ctx.shadowBlur = 10;
+    ctx.fillRect(px - 1, top, 2, h - top); ctx.shadowBlur = 0;
+  }
+  function selectCue(pre, i) {
+    cueState[pre] = i; var c = CUES[i];
+    $$('.' + pre + ' .c2-pad').forEach(function (p, j) { p.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
+    var card = $('#' + pre + '-card'); if (card) card.style.setProperty('--c', c.c);
+    $('#' + pre + '-cl').textContent = c.k; $('#' + pre + '-ce').textContent = c.era;
+    $('#' + pre + '-ct').textContent = c.title; $('#' + pre + '-cb').textContent = c.body;
+    drawOverTo('#' + pre + '-over', i, pre === 'c4' ? 11 : 8);
+  }
+  ['c2', 'c4'].forEach(function (pre) {
+    $$('.' + pre + ' .c2-pad').forEach(function (p) {
+      p.addEventListener('click', function () { selectCue(pre, +p.getAttribute('data-cue')); });
+    });
+  });
+
+  // Spectrum analyser standing on a floor line, with falling peak caps
+  function floorTo(sel, st, o) {
+    var cv = $(sel), F = fit(cv); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, floorY = Math.round(h * o.floor), H = floorY - 8;
+    var n = Math.max(16, Math.floor(w / (o.step || 9))), step = w / n, bw = Math.max(2, step - 3);
+    if (!cv._pk || cv._pk.length !== n) cv._pk = new Array(n).fill(0);
+    var pk = cv._pk, g = ctx.createLinearGradient(0, floorY - H, 0, floorY);
+    o.grad.forEach(function (s) { g.addColorStop(s[0], s[1]); });
+    for (var i = 0; i < n; i++) {
+      var f = i / n, lv = Math.max(0.03, st.freq ? specAt(st, f, n) : staticSpec(f) * 0.9);
+      var x = i * step, bh = lv * H;
+      ctx.fillStyle = g; ctx.fillRect(x, floorY - bh, bw, bh);
+      if (o.reflect) { ctx.globalAlpha = 0.18; ctx.fillRect(x, floorY + 2, bw, Math.min(h - floorY - 2, bh * 0.45)); ctx.globalAlpha = 1; }
+      pk[i] = st.playing ? Math.max(lv, pk[i] - 0.012) : lv;
+      ctx.fillStyle = o.cap; ctx.fillRect(x, floorY - pk[i] * H - 4, bw, 2);
+    }
+    if (o.axis) {
+      ctx.fillStyle = o.line; ctx.fillRect(0, floorY, w, 1);
+      ctx.font = o.font; ctx.textBaseline = 'top';
+      [[30, '30 Hz'], [100, '100'], [1000, '1k'], [10000, '10k']].forEach(function (a) {
+        var fx = Math.log(a[0] / 30) / Math.log(16000 / 30) * w;
+        ctx.fillStyle = o.label; ctx.fillText(a[1], fx + 4, floorY + 8); ctx.fillRect(fx, floorY, 1, 5);
+      });
+    }
+  }
+  // Radial visualiser — mirrored left/right so lows sit at the top
+  function ringTo(sel, st, o) {
+    var F = fit($(sel)); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, cx = w / 2, cy = h / 2, S = Math.min(w, h), r0 = S * 0.3, L = S * 0.17, n = 96;
+    var breathe = st.ambient ? 0.8 + 0.4 * st.kick : 1;
+    ctx.lineCap = 'round'; ctx.lineWidth = Math.max(2, S * 0.011);
+    for (var i = 0; i < n; i++) {
+      var half = i < n / 2 ? i / (n / 2) : (n - i) / (n / 2);
+      var lv = st.freq ? specAt(st, half * 0.85, n / 2) : (staticSpec(half) * 0.85 + 0.05 * Math.abs(hash(i + 300))) * breathe;
+      lv = Math.max(0.06, Math.min(1, lv));
+      var a = i / n * TAU - Math.PI / 2, c = Math.cos(a), s = Math.sin(a);
+      ctx.strokeStyle = lv > 0.72 ? o.hi : 'rgba(' + o.lo + ',' + (0.45 + lv * 0.5).toFixed(3) + ')';
+      ctx.beginPath(); ctx.moveTo(cx + c * r0, cy + s * r0); ctx.lineTo(cx + c * (r0 + L * lv), cy + s * (r0 + L * lv)); ctx.stroke();
+    }
+    ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(' + o.lo + ',.35)';
+    ctx.beginPath(); ctx.arc(cx, cy, r0 - 6, 0, TAU); ctx.stroke();
+    ctx.fillStyle = 'rgba(' + o.fill + ',' + (0.06 + st.kick * 0.18).toFixed(3) + ')';
+    ctx.beginPath(); ctx.arc(cx, cy, r0 - 8, 0, TAU); ctx.fill();
+  }
 
   /* ═════════ 01 · VINYL CUT ═════════ */
   function drawVinyl() {
@@ -1302,97 +1909,21 @@ html.is-playing .c3-laser-g{animation-play-state:running}
   }, 'static');
 
   /* ═════════ 02 · CLUB DARK ═════════ */
+  reg(2, function (st) { drawDeck('#c2-deck', st, 10); });
   reg(2, function (st) {
-    var F = fit($('#c2-deck')); if (!F) return;
-    var ctx = F.ctx, w = F.w, h = F.h, t = st.t;
-    var ph = Math.round(w * 0.38), ppb = Math.max(38, Math.min(72, w / 15)), pps = ppb / BEAT;
-    var k0 = Math.floor((t - ph / pps) / BEAT) - 1, k1 = Math.ceil((t + (w - ph) / pps) / BEAT) + 1;
-    ctx.font = '500 10px "JetBrains Mono", monospace'; ctx.textBaseline = 'top';
-    for (var k = Math.max(0, k0); k <= k1; k++) {
-      var x = ph + (k * BEAT - t) * pps, isBar = k % 4 === 0;
-      ctx.fillStyle = isBar ? 'rgba(255,255,255,.22)' : 'rgba(255,255,255,.07)';
-      ctx.fillRect(Math.round(x), 0, 1, h);
-      if (isBar) { ctx.fillStyle = 'rgba(255,255,255,.6)'; ctx.fillText(String(k / 4 + 1), x + 4, 6); }
-    }
-    var cy = h / 2;
-    for (var px = 0; px < w; px += 2) {
-      var tt = t + (px - ph) / pps; if (tt < 0) continue;
-      var b = bands(tt, 5);
-      ctx.globalAlpha = px < ph ? 0.45 : 1;
-      var lo = b[0] * h * 0.4, mi = b[1] * h * 0.26, hi = b[2] * h * 0.15;
-      ctx.fillStyle = '#FF2D78'; ctx.fillRect(px, cy - lo, 1.4, lo * 2);
-      ctx.fillStyle = '#1A6CFF'; ctx.fillRect(px, cy - mi, 1.4, mi * 2);
-      ctx.fillStyle = '#FFFFFF'; ctx.fillRect(px, cy - hi, 1.4, hi * 2);
-    }
-    ctx.globalAlpha = 1;
-    ctx.fillStyle = '#FFFFFF'; ctx.shadowColor = '#FF2D78'; ctx.shadowBlur = 12;
-    ctx.fillRect(ph - 1, 0, 2, h); ctx.shadowBlur = 0;
-    ctx.beginPath(); ctx.moveTo(ph - 6, 0); ctx.lineTo(ph + 6, 0); ctx.lineTo(ph, 7); ctx.fill();
-    ctx.beginPath(); ctx.moveTo(ph - 6, h); ctx.lineTo(ph + 6, h); ctx.lineTo(ph, h - 7); ctx.fill();
-  });
-
-  var lastRemain = '', lastBar = '';
-  reg(2, function (st) {
-    var t = st.t, s = Math.ceil(LOOP - (t % LOOP));
+    var t = st.playing ? st.t : 0, s = Math.ceil(LOOP - (t % LOOP));
     if (s > LOOP) s = LOOP;
-    var txt = '-' + String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
-    if (txt !== lastRemain) { var r = $('#c2-remain'); if (r) r.textContent = txt; lastRemain = txt; }
-    var bi = Math.floor(t / BEAT), bt = (Math.floor(bi / 4) + 1) + '.' + ((bi % 4) + 1);
-    if (bt !== lastBar) { var e = $('#c2-bar'); if (e) e.textContent = bt; lastBar = bt; }
+    setText('#c2-remain', '-' + mmss(s));
+    var bi = Math.floor(t / BEAT); setText('#c2-bar', (Math.floor(bi / 4) + 1) + '.' + ((bi % 4) + 1));
   });
-
   reg(2, function (st) {
     var lv = st.freq
       ? [clamp(band(st, 20, 250) * 1.2), clamp(band(st, 250, 4000) * 1.9), clamp(band(st, 4000, 16000) * 3.2)]
       : [0.72, 0.56, 0.8];
     ['#c2-m1', '#c2-m2', '#c2-m3'].forEach(function (s, i) { var el = $(s); if (el) el.style.setProperty('--lvl', lv[i].toFixed(3)); });
   });
-
-  var CUES = [
-    { k: 'A', pos: 5 / 56,  c: '#FF2D78', era: 'The ’70s',       title: 'Ipanema Discotheque', body: 'Resident DJ two blocks from Studio 54 — reading a Manhattan dance floor in real time.' },
-    { k: 'B', pos: 7 / 56,  c: '#1A6CFF', era: '’70s – ’80s',    title: 'Manhattan Record Pool', body: 'A hundred records a week, pulled, played and reported back to the labels before radio heard them.' },
-    { k: 'C', pos: 9 / 56,  c: '#FFFFFF', era: '1979 – 1984',    title: 'A&R Director, Vanguard Records', body: 'Signing, shaping and releasing records from the label side of the table.' },
-    { k: 'D', pos: 13 / 56, c: '#FF2D78', era: 'The Vanguard years', title: 'Public Enemy’s first single', body: 'Signed Spectrum City to Vanguard and produced their first single — before they became Public Enemy.' },
-    { k: 'E', pos: 54 / 56, c: '#1A6CFF', era: 'Today',          title: 'Legends of Vinyl · Pinky Pack Productions', body: 'Co-founder of Legends of Vinyl, and now taking sessions for producers who want that ear on their record.' }
-  ];
-  var cueIdx = 0, overCols = null, overN = 0;
-  function drawOver() {
-    var F = fit($('#c2-over')); if (!F) return;
-    var ctx = F.ctx, w = F.w, h = F.h, n = Math.floor(w / 3);
-    if (!overCols || overN !== n) { overCols = trackCols(n, 600, 21, CAREER, { fadeIn: 0.02, fadeOut: 0.02 }); overN = n; }
-    var pf = CUES[cueIdx].pos;
-    drawBars(ctx, overCols, 0, 16, w, h - 16, { low: '#FF2D78', mid: '#1A6CFF', high: '#FFFFFF', gap: 1, midScale: 0.62, highScale: 0.3, playFrac: pf, dim: 0.28 });
-    ctx.font = '700 8px "JetBrains Mono", monospace'; ctx.textBaseline = 'top';
-    CUES.forEach(function (c, i) {
-      var x = Math.round(c.pos * w);
-      ctx.globalAlpha = i === cueIdx ? 1 : 0.7; ctx.fillStyle = c.c;
-      ctx.fillRect(x, 12, 1.5, h - 12);
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x + 11, 0); ctx.lineTo(x + 11, 9); ctx.lineTo(x + 5, 13); ctx.lineTo(x, 13); ctx.fill();
-      ctx.fillStyle = '#000'; ctx.fillText(c.k, x + 2.5, 2.5);
-    });
-    ctx.globalAlpha = 1;
-    var px = Math.round(pf * w);
-    ctx.fillStyle = '#FFFFFF'; ctx.shadowColor = '#FF2D78'; ctx.shadowBlur = 10;
-    ctx.fillRect(px - 1, 16, 2, h - 16); ctx.shadowBlur = 0;
-  }
-  reg(2, drawOver, 'static');
-  reg(2, function () {
-    var F = fit($('#c2-scrub')); if (!F) return;
-    drawBars(F.ctx, trackCols(Math.floor(F.w / 3), 300, 29, CAREER), 0, 0, F.w, F.h,
-      { low: '#FF2D78', mid: '#FFFFFF', gap: 1, midScale: 0.35, playFrac: 0.18, dim: 0.3 });
-  }, 'static');
-
-  function selectCue(i) {
-    cueIdx = i; var c = CUES[i];
-    $$('.c2-pad').forEach(function (p, j) { p.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
-    var card = $('#c2-card'); card.style.setProperty('--c', c.c);
-    $('#c2-cl').textContent = c.k; $('#c2-ce').textContent = c.era;
-    $('#c2-ct').textContent = c.title; $('#c2-cb').textContent = c.body;
-    drawOver();
-  }
-  $$('.c2-pad').forEach(function (p) {
-    p.addEventListener('click', function () { selectCue(+p.getAttribute('data-cue')); });
-  });
+  reg(2, function () { drawOverTo('#c2-over', cueState.c2, 8); }, 'static');
+  reg(2, function () { scrubTo('#c2-scrub', 29, 0.18, ['#FF2D78', '#FFFFFF']); }, 'static');
 
   /* ═════════ 03 · UV FLOOR ═════════ */
   reg(3, function (st) {
@@ -1468,48 +1999,138 @@ html.is-playing .c3-laser-g{animation-play-state:running}
     var u = h / 130;
     for (var i = 0; i < crowd.length; i++) drawPerson(ctx, crowd[i], h, u, st.kick);
   });
-
-  var peaks = [];
   reg(3, function (st) {
-    var F = fit($('#u3-floor')); if (!F) return;
-    var ctx = F.ctx, w = F.w, h = F.h, floorY = Math.round(h * 0.64), H = floorY - 8;
-    var n = Math.max(16, Math.floor(w / 9)), step = w / n, bw = Math.max(2, step - 3);
-    if (peaks.length !== n) peaks = new Array(n).fill(0);
-    var g = ctx.createLinearGradient(0, floorY - H, 0, floorY);
-    g.addColorStop(0, '#E4D2FF'); g.addColorStop(0.35, '#B06FFF'); g.addColorStop(1, '#5B2A9E');
+    floorTo('#u3-floor', st, { floor: 0.64, grad: [[0, '#E4D2FF'], [0.35, '#B06FFF'], [1, '#5B2A9E']], cap: '#D4FF00',
+      reflect: true, axis: true, line: 'rgba(212,255,0,.5)', label: 'rgba(240,234,255,.62)', font: '500 10px "Space Grotesk", sans-serif' });
+  });
+  reg(3, function (st) { ringTo('#u3-ring', st, { hi: '#D4FF00', lo: '176,111,255', fill: '176,111,255' }); });
+
+  /* ═════════ 04 · CLUB DARK × UV FLOOR ═════════ */
+  var c4el = $('#c4');
+
+  // PINKY, filled with a live spectrum, in option 2's Anton and pink
+  reg(4, function (st) {
+    var F = fit($('#c4-pinky')); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h, txt = 'PINKY', face = '"Anton", Impact, sans-serif';
+    ctx.font = '400 100px ' + face;
+    var m = ctx.measureText(txt), asc = m.actualBoundingBoxAscent || 74;
+    var fs = (h - 3) / (asc / 100), tw = m.width * fs / 100;
+    if (tw > w) { fs *= w / tw; tw = w; }
+    ctx.font = '400 ' + fs + 'px ' + face;
+    var base = h - 1, top = base - asc * fs / 100;
+    var bw = Math.max(4, Math.round(fs / 24)), gap = Math.max(2, Math.round(bw * 0.4)), n = Math.ceil(tw / (bw + gap));
+    var g = ctx.createLinearGradient(0, base, 0, top);
+    g.addColorStop(0, '#8A1040'); g.addColorStop(0.5, '#FF2D78'); g.addColorStop(1, '#FFC2D8');
     for (var i = 0; i < n; i++) {
-      var f = i / n, lv = Math.max(0.03, st.freq ? specAt(st, f, n) : staticSpec(f) * 0.9);
-      var x = i * step, bh = lv * H;
-      ctx.fillStyle = g; ctx.fillRect(x, floorY - bh, bw, bh);
-      ctx.globalAlpha = 0.18; ctx.fillRect(x, floorY + 2, bw, Math.min(h - floorY - 2, bh * 0.45)); ctx.globalAlpha = 1;
-      peaks[i] = st.playing ? Math.max(lv, peaks[i] - 0.012) : lv;
-      ctx.fillStyle = '#D4FF00'; ctx.fillRect(x, floorY - peaks[i] * H - 4, bw, 2);
+      var f = i / n;
+      var lv = st.freq ? 0.35 + specAt(st, f, n) * 0.85 : 0.74 + 0.26 * staticSpec(f);
+      lv = Math.max(0.18, Math.min(1, lv));
+      var x = i * (bw + gap), bh = (base - top) * lv;
+      ctx.fillStyle = g; ctx.fillRect(x, base - bh, bw, bh);
+      ctx.fillStyle = '#FFFFFF'; ctx.fillRect(x, base - bh - 4, bw, 2.5);
     }
-    ctx.fillStyle = 'rgba(212,255,0,.5)'; ctx.fillRect(0, floorY, w, 1);
-    ctx.font = '500 10px "Space Grotesk", sans-serif'; ctx.textBaseline = 'top';
-    [[30, '30 Hz'], [100, '100'], [1000, '1k'], [10000, '10k']].forEach(function (a) {
-      var fx = Math.log(a[0] / 30) / Math.log(16000 / 30) * w;
-      ctx.fillStyle = 'rgba(240,234,255,.62)'; ctx.fillText(a[1], fx + 4, floorY + 8); ctx.fillRect(fx, floorY, 1, 5);
+    ctx.globalCompositeOperation = 'destination-in';
+    ctx.fillStyle = '#000'; ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left';
+    ctx.fillText(txt, 0, base);
+    ctx.globalCompositeOperation = 'destination-over';
+    ctx.fillStyle = 'rgba(255,45,120,0.32)'; ctx.fillText(txt, 0, base);
+    ctx.globalCompositeOperation = 'source-over';
+  });
+
+  // The crowd — fuller silhouettes than option 3, swaying on their own, lifting on the kick
+  var crowd4 = null, crowd4W = 0;
+  function makeCrowd4(w) {
+    var out = [];
+    [[22, 0.72, 0], [34, 1.05, 1]].forEach(function (cfg) {
+      var sp = cfg[0], n = Math.ceil(w / sp) + 2;
+      for (var i = 0; i < n; i++) {
+        var j = i * 7 + cfg[2] * 9001, r = Math.abs(hash(j + 13));
+        out.push({
+          x: (i - 0.5 + (cfg[2] ? 0.5 : 0) + hash(j) * 0.35) * sp, row: cfg[2],
+          s: cfg[1] * (0.88 + 0.24 * Math.abs(hash(j + 7))),
+          h: (cfg[2] ? 50 : 60) * (0.9 + 0.2 * Math.abs(hash(j + 3))),
+          pose: r > 0.82 ? 2 : r > 0.6 ? 1 : r > 0.42 ? 3 : 0,
+          side: hash(j + 17) > 0 ? 1 : -1,
+          ph: Math.abs(hash(j + 23)), f: 0.7 + 0.5 * Math.abs(hash(j + 29)),
+          tilt: hash(j + 31) * 1.6,
+          hair: Math.abs(hash(j + 37)) > 0.6 ? 1 + 0.3 * Math.abs(hash(j + 41)) : 0
+        });
+      }
     });
-  });
-
-  reg(3, function (st) {
-    var F = fit($('#u3-ring')); if (!F) return;
-    var ctx = F.ctx, w = F.w, h = F.h, cx = w / 2, cy = h / 2, S = Math.min(w, h), r0 = S * 0.3, L = S * 0.17, n = 96;
-    ctx.lineCap = 'round'; ctx.lineWidth = Math.max(2, S * 0.011);
-    for (var i = 0; i < n; i++) {
-      var half = i < n / 2 ? i / (n / 2) : (n - i) / (n / 2);
-      var lv = st.freq ? specAt(st, half * 0.85, n / 2) : staticSpec(half) * 0.85 + 0.05 * Math.abs(hash(i + 300));
-      lv = Math.max(0.06, Math.min(1, lv));
-      var a = i / n * TAU - Math.PI / 2, c = Math.cos(a), s = Math.sin(a);
-      ctx.strokeStyle = lv > 0.72 ? '#D4FF00' : 'rgba(176,111,255,' + (0.45 + lv * 0.5).toFixed(3) + ')';
-      ctx.beginPath(); ctx.moveTo(cx + c * r0, cy + s * r0); ctx.lineTo(cx + c * (r0 + L * lv), cy + s * (r0 + L * lv)); ctx.stroke();
+    return out;
+  }
+  function person4(ctx, p, H, u, k, t) {
+    var s = p.s * u;
+    var sway = Math.sin(t * p.f * 1.6 + p.ph * 6) * 2.4 * s;
+    var bob = k * 7 * s * (0.6 + 0.4 * p.ph);
+    var x = p.x + sway, sy = H - p.h * s - bob, hr = 7.2 * s;
+    ctx.beginPath();
+    ctx.moveTo(x - 15 * s, H + 2);
+    ctx.bezierCurveTo(x - 15.5 * s, sy + 22 * s, x - 16.5 * s, sy + 7 * s, x - 12 * s, sy + 2.5 * s);
+    ctx.quadraticCurveTo(x - 7 * s, sy - 1.5 * s, x - 3.2 * s, sy - 2.5 * s);
+    ctx.lineTo(x - 2.8 * s, sy - 7 * s); ctx.lineTo(x + 2.8 * s, sy - 7 * s); ctx.lineTo(x + 3.2 * s, sy - 2.5 * s);
+    ctx.quadraticCurveTo(x + 7 * s, sy - 1.5 * s, x + 12 * s, sy + 2.5 * s);
+    ctx.bezierCurveTo(x + 16.5 * s, sy + 7 * s, x + 15.5 * s, sy + 22 * s, x + 15 * s, H + 2);
+    ctx.closePath(); ctx.fill();
+    var hx = x + p.tilt * s, hy = sy - 7 * s - hr * 0.95;
+    ctx.beginPath(); ctx.ellipse(hx, hy, hr * 0.84, hr * 1.06, p.tilt * 0.06, 0, TAU); ctx.fill();
+    if (p.hair) { ctx.beginPath(); ctx.ellipse(hx, hy - hr * 0.25, hr * 1.02 * p.hair, hr * 0.9, 0, Math.PI * 0.95, Math.PI * 2.05); ctx.fill(); }
+    if (!p.pose) return;
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    var sides = p.pose === 2 ? [1, -1] : [p.side];
+    for (var i = 0; i < sides.length; i++) {
+      var d = sides[i], ax = x + d * 11.5 * s, ay = sy + 3 * s, ex, ey, wx, wy;
+      if (p.pose === 3) { // bent arm, fist pumping on the beat
+        ex = ax + d * 9 * s; ey = ay + 6 * s; wx = ax + d * 6 * s; wy = ay - (12 + k * 10) * s;
+      } else {
+        var lift = k * 6;
+        ex = ax + d * (6 + lift * 0.3) * s; ey = ay - (17 + lift) * s;
+        wx = ex + d * (1.5 - p.ph * 3) * s; wy = ey - (17 + lift) * s;
+      }
+      ctx.lineWidth = 5.4 * s; ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(ex, ey); ctx.stroke();
+      ctx.lineWidth = 4.4 * s; ctx.beginPath(); ctx.moveTo(ex, ey); ctx.lineTo(wx, wy); ctx.stroke();
+      ctx.beginPath(); ctx.arc(wx, wy, 2.7 * s, 0, TAU); ctx.fill();
     }
-    ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(176,111,255,.35)';
-    ctx.beginPath(); ctx.arc(cx, cy, r0 - 6, 0, TAU); ctx.stroke();
-    ctx.fillStyle = 'rgba(176,111,255,' + (0.06 + st.kick * 0.18).toFixed(3) + ')';
-    ctx.beginPath(); ctx.arc(cx, cy, r0 - 8, 0, TAU); ctx.fill();
+  }
+  function crowd4Draw(st) {
+    var F = fit($('#c4-crowd')); if (!F) return;
+    var ctx = F.ctx, w = F.w, h = F.h;
+    if (!crowd4 || crowd4W !== Math.round(w)) { crowd4 = makeCrowd4(w); crowd4W = Math.round(w); }
+    var k = motionOn ? st.kick : 0, t = motionOn ? st.t : 0, u = h / 150;
+    var g = ctx.createLinearGradient(0, 0, 0, h);
+    g.addColorStop(0, 'rgba(255,45,120,0)');
+    g.addColorStop(0.65, 'rgba(255,45,120,' + (0.08 + k * 0.06).toFixed(3) + ')');
+    g.addColorStop(1, 'rgba(255,45,120,' + (0.22 + k * 0.12).toFixed(3) + ')');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    for (var i = 0; i < crowd4.length; i++) {
+      var p = crowd4[i];
+      ctx.fillStyle = ctx.strokeStyle = p.row ? '#000000' : '#22081A';
+      person4(ctx, p, h, u, k, t);
+    }
+  }
+  reg(4, crowd4Draw);
+  function ring4Draw(st) { ringTo('#c4-ring', st, { hi: '#FF2D78', lo: '26,108,255', fill: '255,45,120' }); }
+  reg(4, ring4Draw);
+  reg(4, function (st) { drawDeck('#c4-deck', st, 12); });
+  reg(4, function (st) {
+    var tr = TRACKS[A.track], t = st.playing ? st.t : 0, s = Math.ceil(tr.len - (t % tr.len));
+    if (s > tr.len) s = tr.len;
+    setText('#c4-rrem', '-' + mmss(s));
+    var bi = Math.floor(t / BEAT); setText('#c4-rbar', (Math.floor(bi / 4) + 1) + '.' + ((bi % 4) + 1));
   });
+  reg(4, function (st) {
+    floorTo('#c4-floor', st, { floor: 0.98, step: 12, grad: [[0, '#FFFFFF'], [0.28, '#FF2D78'], [1, '#1A6CFF']], cap: '#FF2D78' });
+  });
+  reg(4, function () {
+    $$('.c4-trk-wave').forEach(function (cv, i) {
+      var F = fit(cv); if (!F) return;
+      var tr = TRACKS[i];
+      drawBars(F.ctx, trackCols(Math.floor(F.w / 3), tr.len, 61 + i * 13, i === 1 ? RADIO : EXT, { fadeOut: 0.03, midMul: tr.dub ? 0.5 : 1 }),
+        0, 0, F.w, F.h, { low: '#FF2D78', mid: '#FFFFFF', gap: 1, midScale: 0.45, alpha: 0.9 });
+    });
+    scrubTo('#c4-scrub', 33, 0, ['#FF2D78', '#FFFFFF']);
+    drawOverTo('#c4-over', cueState.c4, 11);
+  }, 'static');
 
   /* ── painting ── */
   function paintAll() {
@@ -1517,10 +2138,24 @@ html.is-playing .c3-laser-g{animation-play-state:running}
     if (!A.playing || RM.matches) run(LIVE[active], REST);
   }
   var pend = 0;
-  function schedule() { if (pend) return; pend = requestAnimationFrame(function () { pend = 0; paintAll(); }); }
+  function schedule() { if (pend) return; pend = requestAnimationFrame(function () { pend = 0; paintAll(); ensureAmbient(); }); }
 
-  /* ── audio: a synthesized 124 BPM house loop, click-to-play only ── */
-  var A = { ctx: null, playing: false, t0: 0, next: 0, step: 0, timer: 0, kicks: [], lastKick: -9 };
+  // Option 4 keeps moving with no audio: a slow once-a-bar breath drives the crowd and ring;
+  // the light sweep is CSS. Stops for reduced motion, a hidden tab, or "Pause motion".
+  var ambRaf = 0;
+  function ambientOK() { return active === 4 && !A.playing && !RM.matches && motionOn && !document.hidden; }
+  function ambTick() {
+    if (!ambientOK()) { ambRaf = 0; if (c4el) c4el.style.setProperty('--amb', '0'); return; }
+    var t = performance.now() / 1000, k = 0.5 * (0.5 - 0.5 * Math.cos(TAU * t / (BEAT * 4)));
+    var st = { playing: false, ambient: true, t: t, kick: k, freq: null, wave: null, sr: 48000 };
+    crowd4Draw(st); ring4Draw(st);
+    c4el.style.setProperty('--amb', k.toFixed(3));
+    ambRaf = requestAnimationFrame(ambTick);
+  }
+  function ensureAmbient() { if (!ambRaf && ambientOK()) ambRaf = requestAnimationFrame(ambTick); }
+
+  /* ── audio: synthesized house loops, click-to-play only ── */
+  var A = { ctx: null, playing: false, t0: 0, next: 0, step: 0, timer: 0, kicks: [], lastKick: -9, track: 0, ratio: 1, dub: false };
   var AM9 = [220, 261.63, 329.63, 392, 493.88], FM7 = [174.61, 220, 261.63, 329.63];
   var BASS = [[55, 55, 55, 55], [55, 55, 65.41, 49]];
   A.init = function () {
@@ -1570,21 +2205,25 @@ html.is-playing .c3-laser-g{animation-play-state:running}
     }
   };
   A.stepAt = function (step, t) {
-    var s = step % 16, bar = Math.floor(step / 16);
+    var s = step % 16, bar = Math.floor(step / 16), r = this.ratio;
+    function tr(f) { return f * r; }
     if (s % 4 === 0) this.kick(t);
-    if (s % 4 === 2) this.hit(t, 'highpass', 7200, 0.7, 0.2, 0.14);
-    else if (bar >= 1 && s % 2 === 1) this.hit(t, 'highpass', 9000, 0.7, 0.06, 0.035);
+    if (s % 4 === 2) this.hit(t, 'highpass', 7200, 0.7, this.dub ? 0.12 : 0.2, 0.14);
+    else if (bar >= 1 && s % 2 === 1 && !this.dub) this.hit(t, 'highpass', 9000, 0.7, 0.06, 0.035);
     if (bar >= 2 && (s === 4 || s === 12)) this.clap(t);
-    if (bar >= 1 && s % 4 === 2) this.bass(t, BASS[bar % 2][s >> 2], BEAT * 0.42);
-    if (bar >= 4 && (s === 3 || s === 10)) this.stab(t, (Math.floor(bar / 2) % 2) ? FM7 : AM9);
+    if (bar >= 1 && s % 4 === 2) this.bass(t, BASS[bar % 2][s >> 2] * r, BEAT * 0.42);
+    if (!this.dub && bar >= 4 && (s === 3 || s === 10)) this.stab(t, ((Math.floor(bar / 2) % 2) ? FM7 : AM9).map(tr));
+    if (this.dub && bar >= 2 && s === 6) { var ch = AM9.map(tr); this.stab(t, ch); this.stab(t + BEAT * 0.75, ch); }
   };
   A.tick = function () {
     var c = this.ctx;
     while (this.next < c.currentTime + 0.12) { this.stepAt(this.step, this.next); this.next += BEAT / 4; this.step++; }
   };
-  A.play = function () {
+  A.play = function (i) {
+    if (i == null) i = this.track;
     if (!this.ctx && !this.init()) return;
-    var self = this, c = this.ctx;
+    var self = this, c = this.ctx, tr = TRACKS[i];
+    this.track = i; setTempo(tr.bpm); this.ratio = Math.pow(2, tr.semi / 12); this.dub = !!tr.dub;
     var go = function () {
       var now = c.currentTime;
       self.t0 = now + 0.06; self.next = self.t0; self.step = 0; self.kicks.length = 0; self.lastKick = -9;
@@ -1620,6 +2259,21 @@ html.is-playing .c3-laser-g{animation-play-state:running}
     raf = requestAnimationFrame(frame);
   }
 
+  function updateTrackUI() {
+    var p = A.playing, tr = TRACKS[A.track];
+    $$('[data-track]').forEach(function (b) {
+      var on = p && +b.getAttribute('data-track') === A.track;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      var tx = b.querySelector('.play-text'); if (tx) tx.textContent = on ? b.getAttribute('data-on') : b.getAttribute('data-off');
+      var lbl = b.getAttribute('data-label'); if (lbl) b.setAttribute('aria-label', (on ? 'Pause ' : 'Play ') + lbl);
+    });
+    $$('.c4-trk').forEach(function (li, i) { li.classList.toggle('is-active', i === A.track); });
+    setText('#c4-rt', tr.name + ' — ' + tr.ver);
+    setText('#c4-rbpm', tr.bpm.toFixed(1));
+    setText('#c4-rkey', tr.key);
+    setText('#c4-deck-tag', 'Beatgrid · ' + tr.bpm.toFixed(2));
+  }
+
   var playBtns = $$('[data-play]');
   function onTransport() {
     var p = A.playing;
@@ -1628,12 +2282,42 @@ html.is-playing .c3-laser-g{animation-play-state:running}
       b.setAttribute('aria-pressed', p ? 'true' : 'false');
       var t = b.querySelector('.play-text'); if (t) t.textContent = p ? b.getAttribute('data-on') : b.getAttribute('data-off');
     });
-    if (p) { if (!raf) raf = requestAnimationFrame(frame); }
-    else { root.style.setProperty('--kick', '0'); peaks = []; paintAll(); }
+    updateTrackUI();
+    if (p) { if (c4el) c4el.style.setProperty('--amb', '0'); if (!raf) raf = requestAnimationFrame(frame); }
+    else { root.style.setProperty('--kick', '0'); paintAll(); ensureAmbient(); }
   }
   playBtns.forEach(function (b) { b.addEventListener('click', function () { A.toggle(); }); });
+  $$('[data-track]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var i = +b.getAttribute('data-track');
+      if (A.playing && A.track === i) A.pause(); else A.play(i);
+    });
+  });
   var cue = $('#c2-cue'); if (cue) cue.addEventListener('click', function () { if (A.playing) A.pause(); else paintAll(); });
-  document.addEventListener('visibilitychange', function () { if (document.hidden && A.playing) A.pause(); });
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden && A.playing) A.pause();
+    else if (!document.hidden) ensureAmbient();
+  });
+
+  /* ── option 4: its own two-page navigation + motion control ── */
+  function showPage4(n) {
+    $('#c4-p1').hidden = n !== 1; $('#c4-p2').hidden = n !== 2;
+    $$('.c4-navlink').forEach(function (x) {
+      if (+x.getAttribute('data-page') === n) x.setAttribute('aria-current', 'page'); else x.removeAttribute('aria-current');
+    });
+    paintAll(); ensureAmbient();
+    if (c4el && c4el.getBoundingClientRect().top < 0) c4el.scrollIntoView({ block: 'start' });
+  }
+  $$('.c4-navlink').forEach(function (b) {
+    b.addEventListener('click', function () { showPage4(+b.getAttribute('data-page')); });
+  });
+  var mBtn = $('#c4-motion');
+  if (mBtn) mBtn.addEventListener('click', function () {
+    motionOn = !motionOn;
+    c4el.classList.toggle('motion-off', !motionOn);
+    mBtn.textContent = motionOn ? 'Pause motion' : 'Resume motion';
+    if (motionOn) ensureAmbient(); else { c4el.style.setProperty('--amb', '0'); paintAll(); }
+  });
 
   /* ── tabs ── */
   var tabs = $$('[role="tab"]');
@@ -1643,10 +2327,10 @@ html.is-playing .c3-laser-g{animation-play-state:running}
       t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
       document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
     });
-    active = i + 1; peaks = [];
+    active = i + 1;
     if (focus) tabs[i].focus();
-    try { localStorage.setItem('pinky-remix-tab', String(i)); } catch (e) {}
-    paintAll();
+    try { localStorage.setItem('pinky-remix-tab-v2', String(i)); } catch (e) {}
+    paintAll(); ensureAmbient();
   }
   tabs.forEach(function (t, i) {
     t.addEventListener('click', function () { select(i, false); });
@@ -1665,13 +2349,16 @@ html.is-playing .c3-laser-g{animation-play-state:running}
     $$('.design-frame').forEach(function (el) { ro.observe(el); });
   } else window.addEventListener('resize', schedule);
 
+  // New viewers land on option 4, the direction built from Ray's notes
   var saved = null;
-  try { saved = localStorage.getItem('pinky-remix-tab'); } catch (e) {}
-  var start = saved === null ? 0 : parseInt(saved, 10);
-  select(isNaN(start) || start < 0 || start >= tabs.length ? 0 : start, false);
+  try { saved = localStorage.getItem('pinky-remix-tab-v2'); } catch (e) {}
+  var start = saved === null ? 3 : parseInt(saved, 10);
+  select(isNaN(start) || start < 0 || start >= tabs.length ? 3 : start, false);
+  updateTrackUI();
 
   if (document.fonts) {
     Promise.all([
+      document.fonts.load('400 100px "Anton"'),
       document.fonts.load('400 100px "Bebas Neue"'),
       document.fonts.load('900 20px "Bodoni Moda"'),
       document.fonts.load('italic 400 20px "Bodoni Moda"'),
@@ -1683,6 +2370,8 @@ html.is-playing .c3-laser-g{animation-play-state:running}
   }
 })();
 </script>
+
+
 
 </body>
 </html>
