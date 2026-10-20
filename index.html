@@ -433,7 +433,7 @@ html.is-playing .c3-laser-g{animation-play-state:running}
 .c4-nav-cta{min-height:46px;display:inline-flex;align-items:center;padding:0 20px;margin-left:8px;border:1px solid #FF2D78;color:#FF2D78;font-size:15px;font-weight:600;transition:background .2s,color .2s}
 .c4-nav-cta:hover{background:#FF2D78;color:#000}
 
-.c4-hero{position:relative;overflow:hidden;padding:72px 56px 210px;
+.c4-hero{position:relative;overflow:hidden;padding:72px 56px 250px;
   background:radial-gradient(ellipse 80% 55% at 28% 112%,rgba(255,45,120,.30),transparent 70%),
              radial-gradient(ellipse 60% 50% at 86% 108%,rgba(26,108,255,.24),transparent 70%),#000}
 .c4-hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;background:radial-gradient(ellipse 120% 95% at 50% 38%,transparent 55%,rgba(0,0,0,.7) 100%)}
@@ -445,7 +445,7 @@ html.is-playing .c3-laser-g{animation-play-state:running}
 .c4.motion-off .c4-sweep{animation-play-state:paused}
 .c4-cone{opacity:calc(.12 + max(var(--kick),var(--amb)) * .22)}
 .c4-laser{stroke-width:1.2;vector-effect:non-scaling-stroke;opacity:calc(.14 + max(var(--kick),var(--amb)) * .5)}
-.c4-crowd{position:absolute;left:0;right:0;bottom:0;width:100%;height:190px;display:block;z-index:1;pointer-events:none}
+.c4-crowd{position:absolute;left:0;right:0;bottom:0;width:100%;height:236px;display:block;z-index:1;pointer-events:none}
 .c4-grain{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:.07;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .c4-motion{position:absolute;top:18px;right:22px;z-index:6;min-height:40px;padding:0 16px;border:1px solid rgba(255,255,255,.26);border-radius:999px;background:rgba(0,0,0,.55);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.86);transition:border-color .2s}
@@ -561,7 +561,7 @@ html.is-playing .c3-laser-g{animation-play-state:running}
   .frame-hint{margin:0 16px 12px}
   .c4-nav{padding:16px 22px}
   .c4-nav-cta{margin-left:0}
-  .c4-hero{padding:72px 22px 190px}
+  .c4-hero{padding:72px 22px 220px}
   .c4-hero-grid{grid-template-columns:1fr;gap:40px}
   .c4-role{font-size:18px}
   .c4-listen{padding:64px 22px 56px}
@@ -2037,75 +2037,171 @@ html.is-playing .c3-laser-g{animation-play-state:running}
     ctx.globalCompositeOperation = 'source-over';
   });
 
-  // The crowd — fuller silhouettes than option 3, swaying on their own, lifting on the kick
-  var crowd4 = null, crowd4W = 0;
+  // The crowd — backlit silhouettes with real proportions, each dancing their own move to the beat
+  var crowd4 = null, crowd4W = 0, crowdOff = null, MOVES = 8;
   function makeCrowd4(w) {
-    var out = [];
-    [[22, 0.72, 0], [34, 1.05, 1]].forEach(function (cfg) {
-      var sp = cfg[0], n = Math.ceil(w / sp) + 2;
+    var rows = [], cfg = [
+      { sp: 19, s: 0.6,  base: -18, color: '#3A0F2C', alpha: 0.9, glow: 0.35, blur: 6 },
+      { sp: 27, s: 0.86, base: 6,   color: '#16040F', alpha: 1,   glow: 0.6,  blur: 7 },
+      { sp: 44, s: 1.22, base: 40,  color: '#000000', alpha: 1,   glow: 0.6,  blur: 10 }
+    ];
+    cfg.forEach(function (c, r) {
+      var people = [], n = Math.ceil(w / c.sp) + 2;
       for (var i = 0; i < n; i++) {
-        var j = i * 7 + cfg[2] * 9001, r = Math.abs(hash(j + 13));
-        out.push({
-          x: (i - 0.5 + (cfg[2] ? 0.5 : 0) + hash(j) * 0.35) * sp, row: cfg[2],
-          s: cfg[1] * (0.88 + 0.24 * Math.abs(hash(j + 7))),
-          h: (cfg[2] ? 50 : 60) * (0.9 + 0.2 * Math.abs(hash(j + 3))),
-          pose: r > 0.82 ? 2 : r > 0.6 ? 1 : r > 0.42 ? 3 : 0,
+        var j = i * 11 + r * 7919;
+        if (r === 2 && Math.abs(hash(j + 2)) < 0.25) continue; // gaps in the front row so the floor reads through
+        people.push({
+          x: (i - 0.5 + (r % 2 ? 0.5 : 0) + hash(j) * 0.38) * c.sp,
+          s: c.s * (0.9 + 0.2 * Math.abs(hash(j + 7))),
+          bw: 0.86 + 0.32 * Math.abs(hash(j + 3)),       // build
+          tl: 0.92 + 0.16 * Math.abs(hash(j + 5)),       // torso length
+          move: Math.floor(Math.abs(hash(j + 13)) * MOVES) % MOVES,
           side: hash(j + 17) > 0 ? 1 : -1,
-          ph: Math.abs(hash(j + 23)), f: 0.7 + 0.5 * Math.abs(hash(j + 29)),
-          tilt: hash(j + 31) * 1.6,
-          hair: Math.abs(hash(j + 37)) > 0.6 ? 1 + 0.3 * Math.abs(hash(j + 41)) : 0
+          ph: Math.abs(hash(j + 23)) * TAU,
+          lag: Math.abs(hash(j + 29)) * 0.18,            // nobody is exactly on the grid
+          hair: Math.floor(Math.abs(hash(j + 37)) * 5) % 5,
+          tilt: hash(j + 31) * 0.1
         });
       }
+      rows.push({ c: c, people: people });
     });
-    return out;
+    return rows;
   }
-  function person4(ctx, p, H, u, k, t) {
-    var s = p.s * u;
-    var sway = Math.sin(t * p.f * 1.6 + p.ph * 6) * 2.4 * s;
-    var bob = k * 7 * s * (0.6 + 0.4 * p.ph);
-    var x = p.x + sway, sy = H - p.h * s - bob, hr = 7.2 * s;
+  // A tapered capsule: upper arm or forearm, filled — not a stroked line
+  function limb(ctx, x1, y1, x2, y2, r1, r2) {
+    var dx = x2 - x1, dy = y2 - y1, L = Math.sqrt(dx * dx + dy * dy) || 1, nx = -dy / L, ny = dx / L;
     ctx.beginPath();
-    ctx.moveTo(x - 15 * s, H + 2);
-    ctx.bezierCurveTo(x - 15.5 * s, sy + 22 * s, x - 16.5 * s, sy + 7 * s, x - 12 * s, sy + 2.5 * s);
-    ctx.quadraticCurveTo(x - 7 * s, sy - 1.5 * s, x - 3.2 * s, sy - 2.5 * s);
-    ctx.lineTo(x - 2.8 * s, sy - 7 * s); ctx.lineTo(x + 2.8 * s, sy - 7 * s); ctx.lineTo(x + 3.2 * s, sy - 2.5 * s);
-    ctx.quadraticCurveTo(x + 7 * s, sy - 1.5 * s, x + 12 * s, sy + 2.5 * s);
-    ctx.bezierCurveTo(x + 16.5 * s, sy + 7 * s, x + 15.5 * s, sy + 22 * s, x + 15 * s, H + 2);
-    ctx.closePath(); ctx.fill();
-    var hx = x + p.tilt * s, hy = sy - 7 * s - hr * 0.95;
-    ctx.beginPath(); ctx.ellipse(hx, hy, hr * 0.84, hr * 1.06, p.tilt * 0.06, 0, TAU); ctx.fill();
-    if (p.hair) { ctx.beginPath(); ctx.ellipse(hx, hy - hr * 0.25, hr * 1.02 * p.hair, hr * 0.9, 0, Math.PI * 0.95, Math.PI * 2.05); ctx.fill(); }
-    if (!p.pose) return;
-    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-    var sides = p.pose === 2 ? [1, -1] : [p.side];
-    for (var i = 0; i < sides.length; i++) {
-      var d = sides[i], ax = x + d * 11.5 * s, ay = sy + 3 * s, ex, ey, wx, wy;
-      if (p.pose === 3) { // bent arm, fist pumping on the beat
-        ex = ax + d * 9 * s; ey = ay + 6 * s; wx = ax + d * 6 * s; wy = ay - (12 + k * 10) * s;
-      } else {
-        var lift = k * 6;
-        ex = ax + d * (6 + lift * 0.3) * s; ey = ay - (17 + lift) * s;
-        wx = ex + d * (1.5 - p.ph * 3) * s; wy = ey - (17 + lift) * s;
-      }
-      ctx.lineWidth = 5.4 * s; ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(ex, ey); ctx.stroke();
-      ctx.lineWidth = 4.4 * s; ctx.beginPath(); ctx.moveTo(ex, ey); ctx.lineTo(wx, wy); ctx.stroke();
-      ctx.beginPath(); ctx.arc(wx, wy, 2.7 * s, 0, TAU); ctx.fill();
+    ctx.moveTo(x1 + nx * r1, y1 + ny * r1); ctx.lineTo(x2 + nx * r2, y2 + ny * r2);
+    ctx.lineTo(x2 - nx * r2, y2 - ny * r2); ctx.lineTo(x1 - nx * r1, y1 - ny * r1); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.arc(x1, y1, r1, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc(x2, y2, r2, 0, TAU); ctx.fill();
+  }
+  function hair(ctx, t, hx, hy, r) {
+    ctx.beginPath();
+    if (t === 1) ctx.arc(hx, hy - r * 0.18, r * 1.32, 0, TAU);                       // natural
+    else if (t === 2) {                                                               // long, past the shoulders
+      ctx.moveTo(hx - r * 0.92, hy - r * 0.3);
+      ctx.quadraticCurveTo(hx - r * 1.25, hy + r * 1.2, hx - r * 1.1, hy + r * 2.3);
+      ctx.lineTo(hx + r * 1.1, hy + r * 2.3);
+      ctx.quadraticCurveTo(hx + r * 1.25, hy + r * 1.2, hx + r * 0.92, hy - r * 0.3);
+      ctx.ellipse(hx, hy - r * 0.3, r * 0.92, r * 0.86, 0, 0, Math.PI, true);
     }
+    else if (t === 3) ctx.arc(hx + r * 0.15, hy - r * 1.05, r * 0.5, 0, TAU);        // bun
+    else if (t === 4) {                                                               // cap
+      ctx.ellipse(hx, hy - r * 0.42, r * 0.98, r * 0.7, 0, Math.PI, TAU);
+      ctx.rect(hx - r * 1.05, hy - r * 0.48, r * 2.1, r * 0.22);
+    }
+    else ctx.ellipse(hx, hy - r * 0.12, r * 0.9, r * 0.95, 0, 0, TAU);                // short
+    ctx.fill();
+  }
+  // Arm angles per move, measured from hanging straight down (0) to straight up (π);
+  // past π reaches back in over the head. Returns [left upper, left fore, right upper, right fore].
+  function pose(m, b, e, side, ph) {
+    var fr = b - Math.floor(b), hit = Math.exp(-fr * 5);
+    var sw = Math.sin(Math.PI * b + ph), sw2 = Math.sin(Math.PI * b / 2 + ph);
+    var L1, L2, R1, R2, tmp;
+    switch (m) {
+      case 0: // both hands up, waving
+        tmp = 0.45 * e * Math.sin(Math.PI * b + ph + 1.2);
+        L1 = 2.45 + 0.28 * e * sw; L2 = L1 + tmp;
+        R1 = 2.45 - 0.28 * e * sw; R2 = R1 - tmp;
+        break;
+      case 1: // fist pump on every kick
+        var p1 = 2.15 + 0.5 * e * hit, p2 = 2.9 + 0.25 * e * hit, o1 = 0.42 + 0.12 * e * hit, o2 = 2.0;
+        if (side > 0) { R1 = p1; R2 = p2; L1 = o1; L2 = o2; } else { L1 = p1; L2 = p2; R1 = o1; R2 = o2; }
+        break;
+      case 2: // clapping overhead on 2 and 4
+        var cb = (b - 1) / 2, hc = Math.exp(-(cb - Math.floor(cb)) * 7) * e;
+        L1 = R1 = 3.22; L2 = R2 = 3.3 + 0.62 * hc;
+        break;
+      case 3: // bent arms swinging — the two-step
+        L1 = 0.55 + 0.5 * e * sw; L2 = L1 + 1.55;
+        R1 = 0.55 - 0.5 * e * sw; R2 = R1 + 1.55;
+        break;
+      case 4: // low swing, side to side
+        L1 = 0.3 + 0.75 * e * Math.max(0, sw2);  L2 = L1 + 0.5;
+        R1 = 0.3 + 0.75 * e * Math.max(0, -sw2); R2 = R1 + 0.5;
+        break;
+      case 5: // one finger to the ceiling
+        var u1 = 2.92 + 0.14 * e * sw, u2 = 3.05 + 0.12 * e * hit;
+        if (side > 0) { R1 = u1; R2 = u2; L1 = 0.22; L2 = 0.45; } else { L1 = u1; L2 = u2; R1 = 0.22; R2 = 0.45; }
+        break;
+      case 6: // arms out, rolling wave
+        L1 = 1.65 + 0.32 * e * sw;                                    L2 = L1 + 0.6 * e * Math.sin(Math.PI * b + ph + 1.4);
+        R1 = 1.65 + 0.32 * e * Math.sin(Math.PI * b + ph + 2.2);      R2 = R1 + 0.6 * e * Math.sin(Math.PI * b + ph + 3.6);
+        break;
+      default: // drink in one hand, the other keeping time
+        var d1 = 0.5, d2 = 2.55, k1 = 0.35 + 0.5 * e * Math.max(0, sw), k2 = k1 + 0.9 + 0.3 * e * hit;
+        if (side > 0) { R1 = d1; R2 = d2; L1 = k1; L2 = k2; } else { L1 = d1; L2 = d2; R1 = k1; R2 = k2; }
+    }
+    return [L1, L2, R1, R2];
+  }
+  function dancer(ctx, p, base, u, b, e) {
+    var s = p.s * u, bb = b - p.lag;
+    var fr = bb - Math.floor(bb), hit = Math.exp(-fr * 5);
+    var sway = Math.sin(Math.PI * bb + p.ph) * 3.2 * s * e;
+    var dip = (hit * 3.4 - 1.2) * s * e;                  // knees give on the beat
+    var x = p.x + sway, hw = 15 * s * p.bw, sy = base - 54 * s * p.tl + dip;
+    var tilt = p.tilt + Math.sin(Math.PI * bb + p.ph) * 0.07 * e, pivot = sy + 20 * s;
+    ctx.save(); ctx.translate(x, pivot); ctx.rotate(tilt); ctx.translate(-x, -pivot);
+    // torso — deltoids, trapezius and neck, tapering to the waist
+    ctx.beginPath();
+    ctx.moveTo(x - hw * 0.8, base + 40 * s);
+    ctx.bezierCurveTo(x - hw * 0.78, sy + 34 * s, x - hw * 1.02, sy + 16 * s, x - hw, sy + 7 * s);
+    ctx.bezierCurveTo(x - hw * 0.98, sy + s, x - hw * 0.7, sy - 1.5 * s, x - 5 * s, sy - 2.5 * s);
+    ctx.quadraticCurveTo(x - 3.4 * s, sy - 3.2 * s, x - 3.2 * s, sy - 7 * s);
+    ctx.lineTo(x + 3.2 * s, sy - 7 * s);
+    ctx.quadraticCurveTo(x + 3.4 * s, sy - 3.2 * s, x + 5 * s, sy - 2.5 * s);
+    ctx.bezierCurveTo(x + hw * 0.7, sy - 1.5 * s, x + hw * 0.98, sy + s, x + hw, sy + 7 * s);
+    ctx.bezierCurveTo(x + hw * 1.02, sy + 16 * s, x + hw * 0.78, sy + 34 * s, x + hw * 0.8, base + 40 * s);
+    ctx.closePath(); ctx.fill();
+    // head and hair, seen from behind, nodding a beat-fraction late
+    var hr = 7.6 * s, nb = bb - 0.12, nod = Math.exp(-(nb - Math.floor(nb)) * 5) * 1.6 * s * e;
+    var hx = x + Math.sin(Math.PI * bb + p.ph + 0.6) * 1.2 * s * e, hy = sy - 7 * s - hr * 0.92 + nod;
+    ctx.beginPath(); ctx.ellipse(hx, hy, hr * 0.84, hr, 0, 0, TAU); ctx.fill();
+    hair(ctx, p.hair, hx, hy, hr);
+    // arms: shoulder → elbow → wrist → hand
+    var a = pose(p.move, bb, e, p.side, p.ph), LU = 15 * s, LF = 13.5 * s;
+    for (var k = 0; k < 2; k++) {
+      var d = k ? 1 : -1, t1 = a[k * 2], t2 = a[k * 2 + 1];
+      var shx = x + d * hw * 0.84, shy = sy + 4 * s;
+      var ex = shx + d * Math.sin(t1) * LU, ey = shy + Math.cos(t1) * LU;
+      var wx = ex + d * Math.sin(t2) * LF, wy = ey + Math.cos(t2) * LF;
+      limb(ctx, shx, shy, ex, ey, 3.6 * s, 2.9 * s);
+      limb(ctx, ex, ey, wx, wy, 2.9 * s, 2.2 * s);
+      ctx.beginPath(); ctx.ellipse(wx + d * Math.sin(t2) * 1.6 * s, wy + Math.cos(t2) * 1.6 * s, 2.5 * s, 3 * s, t2 * -d, 0, TAU); ctx.fill();
+    }
+    ctx.restore();
   }
   function crowd4Draw(st) {
-    var F = fit($('#c4-crowd')); if (!F) return;
+    var cv = $('#c4-crowd'), F = fit(cv); if (!F) return;
     var ctx = F.ctx, w = F.w, h = F.h;
     if (!crowd4 || crowd4W !== Math.round(w)) { crowd4 = makeCrowd4(w); crowd4W = Math.round(w); }
-    var k = motionOn ? st.kick : 0, t = motionOn ? st.t : 0, u = h / 150;
+    var still = !motionOn, k = still ? 0 : st.kick;
+    var b = still ? 0 : st.t / BEAT, e = still ? 0 : st.playing ? 1 : 0.86;
+    var u = h / 115, d = cv.width / w;
     var g = ctx.createLinearGradient(0, 0, 0, h);
     g.addColorStop(0, 'rgba(255,45,120,0)');
-    g.addColorStop(0.65, 'rgba(255,45,120,' + (0.08 + k * 0.06).toFixed(3) + ')');
-    g.addColorStop(1, 'rgba(255,45,120,' + (0.22 + k * 0.12).toFixed(3) + ')');
+    g.addColorStop(0.5, 'rgba(255,45,120,' + (0.07 + k * 0.06).toFixed(3) + ')');
+    g.addColorStop(1, 'rgba(255,45,120,' + (0.24 + k * 0.12).toFixed(3) + ')');
     ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
-    for (var i = 0; i < crowd4.length; i++) {
-      var p = crowd4[i];
-      ctx.fillStyle = ctx.strokeStyle = p.row ? '#000000' : '#22081A';
-      person4(ctx, p, h, u, k, t);
+    // each row is drawn flat to an offscreen canvas, then composited once with a pink
+    // shadow — a backlit rim where the stage haze catches heads, shoulders and hands
+    if (!crowdOff) crowdOff = document.createElement('canvas');
+    if (crowdOff.width !== cv.width || crowdOff.height !== cv.height) { crowdOff.width = cv.width; crowdOff.height = cv.height; }
+    var oc = crowdOff.getContext('2d');
+    for (var r = 0; r < crowd4.length; r++) {
+      var row = crowd4[r];
+      oc.setTransform(1, 0, 0, 1, 0, 0); oc.clearRect(0, 0, crowdOff.width, crowdOff.height);
+      oc.setTransform(d, 0, 0, d, 0, 0); oc.fillStyle = row.c.color;
+      for (var i = 0; i < row.people.length; i++) dancer(oc, row.people[i], h + row.c.base * u, u, b, e);
+      ctx.save();
+      ctx.globalAlpha = row.c.alpha;
+      ctx.shadowColor = 'rgba(255,45,120,' + (row.c.glow + k * 0.2).toFixed(3) + ')';
+      ctx.shadowBlur = row.c.blur * u * d;
+      ctx.shadowOffsetY = -1.5 * u * d;
+      ctx.drawImage(crowdOff, 0, 0, w, h);
+      ctx.restore();
     }
   }
   reg(4, crowd4Draw);
